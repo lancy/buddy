@@ -5,19 +5,110 @@
 //  Created by Lancy on 10/6/13.
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
-
 #import "GLAppDelegate.h"
+
+
+#import "AKTabBarController.h"
+
+
+@interface GLAppDelegate ()
+@property (strong, nonatomic) AKTabBarController *tabBarController;
+
+@end
 
 @implementation GLAppDelegate
 
+- (void)customUserinterface
+{
+    [self customNavigation];
+    [self customTabbar];
+}
+
+- (void)customNavigation
+{
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navi_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    
+}
+
+- (void)customTabbar
+{
+    // Below you will find an example of the possible customizations, just uncomment the lines below
+    
+    // Tab background Image
+    //    [_tabBarController setBackgroundImageName:@"tabbar_bg.png"];
+    [_tabBarController setSelectedBackgroundImageName:@"tabbar_selected.png"];
+    
+    [_tabBarController setTabTitleIsHidden:YES];
+    
+    // Tabs top embos Color
+    //     [_tabBarController setTabEdgeColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]];
+    
+    // Tabs Colors settings
+    //     [_tabBarController setTabColors:@[[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.0],
+    //     [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0]]]; // MAX 2 Colors
+    //
+    //     [_tabBarController setSelectedTabColors:@[[UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:1.0],
+    //     [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.0]]]; // MAX 2 Colors
+    
+    // Tab Stroke Color
+    //     [_tabBarController setTabStrokeColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
+    
+    // Icons Color settings
+    //     [_tabBarController setIconColors:@[[UIColor colorWithRed:174.0/255.0 green:174.0/255.0 blue:174.0/255.0 alpha:1],
+    //     [UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:228.0/255.0 alpha:1]]]; // MAX 2 Colors
+    
+    // Icon Shadow
+    //     [_tabBarController setIconShadowColor:[UIColor blackColor]];
+    //     [_tabBarController setIconShadowOffset:CGSizeMake(0, 1)];
+    
+    [_tabBarController setSelectedIconColors:@[[UIColor lightGrayColor], [UIColor whiteColor]]];
+    //     [_tabBarController setSelectedIconColors:@[[UIColor colorWithRed:174.0/255.0 green:174.0/255.0 blue:174.0/255.0 alpha:1],
+    //     [UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:228.0/255.0 alpha:1]]]; // MAX 2 Colors
+    //
+    //     [_tabBarController setSelectedIconOuterGlowColor:[UIColor darkGrayColor]];
+    
+    // Text Color
+    //     [_tabBarController setTextColor:[UIColor colorWithRed:157.0/255.0 green:157.0/255.0 blue:157.0/255.0 alpha:1.0]];
+    //     [_tabBarController setSelectedTextColor:[UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:228.0/255.0 alpha:1.0]];
+    
+    // Text font
+    //     [_tabBarController setTextFont:[UIFont fontWithName:@"Chalkduster" size:14]];
+    
+    // Hide / Show glossy on tab icons
+    //     [_tabBarController setIconGlossyIsHidden:YES];
+    
+    // Enable / Disable pre-rendered image mode
+    //     [_tabBarController setTabIconPreRendered:YES];
+    
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // If the device is an iPad, we make it taller.
+    _tabBarController = [[AKTabBarController alloc] initWithTabBarHeight:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 70 : 53];
+    [_tabBarController setMinimumHeightToDisplayTitle:40.0];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+    
+    [_tabBarController setViewControllers: [NSMutableArray arrayWithObjects:
+                                             [[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"BuddyViewController"]],
+                                             [[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"ReminderViewController"]],
+                                             [[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"MessageViewController"]],
+                                             [[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"MoreViewController"]],
+                                            nil]];
+    
+    
+    
+    [self customUserinterface];
+    [_window setRootViewController:_tabBarController];
+    [_window makeKeyAndVisible];
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
