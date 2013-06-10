@@ -91,7 +91,6 @@
 - (void)didTapPlusButton:(id)sender
 {
     [[GLBuddyManager shareManager] addNewBuddyWithName:@"Lancy" phoneNumber:@"15902063569" avatarPath:nil];
-    [self loadBuddyData];
 }
 
 #pragma mark - Table View

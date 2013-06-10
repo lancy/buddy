@@ -47,6 +47,7 @@
 		BFDFA7631765C394006668BC /* GLMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFA7621765C394006668BC /* GLMessageCell.m */; };
 		BFDFA7661765CF69006668BC /* GLBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFA7651765CF68006668BC /* GLBuddyManager.m */; };
 		BFDFA7691765D0DB006668BC /* NSDictionary+GLBuddy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFA7681765D0DA006668BC /* NSDictionary+GLBuddy.m */; };
+		BFDFA76C1765E4C1006668BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA76B1765E4C1006668BC /* MessageUI.framework */; };
 		D5F6838613F2457881927AC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD115A314A7248F692A47BF0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		BFDFA7651765CF68006668BC /* GLBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBuddyManager.m; sourceTree = "<group>"; };
 		BFDFA7671765D0D9006668BC /* NSDictionary+GLBuddy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GLBuddy.h"; sourceTree = "<group>"; };
 		BFDFA7681765D0DA006668BC /* NSDictionary+GLBuddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GLBuddy.m"; sourceTree = "<group>"; };
+		BFDFA76B1765E4C1006668BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FD115A314A7248F692A47BF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDFA76C1765E4C1006668BC /* MessageUI.framework in Frameworks */,
 				BFDFA6CC1764E83D006668BC /* UIKit.framework in Frameworks */,
 				BFDFA6CE1764E83D006668BC /* Foundation.framework in Frameworks */,
 				BFDFA6D01764E83D006668BC /* CoreGraphics.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		BFDFA6CA1764E83D006668BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFDFA76B1765E4C1006668BC /* MessageUI.framework */,
 				BFDFA6CB1764E83D006668BC /* UIKit.framework */,
 				BFDFA6CD1764E83D006668BC /* Foundation.framework */,
 				BFDFA6CF1764E83D006668BC /* CoreGraphics.framework */,

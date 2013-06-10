@@ -11,7 +11,9 @@
 #import "GLMessageCell.h"
 #import "NSDictionary+GLBuddy.h"
 
-@interface GLMessageViewController () <UITableViewDataSource, UITableViewDelegate>
+#import <MessageUI/MessageUI.h>
+
+@interface GLMessageViewController () <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -105,13 +107,41 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *buddy = self.buddys[indexPath.row];
-    NSString *cleanedString = [[buddy.buddyPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];    
+    NSString *cleanedString = [[buddy.buddyPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
+    
+    if ([MFMessageComposeViewController canSendText]) {
+        MFMessageComposeViewController *messageComposer =
+        [[MFMessageComposeViewController alloc] init];
+        NSString *message = NSLocalizedString(@"I miss you dear, call me if you have time.", nil);
+        [messageComposer setRecipients:@[cleanedString]];
+        [messageComposer setBody:message];
+        messageComposer.messageComposeDelegate = self;
+        [self presentViewController:messageComposer animated:YES completion:nil];
+    } else {
+#warning DOTO: exception handle;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+#pragma mark - message delegate methods
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller
+                 didFinishWithResult:(MessageComposeResult)result {
+    if (result == MessageComposeResultFailed) {
+        #warning TOTO exception handler
+        NSLog(@"Message compose failed");
+    } else if (result == MessageComposeResultCancelled) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else if (result == MessageComposeResultSent) {
+        // give current buddy a red heart
+        [self dismissViewControllerAnimated:YES completion:nil];
+        #warning TODO sent handler
+    }
 }
 
 - (void)dealloc
