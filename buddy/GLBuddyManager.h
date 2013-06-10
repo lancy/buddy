@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 extern NSString * const BuddysDidChangedNotification;
 
@@ -15,6 +16,7 @@ extern NSString * const BuddysDidChangedNotification;
 + (GLBuddyManager *)shareManager;
 
 - (NSArray *)allBuddys;
+- (void)addNewBuddyWithPerson:(ABRecordRef)person;
 - (void)addNewBuddyWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber avatarPath:(NSString *)avatarPath;
 - (void)updateBuddyMessageTimeWithIndex:(NSUInteger)index;
 - (void)removeBuddyWithIndex:(NSUInteger)index;

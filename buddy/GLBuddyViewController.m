@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
 
+#import <AddressBookUI/AddressBookUI.h>
 #import "GLBuddyViewController.h"
 
 #import "GLBuddyManager.h"
@@ -14,7 +15,7 @@
 #import "GLBuddyCell.h"
 
 
-@interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate>
+@interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -99,7 +100,10 @@
 #pragma mark - View Methods
 - (void)didTapPlusButton:(id)sender
 {
-    [[GLBuddyManager shareManager] addNewBuddyWithName:@"Grace" phoneNumber:@"156-2617-2404" avatarPath:nil];
+    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)handleLongPressGesture:(UILongPressGestureRecognizer *)gestureRecognizer
@@ -185,6 +189,34 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+#pragma mark - People Picker Navagation Delegate
+
+- (void)peoplePickerNavigationControllerDidCancel:
+(ABPeoplePickerNavigationController *)peoplePicker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person {
+    
+    [[GLBuddyManager shareManager] addNewBuddyWithPerson:person];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    return NO;
+}
+
+- (BOOL)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      shouldContinueAfterSelectingPerson:(ABRecordRef)person
+                                property:(ABPropertyID)property
+                              identifier:(ABMultiValueIdentifier)identifier
+{
+    return NO;
 }
 
 - (void)dealloc

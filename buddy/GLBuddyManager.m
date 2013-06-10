@@ -47,6 +47,35 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
     return _buddys;
 }
 
+- (void)addNewBuddyWithPerson:(ABRecordRef)person
+{
+    NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+                                                                    kABPersonFirstNameProperty);
+    NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+                                                                         kABPersonLastNameProperty);
+    NSString *fullName;
+    if (firstName && lastName) {
+        fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    } else if (firstName) {
+        fullName = firstName;
+    } else {
+        fullName = lastName;
+    }
+    
+    NSString* phone = nil;
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
+                                                     kABPersonPhoneProperty);
+    if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        phone = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+    } else {
+        phone = @"[None]";
+    }
+    CFRelease(phoneNumbers);
+    
+    [self addNewBuddyWithName:fullName phoneNumber:phone avatarPath:nil];
+}
+
 - (void)addNewBuddyWithName:(NSString *)name
                 phoneNumber:(NSString *)phoneNumber
                  avatarPath:(NSString *)avatarPath
