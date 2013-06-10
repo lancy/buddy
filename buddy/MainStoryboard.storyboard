@@ -243,26 +243,6 @@
         <image name="buddy_tableviewcell_default_avatar@2x.png" width="144" height="144"/>
         <image name="buddy_tableviewcell_phone@2x.png" width="56" height="90"/>
     </resources>
-    <classes>
-        <class className="GLBuddyCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
-        </class>
-        <class className="GLBuddyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
-        </class>
-        <class className="GLMessageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
-        </class>
-        <class className="GLMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
-        </class>
-        <class className="GLReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

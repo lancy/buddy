@@ -40,12 +40,31 @@
 - (void)customUserinterface
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
+    
+    UIImage *plusButtonImage= [UIImage imageNamed:@"navi_plusbutton.png"];
+    UIButton *plusButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, plusButtonImage.size.width, plusButtonImage.size.height)];
+
+    [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithCustomView:plusButton];
+    [self.navigationItem setRightBarButtonItem:plusBarButton];
+    
+    UIBarButtonItem *negativeSeperator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSeperator.width = -5;
+    
+    [self.navigationItem setRightBarButtonItems:@[negativeSeperator, plusBarButton]];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - View Methods
+- (void)didTapPlusButton:(id)sender
+{
+    
 }
 
 #pragma mark - Table View
