@@ -67,6 +67,13 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
     [self saveBuddysToFile];
 }
 
+- (void)removeBuddyWithIndex:(NSUInteger)index
+{
+    [self.buddys removeObjectAtIndex:index];
+    [self saveBuddysToFile];
+}
+
+
 - (void)clearAllBuddys
 {
     self.buddys = [[NSMutableArray alloc] init];
