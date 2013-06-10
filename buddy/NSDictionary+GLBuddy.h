@@ -19,4 +19,7 @@
 - (NSString *)avatarPath;
 - (void)setAvatarPath:(NSString *)avatarPath;
 
+- (NSTimeInterval)lastMessageTimeStamp;
+- (void)setLastMessageTimeStamp:(NSTimeInterval)timeStamp;
+
 @end

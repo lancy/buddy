@@ -56,7 +56,14 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
     [newBuddy setBuddyPhoneNumber:phoneNumber];
     [newBuddy setAvatarPath:avatarPath];
     
-    [self.buddys addObject:[newBuddy copy]];
+    [self.buddys addObject:newBuddy];
+    [self saveBuddysToFile];
+}
+
+- (void)updateBuddyMessageTimeWithIndex:(NSUInteger)index
+{
+    NSTimeInterval currentTimeStamp = [[NSDate date] timeIntervalSince1970];
+    [self.buddys[index] setLastMessageTimeStamp:currentTimeStamp];
     [self saveBuddysToFile];
 }
 

@@ -31,6 +31,13 @@
 {
     [self.nameLabel setText:buddy.buddyName];
     [self.descriptionLabel setText:NSLocalizedString(@"Click here to message him/her.", nil)];
+    NSTimeInterval secondsOfADay = 24 * 60 * 60;
+    NSTimeInterval currentTimeStamp = [[NSDate date] timeIntervalSince1970];
+    if (currentTimeStamp - buddy.lastMessageTimeStamp >  secondsOfADay) {
+        [self.heartImageView setImage:[UIImage imageNamed:@"message_tableviewcell_unsend.png"]];
+    } else {
+        [self.heartImageView setImage:[UIImage imageNamed:@"message_tableviewcell_sent.png"]];
+    }
 }
 
 

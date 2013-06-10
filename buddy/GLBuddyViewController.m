@@ -43,8 +43,8 @@
     [self customUserinterface];
     [self registerNotificationHandler];
     
-    #warning test methods, need to remove
-    [[GLBuddyManager shareManager] clearAllBuddys];
+//    #warning test methods, need to remove
+//    [[GLBuddyManager shareManager] clearAllBuddys];
 
     [self loadBuddyData];
 	// Do any additional setup after loading the view.
@@ -90,7 +90,7 @@
 #pragma mark - View Methods
 - (void)didTapPlusButton:(id)sender
 {
-    [[GLBuddyManager shareManager] addNewBuddyWithName:@"Lancy" phoneNumber:@"15902063569" avatarPath:nil];
+    [[GLBuddyManager shareManager] addNewBuddyWithName:@"Grace" phoneNumber:@"156-2617-2404" avatarPath:nil];
 }
 
 #pragma mark - Table View

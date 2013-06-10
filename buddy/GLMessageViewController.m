@@ -18,6 +18,8 @@
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
+@property (assign) NSUInteger currentSelectedBuddyIndex;
+
 @end
 
 @implementation GLMessageViewController
@@ -105,6 +107,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.currentSelectedBuddyIndex = indexPath.row;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *buddy = self.buddys[indexPath.row];
     NSString *cleanedString = [[buddy.buddyPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
@@ -139,9 +142,14 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     } else if (result == MessageComposeResultSent) {
         // give current buddy a red heart
+        [[GLBuddyManager shareManager] updateBuddyMessageTimeWithIndex:self.currentSelectedBuddyIndex];
         [self dismissViewControllerAnimated:YES completion:nil];
-        #warning TODO sent handler
     }
+}
+
+- (void)updateRecentlyMessageTimeOfCurrentSelectedBuddy
+{
+    
 }
 
 - (void)dealloc

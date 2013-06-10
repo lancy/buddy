@@ -38,6 +38,18 @@
     [self setValue:avatarPath forKey:@"avatarPath"];
 }
 
+- (NSTimeInterval)lastMessageTimeStamp
+{
+    return [[self valueForKey:@"lastMessageTimeStamp"] floatValue];
+    
+}
+
+- (void)setLastMessageTimeStamp:(NSTimeInterval)timeStamp
+{
+    [self setValue:[NSNumber numberWithFloat:timeStamp] forKey:@"lastMessageTimeStamp"];
+}
+
+
 
 
 @end
