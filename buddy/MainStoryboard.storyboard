@@ -275,6 +275,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Messages" id="5bS-Rh-MXG"/>
+                    <connections>
+                        <outlet property="tableview" destination="c8d-i6-L9k" id="a9k-aQ-uE8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO6-H6-wAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,39 +388,6 @@
         <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
     </resources>
-    <classes>
-        <class className="GLBuddyCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descritionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLBuddyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLMessageCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
-        </class>
-        <class className="GLMessageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
-        </class>
-        <class className="GLMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
-        </class>
-        <class className="GLReminderCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
-        </class>
-        <class className="GLReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

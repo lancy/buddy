@@ -41,6 +41,7 @@
 {
     [super viewDidLoad];
     [self customUserinterface];
+    [self registerNotificationHandler];
     
     #warning test methods, need to remove
     [[GLBuddyManager shareManager] clearAllBuddys];
@@ -75,6 +76,11 @@
 }
 
 #pragma mark - data methods
+
+- (void)registerNotificationHandler
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadBuddyData) name:BuddysDidChangedNotification object:nil];
+}
 - (void)loadBuddyData
 {
     self.buddys = [[GLBuddyManager shareManager] allBuddys];
@@ -138,6 +144,10 @@
     return YES;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end
