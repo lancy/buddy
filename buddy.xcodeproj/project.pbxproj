@@ -45,6 +45,8 @@
 		BFDFA75F1765C34D006668BC /* message_tableviewcell_sent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDFA75D1765C34C006668BC /* message_tableviewcell_sent@2x.png */; };
 		BFDFA7601765C34D006668BC /* message_tableviewcell_unsend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDFA75E1765C34C006668BC /* message_tableviewcell_unsend@2x.png */; };
 		BFDFA7631765C394006668BC /* GLMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFA7621765C394006668BC /* GLMessageCell.m */; };
+		BFDFA7661765CF69006668BC /* GLBuddyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFA7651765CF68006668BC /* GLBuddyManager.m */; };
+		BFDFA7691765D0DB006668BC /* NSMutableDictionary+GLBuddy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDFA7681765D0DA006668BC /* NSMutableDictionary+GLBuddy.m */; };
 		D5F6838613F2457881927AC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD115A314A7248F692A47BF0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,10 @@
 		BFDFA75E1765C34C006668BC /* message_tableviewcell_unsend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_tableviewcell_unsend@2x.png"; sourceTree = "<group>"; };
 		BFDFA7611765C394006668BC /* GLMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMessageCell.h; sourceTree = "<group>"; };
 		BFDFA7621765C394006668BC /* GLMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMessageCell.m; sourceTree = "<group>"; };
+		BFDFA7641765CF67006668BC /* GLBuddyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBuddyManager.h; sourceTree = "<group>"; };
+		BFDFA7651765CF68006668BC /* GLBuddyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBuddyManager.m; sourceTree = "<group>"; };
+		BFDFA7671765D0D9006668BC /* NSMutableDictionary+GLBuddy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+GLBuddy.h"; sourceTree = "<group>"; };
+		BFDFA7681765D0DA006668BC /* NSMutableDictionary+GLBuddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+GLBuddy.m"; sourceTree = "<group>"; };
 		FD115A314A7248F692A47BF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,7 @@
 			children = (
 				BFDFA6DA1764E83D006668BC /* GLAppDelegate.h */,
 				BFDFA6DB1764E83D006668BC /* GLAppDelegate.m */,
+				BFDFA76A1765D3B6006668BC /* DataManager */,
 				BFDFA72C17650603006668BC /* View Controller */,
 				BFDFA6E81764E887006668BC /* MainStoryboard.storyboard */,
 				BFDFA6D21764E83D006668BC /* Supporting Files */,
@@ -252,6 +259,17 @@
 				BFDFA72A17650432006668BC /* GLMoreViewController.m */,
 			);
 			name = More;
+			sourceTree = "<group>";
+		};
+		BFDFA76A1765D3B6006668BC /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				BFDFA7641765CF67006668BC /* GLBuddyManager.h */,
+				BFDFA7651765CF68006668BC /* GLBuddyManager.m */,
+				BFDFA7671765D0D9006668BC /* NSMutableDictionary+GLBuddy.h */,
+				BFDFA7681765D0DA006668BC /* NSMutableDictionary+GLBuddy.m */,
+			);
+			name = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +402,8 @@
 				BFDFA73A176509E4006668BC /* GLBuddyCell.m in Sources */,
 				BFDFA75C1765BA46006668BC /* GLReminderCell.m in Sources */,
 				BFDFA7631765C394006668BC /* GLMessageCell.m in Sources */,
+				BFDFA7661765CF69006668BC /* GLBuddyManager.m in Sources */,
+				BFDFA7691765D0DB006668BC /* NSMutableDictionary+GLBuddy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
