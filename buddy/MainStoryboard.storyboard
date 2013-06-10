@@ -63,14 +63,14 @@
                                         <constraints>
                                             <constraint firstItem="j3r-CR-Lyh" firstAttribute="leading" secondItem="buv-OS-DCa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="45u-4u-ERd"/>
                                             <constraint firstItem="h7W-Al-fuo" firstAttribute="top" secondItem="j3r-CR-Lyh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B2e-lb-wfR"/>
-                                            <constraint firstItem="f2V-IT-Gxw" firstAttribute="centerY" secondItem="fUT-Xx-zm8" secondAttribute="centerY" type="default" id="BuC-01-G7F"/>
                                             <constraint firstItem="crj-3R-N40" firstAttribute="leading" secondItem="h7W-Al-fuo" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Cq0-aR-DB7"/>
-                                            <constraint firstItem="j3r-CR-Lyh" firstAttribute="top" secondItem="fUT-Xx-zm8" secondAttribute="top" constant="27" id="MSd-fp-4UQ"/>
                                             <constraint firstItem="buv-OS-DCa" firstAttribute="leading" secondItem="fUT-Xx-zm8" secondAttribute="leading" constant="9" id="Q27-vp-8IW"/>
                                             <constraint firstItem="buv-OS-DCa" firstAttribute="centerY" secondItem="f2V-IT-Gxw" secondAttribute="centerY" type="default" id="QAZ-7a-bKK"/>
                                             <constraint firstItem="crj-3R-N40" firstAttribute="leading" secondItem="j3r-CR-Lyh" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Qgs-Su-zZK"/>
+                                            <constraint firstItem="j3r-CR-Lyh" firstAttribute="top" secondItem="fUT-Xx-zm8" secondAttribute="top" constant="34" id="Tsj-4x-gwo"/>
                                             <constraint firstItem="crj-3R-N40" firstAttribute="top" secondItem="j3r-CR-Lyh" secondAttribute="top" type="default" id="Z4C-CO-URJ"/>
                                             <constraint firstItem="h7W-Al-fuo" firstAttribute="leading" secondItem="buv-OS-DCa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="jSf-dw-o4p"/>
+                                            <constraint firstItem="f2V-IT-Gxw" firstAttribute="top" secondItem="fUT-Xx-zm8" secondAttribute="top" constant="15" id="lEH-Wt-ySK"/>
                                             <constraint firstItem="f2V-IT-Gxw" firstAttribute="centerX" secondItem="fUT-Xx-zm8" secondAttribute="centerX" type="default" id="vkz-za-pam"/>
                                         </constraints>
                                     </tableViewCell>
@@ -243,6 +243,26 @@
         <image name="buddy_tableviewcell_default_avatar@2x.png" width="144" height="144"/>
         <image name="buddy_tableviewcell_phone@2x.png" width="56" height="90"/>
     </resources>
+    <classes>
+        <class className="GLBuddyCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
+        </class>
+        <class className="GLBuddyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
+        </class>
+        <class className="GLMessageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
+        </class>
+        <class className="GLMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
+        </class>
+        <class className="GLReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
