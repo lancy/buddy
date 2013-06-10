@@ -14,7 +14,7 @@
 #import "GLBuddyCell.h"
 
 
-@interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -42,12 +42,21 @@
     [super viewDidLoad];
     [self customUserinterface];
     [self registerNotificationHandler];
+    [self initGestureRecognizer];
     
 //    #warning test methods, need to remove
 //    [[GLBuddyManager shareManager] clearAllBuddys];
 
     [self loadBuddyData];
 	// Do any additional setup after loading the view.
+}
+
+- (void)initGestureRecognizer
+{
+    UILongPressGestureRecognizer *longPressGestureRecongnizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
+    longPressGestureRecongnizer.minimumPressDuration = 1.0;
+    [longPressGestureRecongnizer setDelegate:self];
+    [self.tableview addGestureRecognizer:longPressGestureRecongnizer];
 }
 
 - (void)customUserinterface
@@ -91,6 +100,41 @@
 - (void)didTapPlusButton:(id)sender
 {
     [[GLBuddyManager shareManager] addNewBuddyWithName:@"Grace" phoneNumber:@"156-2617-2404" avatarPath:nil];
+}
+
+- (void)handleLongPressGesture:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        CGPoint pressPoint = [gestureRecognizer locationInView:self.tableview];
+        
+        NSIndexPath *indexPath = [self.tableview indexPathForRowAtPoint:pressPoint];
+        if (indexPath == nil) {
+            NSLog(@"long press on table view but not on a row");
+        } else {
+            [self showActionSheetWithBuddyIndex:indexPath.row];
+        }
+    }
+}
+
+- (void)showActionSheetWithBuddyIndex:(NSUInteger)index
+{
+    NSDictionary *buddy = self.buddys[index];
+    NSString *actionSheetTitle = [NSString stringWithFormat:@"%@%@?", NSLocalizedString(@"Remove ", nil), buddy.buddyName];
+    NSString *cancelTitle = NSLocalizedString(@"Cancle", nil);
+    NSString *removeTitle = NSLocalizedString(@"Remove", nil);
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle delegate:self cancelButtonTitle:cancelTitle destructiveButtonTitle:removeTitle otherButtonTitles:nil];
+    [actionSheet setTag:index];
+    [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+}
+
+#pragma mark - Action Sheet Delegate methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == actionSheet.destructiveButtonIndex) {
+        [[GLBuddyManager shareManager] removeBuddyWithIndex:actionSheet.tag];
+    }
+    
 }
 
 #pragma mark - Table View

@@ -60,6 +60,9 @@
 }
 
 #pragma mark - data methods
+
+#warning TODO: need reload after a day
+
 - (void)registerNotificationHandler
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadBuddyData) name:BuddysDidChangedNotification object:nil];
@@ -98,7 +101,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
     
     NSDictionary *buddy = self.buddys[indexPath.row];
     [(GLMessageCell *)cell bindBuddyData:buddy];
