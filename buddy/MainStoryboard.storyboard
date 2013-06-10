@@ -74,7 +74,7 @@
                                             <constraint firstItem="f2V-IT-Gxw" firstAttribute="centerX" secondItem="fUT-Xx-zm8" secondAttribute="centerX" type="default" id="vkz-za-pam"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="descritionLabel" destination="h7W-Al-fuo" id="Bln-gc-Gk7"/>
+                                            <outlet property="descriptionLabel" destination="h7W-Al-fuo" id="qwT-ar-xyz"/>
                                             <outlet property="nameLabel" destination="j3r-CR-Lyh" id="ALO-vi-t27"/>
                                         </connections>
                                     </tableViewCell>
@@ -258,6 +258,10 @@
                                             <constraint firstAttribute="trailing" secondItem="umb-OJ-5fp" secondAttribute="trailing" constant="20" type="default" id="ggD-pw-alm"/>
                                             <constraint firstItem="w8D-1S-L7f" firstAttribute="leading" secondItem="diH-Fi-BLS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zas-nf-EQI"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="w8D-1S-L7f" id="GLW-jp-OER"/>
+                                            <outlet property="nameLabel" destination="qlS-ud-vnF" id="IO7-h7-8r9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

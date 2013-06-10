@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface GLMessageCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+- (void)bindBuddyData:(NSDictionary *)buddy;
 
 @end

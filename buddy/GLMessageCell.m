@@ -7,6 +7,7 @@
 //
 
 #import "GLMessageCell.h"
+#import "NSDictionary+GLBuddy.h"
 
 @implementation GLMessageCell
 
@@ -25,5 +26,12 @@
 
     // Configure the view for the selected state
 }
+
+- (void)bindBuddyData:(NSDictionary *)buddy
+{
+    [self.nameLabel setText:buddy.buddyName];
+    [self.descriptionLabel setText:NSLocalizedString(@"Click here to message him/her.", nil)];
+}
+
 
 @end

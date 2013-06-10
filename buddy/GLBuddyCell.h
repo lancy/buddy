@@ -10,7 +10,7 @@
 
 @interface GLBuddyCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descritionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 - (void)bindBuddyData:(NSDictionary *)buddy;
 

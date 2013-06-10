@@ -97,7 +97,7 @@
     
     
     NSDictionary *buddy = self.buddys[indexPath.row];
-//    [(GLMessageCell *)cell bindBuddyData:buddy];
+    [(GLMessageCell *)cell bindBuddyData:buddy];
     return cell;
 }
 

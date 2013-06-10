@@ -30,7 +30,7 @@
 - (void)bindBuddyData:(NSDictionary *)buddy
 {
     [self.nameLabel setText:buddy.buddyName];
-    [self.descritionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
+    [self.descriptionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
 }
 
 
