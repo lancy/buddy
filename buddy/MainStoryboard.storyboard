@@ -102,7 +102,64 @@
                     <view key="view" contentMode="scaleToFill" id="yTe-iW-3DB">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EGo-QQ-E7r">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="100" id="FN0-5N-JnT" customClass="GLReminderCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buddy_tableviewcell_default_avatar@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-5J-dpY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="VhG-Yb-n0X"/>
+                                                        <constraint firstAttribute="height" constant="60" id="p9R-T1-Y4y"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="reminder_tableviewcell_bubble_unread@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fap-02-FG6">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="58" id="EAX-lY-FdG"/>
+                                                        <constraint firstAttribute="width" constant="221" id="b3g-SP-8ah"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEK-G8-MTr">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="289" id="EXb-MO-2vw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Fap-02-FG6" firstAttribute="bottom" secondItem="kgb-5J-dpY" secondAttribute="bottom" type="default" id="Byy-sV-sks"/>
+                                            <constraint firstItem="Fap-02-FG6" firstAttribute="leading" secondItem="FN0-5N-JnT" secondAttribute="leading" constant="80" id="FtX-ru-1xW"/>
+                                            <constraint firstItem="xEK-G8-MTr" firstAttribute="leading" secondItem="FN0-5N-JnT" secondAttribute="leading" constant="20" type="default" id="IjU-8a-Zfu"/>
+                                            <constraint firstItem="Fap-02-FG6" firstAttribute="leading" secondItem="kgb-5J-dpY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="aFY-ET-pqh"/>
+                                            <constraint firstItem="kgb-5J-dpY" firstAttribute="top" secondItem="FN0-5N-JnT" secondAttribute="top" constant="34" id="gkc-xZ-fMP"/>
+                                            <constraint firstItem="xEK-G8-MTr" firstAttribute="top" secondItem="FN0-5N-JnT" secondAttribute="top" constant="11" id="hDY-KB-bwB"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WsQ-9d-Tga" id="5bs-yj-TZn"/>
+                                    <outlet property="delegate" destination="WsQ-9d-Tga" id="ys2-9N-XVx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EGo-QQ-E7r" firstAttribute="bottom" secondItem="yTe-iW-3DB" secondAttribute="bottom" type="default" id="Bni-8S-YAa"/>
+                            <constraint firstItem="EGo-QQ-E7r" firstAttribute="top" secondItem="yTe-iW-3DB" secondAttribute="top" type="default" id="lyL-1i-Bfe"/>
+                            <constraint firstItem="EGo-QQ-E7r" firstAttribute="trailing" secondItem="yTe-iW-3DB" secondAttribute="trailing" type="default" id="pLD-ni-TcR"/>
+                            <constraint firstItem="EGo-QQ-E7r" firstAttribute="leading" secondItem="yTe-iW-3DB" secondAttribute="leading" type="default" id="yv3-MX-gew"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminder" id="r1b-RO-h7A"/>
                 </viewController>
@@ -132,7 +189,83 @@
                     <view key="view" contentMode="scaleToFill" id="de5-sn-LhV">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-i6-L9k">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="100" id="Jpd-DD-col" customClass="GLMessageCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buddy_tableviewcell_bg@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="XLq-w6-UEb">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="313" id="OqG-i1-ipp"/>
+                                                        <constraint firstAttribute="height" constant="84" id="gGw-nb-7m8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="大女儿" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlS-ud-vnF">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="n6Q-dS-SJM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" red="0.16342426839999999" green="0.1694075763" blue="0.18279610569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点这里发送信息给大女儿" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8D-1S-L7f">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="dHo-Ka-fEL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.41442596910000001" green="0.43346688150000001" blue="0.47626855969999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="message_tableviewcell_unsend@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="umb-OJ-5fp">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="sOw-ei-el8"/>
+                                                        <constraint firstAttribute="width" constant="55" id="ut0-hL-Nta"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buddy_tableviewcell_default_avatar@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="diH-Fi-BLS">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="HgM-I2-KfB"/>
+                                                        <constraint firstAttribute="width" constant="72" id="oBP-MD-vYd"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="XLq-w6-UEb" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="15" id="9Md-az-eCP"/>
+                                            <constraint firstItem="qlS-ud-vnF" firstAttribute="trailing" secondItem="w8D-1S-L7f" secondAttribute="trailing" type="default" id="DxL-K4-c81"/>
+                                            <constraint firstItem="XLq-w6-UEb" firstAttribute="centerX" secondItem="Jpd-DD-col" secondAttribute="centerX" type="default" id="EPG-Ja-4mF"/>
+                                            <constraint firstItem="qlS-ud-vnF" firstAttribute="leading" secondItem="diH-Fi-BLS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="IP0-Yf-3Oq"/>
+                                            <constraint firstItem="qlS-ud-vnF" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="34" id="R9H-NS-JqS"/>
+                                            <constraint firstItem="w8D-1S-L7f" firstAttribute="top" secondItem="qlS-ud-vnF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ViF-xk-ImV"/>
+                                            <constraint firstItem="diH-Fi-BLS" firstAttribute="centerY" secondItem="XLq-w6-UEb" secondAttribute="centerY" type="default" id="X5K-3v-tEg"/>
+                                            <constraint firstItem="diH-Fi-BLS" firstAttribute="leading" secondItem="Jpd-DD-col" secondAttribute="leading" constant="9" id="dsK-We-As3"/>
+                                            <constraint firstItem="umb-OJ-5fp" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="29" id="f4l-4K-XEX"/>
+                                            <constraint firstAttribute="trailing" secondItem="umb-OJ-5fp" secondAttribute="trailing" constant="20" type="default" id="ggD-pw-alm"/>
+                                            <constraint firstItem="w8D-1S-L7f" firstAttribute="leading" secondItem="diH-Fi-BLS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zas-nf-EQI"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tDn-R1-Hhr" id="idK-PO-HxN"/>
+                                    <outlet property="delegate" destination="tDn-R1-Hhr" id="cGw-yf-15B"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c8d-i6-L9k" firstAttribute="leading" secondItem="de5-sn-LhV" secondAttribute="leading" type="default" id="4JB-b9-eO9"/>
+                            <constraint firstItem="c8d-i6-L9k" firstAttribute="top" secondItem="de5-sn-LhV" secondAttribute="top" type="default" id="8OY-71-CgU"/>
+                            <constraint firstItem="c8d-i6-L9k" firstAttribute="trailing" secondItem="de5-sn-LhV" secondAttribute="trailing" type="default" id="pfy-jY-dbZ"/>
+                            <constraint firstItem="c8d-i6-L9k" firstAttribute="bottom" secondItem="de5-sn-LhV" secondAttribute="bottom" type="default" id="rWc-Wm-b3I"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Messages" id="5bS-Rh-MXG"/>
                 </viewController>
@@ -242,6 +375,8 @@
         <image name="buddy_tableviewcell_bg@2x.png" width="626" height="168"/>
         <image name="buddy_tableviewcell_default_avatar@2x.png" width="144" height="144"/>
         <image name="buddy_tableviewcell_phone@2x.png" width="56" height="90"/>
+        <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
+        <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
     </resources>
     <classes>
         <class className="GLBuddyCell" superclassName="UITableViewCell">
@@ -250,11 +385,17 @@
         <class className="GLBuddyViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
         </class>
+        <class className="GLMessageCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
+        </class>
         <class className="GLMessageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
         </class>
         <class className="GLMoreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
+        </class>
+        <class className="GLReminderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
         </class>
         <class className="GLReminderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
