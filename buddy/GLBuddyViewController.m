@@ -84,7 +84,7 @@
 #pragma mark - View Methods
 - (void)didTapPlusButton:(id)sender
 {
-    [[GLBuddyManager shareManager] addNewBuddyWithName:@"Lancy" phoneNumber:@"12334123" avatarPath:nil];
+    [[GLBuddyManager shareManager] addNewBuddyWithName:@"Lancy" phoneNumber:@"15902063569" avatarPath:nil];
     [self loadBuddyData];
 }
 
@@ -120,6 +120,16 @@
     NSDictionary *buddy = self.buddys[indexPath.row];
     [(GLBuddyCell *)cell bindBuddyData:buddy];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSDictionary *buddy = self.buddys[indexPath.row];
+    NSString *cleanedString = [[buddy.buddyPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
+    NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", cleanedString]];
+    [[UIApplication sharedApplication] openURL:telURL];
+
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

@@ -15,7 +15,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-Ye-FGF">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BuddyCell" rowHeight="100" id="fUT-Xx-zm8" customClass="GLBuddyCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="BuddyCell" rowHeight="100" id="fUT-Xx-zm8" customClass="GLBuddyCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -62,15 +62,15 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="j3r-CR-Lyh" firstAttribute="leading" secondItem="buv-OS-DCa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="45u-4u-ERd"/>
+                                            <constraint firstItem="j3r-CR-Lyh" firstAttribute="top" secondItem="fUT-Xx-zm8" secondAttribute="top" constant="27" id="8UV-aw-UN5"/>
                                             <constraint firstItem="h7W-Al-fuo" firstAttribute="top" secondItem="j3r-CR-Lyh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B2e-lb-wfR"/>
                                             <constraint firstItem="crj-3R-N40" firstAttribute="leading" secondItem="h7W-Al-fuo" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Cq0-aR-DB7"/>
                                             <constraint firstItem="buv-OS-DCa" firstAttribute="leading" secondItem="fUT-Xx-zm8" secondAttribute="leading" constant="9" id="Q27-vp-8IW"/>
                                             <constraint firstItem="buv-OS-DCa" firstAttribute="centerY" secondItem="f2V-IT-Gxw" secondAttribute="centerY" type="default" id="QAZ-7a-bKK"/>
                                             <constraint firstItem="crj-3R-N40" firstAttribute="leading" secondItem="j3r-CR-Lyh" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Qgs-Su-zZK"/>
-                                            <constraint firstItem="j3r-CR-Lyh" firstAttribute="top" secondItem="fUT-Xx-zm8" secondAttribute="top" constant="34" id="Tsj-4x-gwo"/>
+                                            <constraint firstItem="f2V-IT-Gxw" firstAttribute="centerY" secondItem="fUT-Xx-zm8" secondAttribute="centerY" type="default" id="Swv-87-Bny"/>
                                             <constraint firstItem="crj-3R-N40" firstAttribute="top" secondItem="j3r-CR-Lyh" secondAttribute="top" type="default" id="Z4C-CO-URJ"/>
                                             <constraint firstItem="h7W-Al-fuo" firstAttribute="leading" secondItem="buv-OS-DCa" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="jSf-dw-o4p"/>
-                                            <constraint firstItem="f2V-IT-Gxw" firstAttribute="top" secondItem="fUT-Xx-zm8" secondAttribute="top" constant="15" id="lEH-Wt-ySK"/>
                                             <constraint firstItem="f2V-IT-Gxw" firstAttribute="centerX" secondItem="fUT-Xx-zm8" secondAttribute="centerX" type="default" id="vkz-za-pam"/>
                                         </constraints>
                                         <connections>
@@ -81,7 +81,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="RlJ-5h-4dp" id="dlR-Ka-PUN"/>
-                                    <outlet property="delegate" destination="RlJ-5h-4dp" id="KWs-FI-fzz"/>
+                                    <outlet property="delegate" destination="RlJ-5h-4dp" id="ft1-Mi-zce"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -246,15 +246,15 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="XLq-w6-UEb" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="15" id="9Md-az-eCP"/>
+                                            <constraint firstItem="qlS-ud-vnF" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="27" id="8c5-F8-QHb"/>
+                                            <constraint firstItem="umb-OJ-5fp" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="22" id="Cvd-LC-oSu"/>
                                             <constraint firstItem="qlS-ud-vnF" firstAttribute="trailing" secondItem="w8D-1S-L7f" secondAttribute="trailing" type="default" id="DxL-K4-c81"/>
                                             <constraint firstItem="XLq-w6-UEb" firstAttribute="centerX" secondItem="Jpd-DD-col" secondAttribute="centerX" type="default" id="EPG-Ja-4mF"/>
                                             <constraint firstItem="qlS-ud-vnF" firstAttribute="leading" secondItem="diH-Fi-BLS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="IP0-Yf-3Oq"/>
-                                            <constraint firstItem="qlS-ud-vnF" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="34" id="R9H-NS-JqS"/>
                                             <constraint firstItem="w8D-1S-L7f" firstAttribute="top" secondItem="qlS-ud-vnF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ViF-xk-ImV"/>
                                             <constraint firstItem="diH-Fi-BLS" firstAttribute="centerY" secondItem="XLq-w6-UEb" secondAttribute="centerY" type="default" id="X5K-3v-tEg"/>
                                             <constraint firstItem="diH-Fi-BLS" firstAttribute="leading" secondItem="Jpd-DD-col" secondAttribute="leading" constant="9" id="dsK-We-As3"/>
-                                            <constraint firstItem="umb-OJ-5fp" firstAttribute="top" secondItem="Jpd-DD-col" secondAttribute="top" constant="29" id="f4l-4K-XEX"/>
+                                            <constraint firstItem="diH-Fi-BLS" firstAttribute="centerY" secondItem="Jpd-DD-col" secondAttribute="centerY" type="default" id="fV9-bS-UEn"/>
                                             <constraint firstAttribute="trailing" secondItem="umb-OJ-5fp" secondAttribute="trailing" constant="20" type="default" id="ggD-pw-alm"/>
                                             <constraint firstItem="w8D-1S-L7f" firstAttribute="leading" secondItem="diH-Fi-BLS" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zas-nf-EQI"/>
                                         </constraints>
@@ -385,6 +385,39 @@
         <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
     </resources>
+    <classes>
+        <class className="GLBuddyCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descritionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLBuddyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLMessageCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
+        </class>
+        <class className="GLMessageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
+        </class>
+        <class className="GLMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
+        </class>
+        <class className="GLReminderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
+        </class>
+        <class className="GLReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
