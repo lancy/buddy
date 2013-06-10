@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSMutableDictionary (GLBuddy)
+@interface NSDictionary (GLBuddy)
 
 - (NSString *)buddyName;
 - (void)setBuddyName:(NSString *)buddyName;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
 
-#import "NSMutableDictionary+GLBuddy.h"
+#import "NSDictionary+GLBuddy.h"
 
-@implementation NSMutableDictionary (GLBuddy)
+@implementation NSDictionary (GLBuddy)
 
 - (NSString *)buddyName
 {

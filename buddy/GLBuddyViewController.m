@@ -8,9 +8,16 @@
 
 #import "GLBuddyViewController.h"
 
+#import "GLBuddyManager.h"
+#import "NSDictionary+GLBuddy.h"
+
+#import "GLBuddyCell.h"
+
+
 @interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSMutableArray *buddys;
+@property (strong, nonatomic) NSArray *buddys;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end
 
@@ -34,6 +41,11 @@
 {
     [super viewDidLoad];
     [self customUserinterface];
+    
+    #warning test methods, need to remove
+    [[GLBuddyManager shareManager] clearAllBuddys];
+
+    [self loadBuddyData];
 	// Do any additional setup after loading the view.
 }
 
@@ -43,9 +55,9 @@
     
     UIImage *plusButtonImage= [UIImage imageNamed:@"navi_plusbutton.png"];
     UIButton *plusButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, plusButtonImage.size.width, plusButtonImage.size.height)];
-
     [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton.png"] forState:UIControlStateNormal];
     [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton_selected.png"] forState:UIControlStateHighlighted];
+    [plusButton addTarget:self action:@selector(didTapPlusButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithCustomView:plusButton];
     [self.navigationItem setRightBarButtonItem:plusBarButton];
     
@@ -62,10 +74,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - data methods
+- (void)loadBuddyData
+{
+    self.buddys = [[GLBuddyManager shareManager] allBuddys];
+    [self.tableview reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 #pragma mark - View Methods
 - (void)didTapPlusButton:(id)sender
 {
-    
+    [[GLBuddyManager shareManager] addNewBuddyWithName:@"Lancy" phoneNumber:@"12334123" avatarPath:nil];
+    [self loadBuddyData];
 }
 
 #pragma mark - Table View
@@ -77,7 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return self.buddys.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,8 +117,8 @@
     }
     
     
-//    NSDate *object = self.buddys[indexPath.row];
-//    cell.textLabel.text = [object description];
+    NSDictionary *buddy = self.buddys[indexPath.row];
+    [(GLBuddyCell *)cell bindBuddyData:buddy];
     return cell;
 }
 

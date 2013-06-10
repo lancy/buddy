@@ -8,7 +8,7 @@
 
 #import "GLBuddyManager.h"
 
-#import "NSMutableDictionary+GLBuddy.h"
+#import "NSDictionary+GLBuddy.h"
 
 NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton";
 
@@ -40,6 +40,9 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
 {
     if (!_buddys) {
         [self loadBuddysFromFile];
+        if (!_buddys) {
+            _buddys = [[NSMutableArray alloc] init];
+        }
     }
     return _buddys;
 }
@@ -55,9 +58,12 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
     
     [self.buddys addObject:[newBuddy copy]];
     [self saveBuddysToFile];
-    [[NSNotificationCenter defaultCenter] postNotificationName:BuddysDidChangedNotification
-                                                        object:self
-                                                      userInfo:@{@"newBuddys": [self allBuddys]}];
+}
+
+- (void)clearAllBuddys
+{
+    self.buddys = [[NSMutableArray alloc] init];
+    [self saveBuddysToFile];
 }
 
 #pragma mark - file operation
@@ -74,6 +80,11 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"buddys.plist"];
     [_buddys writeToFile:plistPath atomically:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:BuddysDidChangedNotification
+                                                        object:self
+                                                      userInfo:@{@"newBuddys": [self allBuddys]}];
+
 }
 
 

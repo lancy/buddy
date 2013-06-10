@@ -16,5 +16,6 @@ extern NSString * const BuddysDidChangedNotification;
 
 - (NSArray *)allBuddys;
 - (void)addNewBuddyWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber avatarPath:(NSString *)avatarPath;
+- (void)clearAllBuddys;
 
 @end

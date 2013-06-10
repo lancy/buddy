@@ -7,6 +7,7 @@
 //
 
 #import "GLBuddyCell.h"
+#import "NSDictionary+GLBuddy.h"
 
 @implementation GLBuddyCell
 
@@ -25,5 +26,12 @@
 
     // Configure the view for the selected state
 }
+
+- (void)bindBuddyData:(NSDictionary *)buddy
+{
+    [self.nameLabel setText:buddy.buddyName];
+    [self.descritionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
+}
+
 
 @end
