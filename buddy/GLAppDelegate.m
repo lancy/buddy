@@ -27,6 +27,7 @@
 - (void)customNavigation
 {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navi_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:236.0/255.0 green:98.0/255.0 blue:70.0/255.0 alpha:1.0]];
     
 }
 
