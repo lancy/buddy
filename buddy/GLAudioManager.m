@@ -1,0 +1,81 @@
+//
+//  GLRecorderManager.m
+//  buddy
+//
+//  Created by Lancy on 12/6/13.
+//  Copyright (c) 2013 GraceLancy. All rights reserved.
+//
+
+#import "GLAudioManager.h"
+
+@interface GLAudioManager ()
+
+@property (strong, nonatomic) AVAudioRecorder *recorder;
+@property (strong, nonatomic) AVAudioPlayer *player;
+
+@property (readwrite, strong, nonatomic) NSURL *recordedFileUrl;
+
+@end
+
+@implementation GLAudioManager
+
+- (float) micAveragePower
+{
+    [self.recorder updateMeters];
+    float avgPower = [self.recorder averagePowerForChannel:0];
+    return avgPower;
+}
+
+
+- (void)startRecord
+{
+    self.recordedFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"RecordedFile"]];
+
+    
+    NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
+                              [NSNumber numberWithInt: kAudioFormatAC3], AVFormatIDKey,
+                              [NSNumber numberWithInt: 1],                         AVNumberOfChannelsKey,
+                              [NSNumber numberWithInt: AVAudioQualityMedium],         AVEncoderAudioQualityKey,
+                              nil];
+    NSError *error;
+    
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:self.recordedFileUrl settings:settings error:&error];
+    
+    if (self.recorder) {
+        [self.recorder prepareToRecord];
+        self.recorder.meteringEnabled = YES;
+        [self.recorder record];
+    } else {
+        NSLog(@"%@",[error description]);
+    }
+}
+
+- (void)stopRecord
+{
+    [self.recorder stop];
+}
+
+- (void)playCurrentAudio
+{
+    if (self.recordedFileUrl) {
+        [self playAudioWithFileUrl:self.recordedFileUrl];
+    }
+    #warning TODO exception handler
+}
+
+- (void)playAudioWithFileUrl:(NSURL *)fileUrl
+{
+    #warning TODO exception handler
+    NSError *error;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:&error];
+    self.player.meteringEnabled = YES;
+    if (self.player) {
+        [self.player play];
+    }
+}
+
+
+
+
+@end

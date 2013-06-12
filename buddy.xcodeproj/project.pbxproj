@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
 		BFDFA6CC1764E83D006668BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CB1764E83D006668BC /* UIKit.framework */; };
 		BFDFA6CE1764E83D006668BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CD1764E83D006668BC /* Foundation.framework */; };
 		BFDFA6D01764E83D006668BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CF1764E83D006668BC /* CoreGraphics.framework */; };
@@ -56,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		7832FC8B3FFC4EBA962DD164 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		BF3501051768C68100E3ABD1 /* GLAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLAudioManager.h; sourceTree = "<group>"; };
+		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
 		BFDFA6C81764E83D006668BC /* buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDFA6CB1764E83D006668BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFDFA6CD1764E83D006668BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF61629D1768C2DB006ED53F /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				BF3501051768C68100E3ABD1 /* GLAudioManager.h */,
+				BF61629B1768C2CE006ED53F /* GLAudioManager.m */,
+			);
+			name = Recorder;
+			sourceTree = "<group>";
+		};
 		BFDFA6BF1764E83D006668BC = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +187,7 @@
 			children = (
 				BFDFA6DA1764E83D006668BC /* GLAppDelegate.h */,
 				BFDFA6DB1764E83D006668BC /* GLAppDelegate.m */,
+				BF61629D1768C2DB006ED53F /* Recorder */,
 				BFDFA76A1765D3B6006668BC /* DataManager */,
 				BFDFA72C17650603006668BC /* View Controller */,
 				BFDFA6E81764E887006668BC /* MainStoryboard.storyboard */,
@@ -420,6 +433,7 @@
 				BFDFA7631765C394006668BC /* GLMessageCell.m in Sources */,
 				BFDFA7661765CF69006668BC /* GLBuddyManager.m in Sources */,
 				BFDFA7691765D0DB006668BC /* NSDictionary+GLBuddy.m in Sources */,
+				BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
