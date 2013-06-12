@@ -51,6 +51,7 @@
     
     [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton.png"] forState:UIControlStateNormal];
     [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton_selected.png"] forState:UIControlStateHighlighted];
+    [plusButton addTarget:self action:@selector(didTapPlusButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithCustomView:plusButton];
     [self.navigationItem setRightBarButtonItem:plusBarButton];
     
@@ -64,7 +65,7 @@
 #pragma mark - View Methods
 - (void)didTapPlusButton:(id)sender
 {
-    
+    [self performSegueWithIdentifier:@"ShowAudioRecordView" sender:self];
 }
 
 #pragma mark - Table View

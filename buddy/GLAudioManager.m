@@ -7,6 +7,10 @@
 //
 
 #import "GLAudioManager.h"
+#import <AudioToolbox/AudioToolbox.h>
+
+
+const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 
 @interface GLAudioManager ()
 
@@ -18,6 +22,25 @@
 @end
 
 @implementation GLAudioManager
+
+- (id)init
+{
+    if (self = [super init]) {
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        NSError *sessionError;
+        [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+        
+        UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+        AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
+        
+        if(session == nil)
+            NSLog(@"Error creating session: %@", [sessionError description]);
+        else
+            [session setActive:YES error:nil];
+
+    }
+    return self;
+}
 
 - (float) micAveragePower
 {
@@ -34,9 +57,9 @@
     
     NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
                               [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
-                              [NSNumber numberWithInt: kAudioFormatAC3], AVFormatIDKey,
+                              [NSNumber numberWithInt: kRecordAudioFormat], AVFormatIDKey,
                               [NSNumber numberWithInt: 1],                         AVNumberOfChannelsKey,
-                              [NSNumber numberWithInt: AVAudioQualityMedium],         AVEncoderAudioQualityKey,
+                              [NSNumber numberWithInt: AVAudioQualityMin],         AVEncoderAudioQualityKey,
                               nil];
     NSError *error;
     

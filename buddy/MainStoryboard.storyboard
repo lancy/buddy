@@ -178,10 +178,82 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminder" id="r1b-RO-h7A"/>
+                    <connections>
+                        <segue destination="jn0-8R-k5a" kind="modal" identifier="ShowAudioRecordView" id="Cvq-wf-LNH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMn-IF-UkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1586" y="-371"/>
+        </scene>
+        <!--Record View Controller - Record Audio-->
+        <scene sceneID="s2Q-ik-Ha7">
+            <objects>
+                <viewController id="DSd-ZJ-hIo" customClass="GLRecordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kfF-vl-Pw0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-R1-pFK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="rj4-6r-khP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRecordButton:" destination="DSd-ZJ-hIo" eventType="touchUpInside" id="xLB-NV-8Ku"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxk-1V-iOW">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapStopButton:" destination="DSd-ZJ-hIo" eventType="touchUpInside" id="FJs-Ui-xyK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-2R-0GE">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapPlayButton:" destination="DSd-ZJ-hIo" eventType="touchUpInside" id="ltT-sI-uO4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j6q-R1-pFK" firstAttribute="top" secondItem="kfF-vl-Pw0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="D9X-XO-EFW"/>
+                            <constraint firstItem="UXY-2R-0GE" firstAttribute="leading" secondItem="kfF-vl-Pw0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JhX-qq-qKc"/>
+                            <constraint firstItem="UXY-2R-0GE" firstAttribute="top" secondItem="j6q-R1-pFK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JwP-DO-Av0"/>
+                            <constraint firstItem="j6q-R1-pFK" firstAttribute="leading" secondItem="kfF-vl-Pw0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="S0C-bc-UQb"/>
+                            <constraint firstAttribute="trailing" secondItem="UXY-2R-0GE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wzg-oq-8cv"/>
+                            <constraint firstItem="Gxk-1V-iOW" firstAttribute="leading" secondItem="j6q-R1-pFK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eiI-eV-cOv"/>
+                            <constraint firstItem="Gxk-1V-iOW" firstAttribute="top" secondItem="kfF-vl-Pw0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="g71-CW-rN1"/>
+                            <constraint firstAttribute="trailing" secondItem="Gxk-1V-iOW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jHz-kb-r3k"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Record Audio" id="2vG-Rp-brf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlJ-Gy-qpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2663" y="-371"/>
         </scene>
         <!--More View Controller - More-->
         <scene sceneID="wat-Yn-YPj">
@@ -403,6 +475,24 @@
             </objects>
             <point key="canvasLocation" x="1060" y="1001"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q0E-Rn-nbF">
+            <objects>
+                <navigationController id="jn0-8R-k5a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mdy-5b-LDp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DSd-ZJ-hIo" kind="relationship" relationship="rootViewController" id="Hds-Dp-Ecf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ls4-qz-Fek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137" y="-371"/>
+        </scene>
     </scenes>
     <resources>
         <image name="buddy_tableviewcell_bg@2x.png" width="626" height="168"/>
@@ -411,6 +501,57 @@
         <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
     </resources>
+    <classes>
+        <class className="GLBuddyCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLBuddyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLMessageCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="heartImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLMessageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
+        </class>
+        <class className="GLRecordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapPlayButton:"/>
+                <relationship kind="action" name="didTapRecordButton:"/>
+                <relationship kind="action" name="didTapStopButton:"/>
+            </relationships>
+        </class>
+        <class className="GLReminderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
+        </class>
+        <class className="GLReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

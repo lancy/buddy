@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */; };
+		BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF35010A1768C95000E3ABD1 /* AVFoundation.framework */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
+		BFCF7FD11768CEAA0083E30B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */; };
 		BFDFA6CC1764E83D006668BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CB1764E83D006668BC /* UIKit.framework */; };
 		BFDFA6CE1764E83D006668BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CD1764E83D006668BC /* Foundation.framework */; };
 		BFDFA6D01764E83D006668BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CF1764E83D006668BC /* CoreGraphics.framework */; };
@@ -58,7 +61,11 @@
 /* Begin PBXFileReference section */
 		7832FC8B3FFC4EBA962DD164 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BF3501051768C68100E3ABD1 /* GLAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLAudioManager.h; sourceTree = "<group>"; };
+		BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRecordViewController.h; sourceTree = "<group>"; };
+		BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRecordViewController.m; sourceTree = "<group>"; };
+		BF35010A1768C95000E3ABD1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
+		BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BFDFA6C81764E83D006668BC /* buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDFA6CB1764E83D006668BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFDFA6CD1764E83D006668BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCF7FD11768CEAA0083E30B /* AudioToolbox.framework in Frameworks */,
+				BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */,
 				BFDFA77217662E05006668BC /* QuartzCore.framework in Frameworks */,
 				BFDFA76F17662320006668BC /* AddressBook.framework in Frameworks */,
 				BFDFA77017662320006668BC /* AddressBookUI.framework in Frameworks */,
@@ -138,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF3501091768C8A200E3ABD1 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */,
+				BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
 		BF61629D1768C2DB006ED53F /* Recorder */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +188,8 @@
 		BFDFA6CA1764E83D006668BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */,
+				BF35010A1768C95000E3ABD1 /* AVFoundation.framework */,
 				BFDFA77117662E05006668BC /* QuartzCore.framework */,
 				BFDFA76D1766231F006668BC /* AddressBook.framework */,
 				BFDFA76E17662320006668BC /* AddressBookUI.framework */,
@@ -262,6 +282,7 @@
 		BFDFA74117650D55006668BC /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				BF3501091768C8A200E3ABD1 /* Record */,
 				BFDFA72317650414006668BC /* GLReminderViewController.h */,
 				BFDFA72417650414006668BC /* GLReminderViewController.m */,
 				BFDFA75A1765BA46006668BC /* GLReminderCell.h */,
@@ -434,6 +455,7 @@
 				BFDFA7661765CF69006668BC /* GLBuddyManager.m in Sources */,
 				BFDFA7691765D0DB006668BC /* NSDictionary+GLBuddy.m in Sources */,
 				BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */,
+				BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
