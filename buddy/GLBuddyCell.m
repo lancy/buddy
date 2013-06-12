@@ -8,6 +8,7 @@
 
 #import "GLBuddyCell.h"
 #import "NSDictionary+GLBuddy.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation GLBuddyCell
 
@@ -31,6 +32,15 @@
 {
     [self.nameLabel setText:buddy.buddyName];
     [self.descriptionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
+    if (buddy.avatarPath) {
+        UIImage *avatarImage = [UIImage imageWithContentsOfFile:buddy.avatarPath];
+        [self.avatarImageView.layer setCornerRadius:32];
+        [self.avatarImageView.layer setMasksToBounds:YES];
+        [self.avatarImageView setImage:avatarImage];
+        [self.avatarImageView setHidden:NO];
+    } else {
+        [self.avatarImageView setHidden:YES];
+    }
 }
 
 

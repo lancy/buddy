@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *heartImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 
 - (void)bindBuddyData:(NSDictionary *)buddy;
 

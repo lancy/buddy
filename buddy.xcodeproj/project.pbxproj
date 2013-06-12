@@ -50,6 +50,7 @@
 		BFDFA76C1765E4C1006668BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA76B1765E4C1006668BC /* MessageUI.framework */; };
 		BFDFA76F17662320006668BC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA76D1766231F006668BC /* AddressBook.framework */; };
 		BFDFA77017662320006668BC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA76E17662320006668BC /* AddressBookUI.framework */; };
+		BFDFA77217662E05006668BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA77117662E05006668BC /* QuartzCore.framework */; };
 		D5F6838613F2457881927AC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD115A314A7248F692A47BF0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		BFDFA76B1765E4C1006668BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BFDFA76D1766231F006668BC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BFDFA76E17662320006668BC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		BFDFA77117662E05006668BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FD115A314A7248F692A47BF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDFA77217662E05006668BC /* QuartzCore.framework in Frameworks */,
 				BFDFA76F17662320006668BC /* AddressBook.framework in Frameworks */,
 				BFDFA77017662320006668BC /* AddressBookUI.framework in Frameworks */,
 				BFDFA76C1765E4C1006668BC /* MessageUI.framework in Frameworks */,
@@ -155,6 +158,7 @@
 		BFDFA6CA1764E83D006668BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFDFA77117662E05006668BC /* QuartzCore.framework */,
 				BFDFA76D1766231F006668BC /* AddressBook.framework */,
 				BFDFA76E17662320006668BC /* AddressBookUI.framework */,
 				BFDFA76B1765E4C1006668BC /* MessageUI.framework */,

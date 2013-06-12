@@ -49,6 +49,7 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
 
 - (void)addNewBuddyWithPerson:(ABRecordRef)person
 {
+    // get full name
     NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
                                                                     kABPersonFirstNameProperty);
     NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
@@ -62,6 +63,7 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
         fullName = lastName;
     }
     
+    // get phone number
     NSString* phone = nil;
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
                                                      kABPersonPhoneProperty);
@@ -73,7 +75,14 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
     }
     CFRelease(phoneNumbers);
     
-    [self addNewBuddyWithName:fullName phoneNumber:phone avatarPath:nil];
+    // get avatar image
+    NSData  *imgData = (__bridge_transfer NSData *) ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *avatarPath = [documentsDirectory stringByAppendingPathComponent:fullName];
+    [imgData writeToFile:avatarPath atomically:YES];
+    
+    // add to buddys lists
+    [self addNewBuddyWithName:fullName phoneNumber:phone avatarPath:avatarPath];
 }
 
 - (void)addNewBuddyWithName:(NSString *)name
