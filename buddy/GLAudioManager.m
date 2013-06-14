@@ -15,7 +15,6 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 @interface GLAudioManager ()
 
 @property (readwrite, assign, getter = isRecording) BOOL recording;
-@property (readwrite, assign, getter = isPlaying) BOOL playing;
 @property (readwrite, strong, nonatomic) NSURL *recordedFileUrl;
 @property (readwrite, strong, nonatomic) NSString *currentRecordedTime;
 
@@ -40,7 +39,6 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
             [session setActive:YES error:nil];
         
         [self setRecording:NO];
-        [self setPlaying:NO];
     }
     return self;
 }
@@ -84,6 +82,22 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
     [self setRecording:NO];
 }
 
+- (void)prepareCurrentAudio
+{
+    if (self.recordedFileUrl) {
+        [self prepareAudioWithFileUrl:self.recordedFileUrl];
+    }
+}
+- (void)prepareAudioWithFileUrl:(NSURL *)fileUrl
+{
+    #warning TODO exception handler
+    NSError *error;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:&error];
+    self.player.meteringEnabled = YES;
+
+}
+
+
 - (void)playCurrentAudio
 {
     if (self.recordedFileUrl) {
@@ -94,10 +108,6 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 
 - (void)playAudioWithFileUrl:(NSURL *)fileUrl
 {
-    #warning TODO exception handler
-    NSError *error;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:&error];
-    self.player.meteringEnabled = YES;
     if (self.player) {
         [self.player play];
     }

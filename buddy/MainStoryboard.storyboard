@@ -196,10 +196,87 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Record Audio" id="2vG-Rp-brf"/>
+                    <connections>
+                        <segue destination="u6H-EV-Z63" kind="push" identifier="FinishedRecording" id="CPQ-e5-Kh2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlJ-Gy-qpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2663" y="-371"/>
+        </scene>
+        <!--Reminder Setting View Controller - Reminder Setting-->
+        <scene sceneID="eiT-9s-eB9">
+            <objects>
+                <viewController id="u6H-EV-Z63" customClass="GLReminderSettingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6yu-Ay-Chz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="cQ4-PX-Iqv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="CBv-20-VAI"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="392913223.65609401">
+                                    <!--2013-06-14 14:33:43 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-1g-MFW">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="brz-lJ-m5z"/>
+                                    <constraint firstAttribute="height" constant="44" id="mCM-8b-SIH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapPlayButton:" destination="u6H-EV-Z63" eventType="touchUpInside" id="fov-VK-F2Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cQ4-PX-Iqv" firstAttribute="leading" secondItem="6yu-Ay-Chz" secondAttribute="leading" type="default" id="6EI-2i-DCa"/>
+                            <constraint firstItem="cQ4-PX-Iqv" firstAttribute="bottom" secondItem="6yu-Ay-Chz" secondAttribute="bottom" type="default" id="NiC-EL-xCQ"/>
+                            <constraint firstItem="OPY-1g-MFW" firstAttribute="centerY" secondItem="6yu-Ay-Chz" secondAttribute="centerY" type="default" id="c0G-0m-D97"/>
+                            <constraint firstItem="OPY-1g-MFW" firstAttribute="centerX" secondItem="cQ4-PX-Iqv" secondAttribute="centerX" type="default" id="oQv-tX-WnX"/>
+                            <constraint firstItem="cQ4-PX-Iqv" firstAttribute="trailing" secondItem="6yu-Ay-Chz" secondAttribute="trailing" type="default" id="zpd-SD-HsE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reminder Setting" id="tax-PH-A3h"/>
+                    <connections>
+                        <outlet property="playerButton" destination="OPY-1g-MFW" id="abx-IZ-s7P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79H-ha-yzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3133" y="-371"/>
         </scene>
         <!--More View Controller - More-->
         <scene sceneID="wat-Yn-YPj">
@@ -482,14 +559,16 @@
         </class>
         <class className="GLRecordViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didTapPlayButton:"/>
-                <relationship kind="action" name="didTapRecordButton:"/>
-                <relationship kind="action" name="didTapStopButton:"/>
-            </relationships>
         </class>
         <class className="GLReminderCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
+        </class>
+        <class className="GLReminderSettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderSettingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapPlayButton:"/>
+                <relationship kind="outlet" name="playerButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="GLReminderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>

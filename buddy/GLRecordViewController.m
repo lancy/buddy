@@ -10,6 +10,7 @@
 #import "GLAudioManager.h"
 #import "GLAudioPowerIndicatorView.h"
 #import "MCProgressBarView.h"
+#import "GLReminderSettingViewController.h"
 
 @interface GLRecordViewController ()
 @property (strong, nonatomic) GLAudioManager *audioManager;
@@ -42,6 +43,9 @@
 - (void)initUserinterface
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
+    
+    UIBarButtonItem *cancleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didTapCancleButton:)];
+    [self.navigationItem setLeftBarButtonItem:cancleButton];
     
 #warning TODO: auto layout
     self.powerIndicatorView = [[GLAudioPowerIndicatorView alloc] initWithFrame:CGRectMake(10, 250, 300, 300)];
@@ -95,27 +99,52 @@
         int s = ((int) self.audioManager.recorder.currentTime) % 60;
         int ss = (self.audioManager.recorder.currentTime - ((int) self.audioManager.recorder.currentTime)) * 100;
         
+        NSMutableString *recordingString = [NSLocalizedString(@"Recording.", nil) mutableCopy];
+        if (s % 3 == 0) {
+            [recordingString appendString:@"."];
+        } else if (s % 3 == 1) {
+            [recordingString appendString:@".."];
+        }
+        [self.stateLabel setText:recordingString];
         self.timeLabel.text = [NSString stringWithFormat:@"%.2d:%.2d / 01:00", m, s];
+        [self.powerIndicatorView setPower:self.audioManager.micAveragePower];
         
         CGFloat progress;
         if (m > 0){
             progress = 1;
+            [self stopRecroding];
+            [self performSegueWithIdentifier:@"FinishedRecording" sender:self];
         } else {
             progress = (s + ss / 100.0) / 60.0;
         }
         [self.progressBarView setProgress:progress];
         
         
-        [self.powerIndicatorView setPower:self.audioManager.micAveragePower];
     }
+}
+
+- (void)didTapCancleButton:(id)sender
+{
+    if ([self isRecording]) {
+        [self stopRecroding];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)stopRecroding
+{
+    [self setRecording:NO];
+    [self.audioManager stopRecord];
+    [self.stateLabel setText:NSLocalizedString(@"Tap the microphone", nil)];
+    [self.powerIndicatorView stopAnimation];
+    [self.timer invalidate];
 }
 
 - (void)didTapRecordToggleButton:(id)sender {
     if (self.isRecording) {
-        [self setRecording:NO];
-        [self.audioManager stopRecord];
-        [self.powerIndicatorView stopAnimation];
-        [self.timer invalidate];
+        [self stopRecroding];
+        [self performSegueWithIdentifier:@"FinishedRecording" sender:self];
     } else {
         [self setRecording:YES];
         [self.audioManager startRecord];
@@ -128,14 +157,17 @@
     }    
 }
 
-- (IBAction)didTapPlayButton:(id)sender {
-    [self.audioManager playCurrentAudio];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FinishedRecording"]) {
+        [segue.destinationViewController setAudioManager:self.audioManager];
+    }
 }
 
 @end
