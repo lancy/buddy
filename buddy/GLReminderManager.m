@@ -9,7 +9,7 @@
 #import "GLReminderManager.h"
 #import "NSDictionary+GLReminder.h"
 
-NSString * const BuddysDidChangedNotification = @"GLLocalRemindersDidChangedNotificaton";
+NSString * const LocalRemindersDidChangedNotification = @"GLLocalRemindersDidChangedNotificaton";
 
 
 @interface GLReminderManager ()
@@ -49,10 +49,11 @@ NSString * const BuddysDidChangedNotification = @"GLLocalRemindersDidChangedNoti
 
 - (void)addNewLocalReminderWithFireDate:(NSDate *)fireDate audioFilePath:(NSString *)audioFilePath
 {
-    NSMutableDictionary *newReminder;
+    NSMutableDictionary *newReminder = [[NSMutableDictionary alloc] init];
     [newReminder setFireDate:fireDate];
     [newReminder setAudioFilePath:audioFilePath];
     [self.localReminders addObject:newReminder];
+    [self.localReminders sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"fireDate" ascending:YES]]];
     
     [self saveLocalRemindersToFile];
 }
@@ -72,7 +73,7 @@ NSString * const BuddysDidChangedNotification = @"GLLocalRemindersDidChangedNoti
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"localReminders.plist"];
     [self.localReminders writeToFile:plistPath atomically:YES];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:BuddysDidChangedNotification
+    [[NSNotificationCenter defaultCenter] postNotificationName:LocalRemindersDidChangedNotification
                                                         object:self
                                                       userInfo:@{@"newLocalReminders": [self allLocalReminders]}];
 }

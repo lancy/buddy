@@ -8,6 +8,7 @@
 
 #import "GLReminderSettingViewController.h"
 #import "MCProgressBarView.h"
+#import "GLReminderManager.h"
 
 @interface GLReminderSettingViewController ()
 
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) UILabel *descriptionLabel;
 @property (strong, nonatomic) MCProgressBarView *progressBarView;
 @property (weak, nonatomic) IBOutlet UIButton *playerButton;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @property (assign, nonatomic) NSTimeInterval audioDuration;
 @property (strong, nonatomic) NSTimer *timer;
@@ -137,17 +139,11 @@
 
 - (void)didTapDoneButton:(id)sender {
     NSString *savedFilePath = [self.audioManager saveCurrentAudioToDocument];
-    NSLog(@"%@", savedFilePath);
+    [[GLReminderManager shareManager] addNewLocalReminderWithFireDate:self.datePicker.date audioFilePath:savedFilePath];
     
-    NSError *error;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:savedFilePath] error:&error];
-    if (error) {
-        NSLog(@"%@", error);
-    }
-    [self.player play];
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (IBAction)didTapPlayButton:(id)sender {

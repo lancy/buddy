@@ -7,8 +7,18 @@
 //
 
 #import "GLReminderViewController.h"
+#import "GLReminderManager.h"
+#import "GLReminderCell.h"
+#import "NSDictionary+GLReminder.h"
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface GLReminderViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSArray *reminders;
+
+@property (strong, nonatomic) AVAudioPlayer *player;
 
 @end
 
@@ -34,6 +44,20 @@
     [super viewDidLoad];
     [self customUserinterface];
 	// Do any additional setup after loading the view.
+    
+    [self registerNotificationHandler];
+    [self loadRemidnersData];
+}
+
+- (void)registerNotificationHandler
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadRemidnersData) name:LocalRemindersDidChangedNotification object:nil];
+}
+
+- (void)loadRemidnersData
+{
+    self.reminders = [[GLReminderManager shareManager] allLocalReminders];
+    [self.tableview reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return self.reminders.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,9 +120,12 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    NSDictionary *reminder = self.reminders[indexPath.row];
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateStyle:NSDateFormatterShortStyle];
+    [dateFormater setTimeStyle:NSDateFormatterShortStyle];
+    [[(GLReminderCell *)cell fireDateLabel] setText:[dateFormater stringFromDate:reminder.fireDate]];
     
-    //    NSDate *object = self.buddys[indexPath.row];
-    //    cell.textLabel.text = [object description];
     return cell;
 }
 
@@ -106,6 +133,22 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSDictionary *reminder = self.reminders[indexPath.row];
+    
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:reminder.audioFilePath] error:nil];
+    [self.player play];
+}
+
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
