@@ -49,7 +49,7 @@
 - (void)resetSubview
 {
     #warning TODO: auto resizing
-    self.setupFrame = CGRectMake(70, 70, 60, 60);
+    self.setupFrame = CGRectMake(87.5, 87.5, 75, 75);
     [self.powerIndicatorView setFrame:self.setupFrame];
     [self.waveAnimationView setFrame:self.setupFrame];
     [self.micIconView setFrame:self.setupFrame];
@@ -60,8 +60,6 @@
     [self resetSubview];
     [self setAnimating:YES];
     
-//         UIViewAnimationOptionAutoreverse
-    
     [UIView animateWithDuration: 1.5
                           delay: 0
                         options: UIViewAnimationOptionOverrideInheritedCurve |
@@ -69,7 +67,7 @@
      UIViewAnimationOptionOverrideInheritedDuration |
      UIViewAnimationOptionRepeat
                      animations:^{
-                         self.waveAnimationView.frame = CGRectMake(0, 0, 200, 200);
+                         self.waveAnimationView.frame = CGRectMake(0, 0, 250, 250);
                          self.waveAnimationView.alpha = 0;
                          if (self.isAnimating) {
                              [UIView setAnimationRepeatCount:2];
@@ -81,9 +79,6 @@
                          self.waveAnimationView.frame = self.setupFrame;
                          self.waveAnimationView.alpha = 1;
                      }];
-
-    
-    
 }
 
 - (void)stopAnimation

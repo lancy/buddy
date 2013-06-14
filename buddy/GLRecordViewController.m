@@ -28,7 +28,7 @@
 	// Do any additional setup after loading the view.
     self.audioManager = [[GLAudioManager alloc] init];
     
-    self.powerIndicatorView = [[GLAudioPowerIndicatorView alloc] initWithFrame:CGRectMake(60, 300, 200, 200)];
+    self.powerIndicatorView = [[GLAudioPowerIndicatorView alloc] initWithFrame:CGRectMake(35, 250, 250, 250)];
     [self.view addSubview:self.powerIndicatorView];
 
 }
