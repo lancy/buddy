@@ -14,6 +14,10 @@
 
 @interface GLAudioManager : NSObject
 
+@property (strong, nonatomic) AVAudioRecorder *recorder;
+@property (strong, nonatomic) AVAudioPlayer *player;
+@property (readonly, assign, getter = isRecording) BOOL recording;
+@property (readonly, assign, getter = isPlaying) BOOL playing;
 @property (readonly, strong, nonatomic) NSURL *recordedFileUrl;
 
 - (float)micAveragePower;

@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */; };
 		BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF35010A1768C95000E3ABD1 /* AVFoundation.framework */; };
+		BF528502176AF7AD00099970 /* record_mic_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF5284FF176AF7AD00099970 /* record_mic_icon@2x.png */; };
+		BF528503176AF7AD00099970 /* record_power_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF528500176AF7AD00099970 /* record_power_indicator@2x.png */; };
+		BF528504176AF7AD00099970 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF528501176AF7AD00099970 /* record_wave_animation@2x.png */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
 		BFCF7FD11768CEAA0083E30B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */; };
+		BFCF7FD41768DB810083E30B /* GLAudioPowerIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCF7FD31768DB810083E30B /* GLAudioPowerIndicatorView.m */; };
 		BFDFA6CC1764E83D006668BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CB1764E83D006668BC /* UIKit.framework */; };
 		BFDFA6CE1764E83D006668BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CD1764E83D006668BC /* Foundation.framework */; };
 		BFDFA6D01764E83D006668BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CF1764E83D006668BC /* CoreGraphics.framework */; };
@@ -64,8 +68,13 @@
 		BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRecordViewController.h; sourceTree = "<group>"; };
 		BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRecordViewController.m; sourceTree = "<group>"; };
 		BF35010A1768C95000E3ABD1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BF5284FF176AF7AD00099970 /* record_mic_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_mic_icon@2x.png"; sourceTree = "<group>"; };
+		BF528500176AF7AD00099970 /* record_power_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_power_indicator@2x.png"; sourceTree = "<group>"; };
+		BF528501176AF7AD00099970 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
 		BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BFCF7FD21768DB810083E30B /* GLAudioPowerIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLAudioPowerIndicatorView.h; sourceTree = "<group>"; };
+		BFCF7FD31768DB810083E30B /* GLAudioPowerIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioPowerIndicatorView.m; sourceTree = "<group>"; };
 		BFDFA6C81764E83D006668BC /* buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDFA6CB1764E83D006668BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BFDFA6CD1764E83D006668BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,9 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDFA77217662E05006668BC /* QuartzCore.framework in Frameworks */,
 				BFCF7FD11768CEAA0083E30B /* AudioToolbox.framework in Frameworks */,
 				BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */,
-				BFDFA77217662E05006668BC /* QuartzCore.framework in Frameworks */,
 				BFDFA76F17662320006668BC /* AddressBook.framework in Frameworks */,
 				BFDFA77017662320006668BC /* AddressBookUI.framework in Frameworks */,
 				BFDFA76C1765E4C1006668BC /* MessageUI.framework in Frameworks */,
@@ -152,6 +161,8 @@
 			children = (
 				BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */,
 				BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */,
+				BFCF7FD21768DB810083E30B /* GLAudioPowerIndicatorView.h */,
+				BFCF7FD31768DB810083E30B /* GLAudioPowerIndicatorView.m */,
 			);
 			name = Record;
 			sourceTree = "<group>";
@@ -234,6 +245,9 @@
 		BFDFA71F17650215006668BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF5284FF176AF7AD00099970 /* record_mic_icon@2x.png */,
+				BF528500176AF7AD00099970 /* record_power_indicator@2x.png */,
+				BF528501176AF7AD00099970 /* record_wave_animation@2x.png */,
 				BFDFA75D1765C34C006668BC /* message_tableviewcell_sent@2x.png */,
 				BFDFA75E1765C34C006668BC /* message_tableviewcell_unsend@2x.png */,
 				BFDFA7521765BA22006668BC /* reminder_tableviewcell_bubble_reading1@2x.png */,
@@ -402,6 +416,9 @@
 				BFDFA7591765BA23006668BC /* reminder_tableviewcell_bubble_unread@2x.png in Resources */,
 				BFDFA75F1765C34D006668BC /* message_tableviewcell_sent@2x.png in Resources */,
 				BFDFA7601765C34D006668BC /* message_tableviewcell_unsend@2x.png in Resources */,
+				BF528502176AF7AD00099970 /* record_mic_icon@2x.png in Resources */,
+				BF528503176AF7AD00099970 /* record_power_indicator@2x.png in Resources */,
+				BF528504176AF7AD00099970 /* record_wave_animation@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +473,7 @@
 				BFDFA7691765D0DB006668BC /* NSDictionary+GLBuddy.m in Sources */,
 				BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */,
 				BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */,
+				BFCF7FD41768DB810083E30B /* GLAudioPowerIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +556,7 @@
 				INFOPLIST_FILE = "buddy/buddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -551,6 +570,7 @@
 				INFOPLIST_FILE = "buddy/buddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

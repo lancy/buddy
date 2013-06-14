@@ -14,10 +14,11 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 
 @interface GLAudioManager ()
 
-@property (strong, nonatomic) AVAudioRecorder *recorder;
-@property (strong, nonatomic) AVAudioPlayer *player;
-
+@property (readwrite, assign, getter = isRecording) BOOL recording;
+@property (readwrite, assign, getter = isPlaying) BOOL playing;
 @property (readwrite, strong, nonatomic) NSURL *recordedFileUrl;
+@property (readwrite, strong, nonatomic) NSString *currentRecordedTime;
+
 
 @end
 
@@ -37,7 +38,9 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
             NSLog(@"Error creating session: %@", [sessionError description]);
         else
             [session setActive:YES error:nil];
-
+        
+        [self setRecording:NO];
+        [self setPlaying:NO];
     }
     return self;
 }
@@ -68,6 +71,7 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
     if (self.recorder) {
         [self.recorder prepareToRecord];
         self.recorder.meteringEnabled = YES;
+        [self setRecording:YES];
         [self.recorder record];
     } else {
         NSLog(@"%@",[error description]);
@@ -77,6 +81,7 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 - (void)stopRecord
 {
     [self.recorder stop];
+    [self setRecording:NO];
 }
 
 - (void)playCurrentAudio
