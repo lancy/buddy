@@ -11,6 +11,7 @@
 @interface GLAudioPowerIndicatorView : UIView
 
 @property (assign, nonatomic) CGFloat power;
+@property (readonly, assign, getter = isAnimating) BOOL animating;
 
 - (void)startAnimation;
 - (void)stopAnimation;

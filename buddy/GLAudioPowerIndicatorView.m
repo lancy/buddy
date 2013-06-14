@@ -53,7 +53,7 @@
 - (void)resetSubview
 {
     #warning TODO: auto resizing
-    self.setupFrame = CGRectMake(87.5, 87.5, 75, 75);
+    self.setupFrame = CGRectMake(112.5, 112.5, 75, 75);
     [self.powerIndicatorView setFrame:self.setupFrame];
     [self.waveAnimationView setFrame:self.setupFrame];
     self.waveAnimationView.alpha = 1;
@@ -69,7 +69,7 @@
                           delay: 0
                         options: UIViewAnimationCurveEaseOut | UIViewAnimationOptionRepeat
                      animations:^{
-                         self.waveAnimationView.frame = CGRectMake(0, 0, 250, 250);
+                         self.waveAnimationView.frame = CGRectMake(0, 0, 300, 300);
                          self.waveAnimationView.alpha = 0;
                          if (self.isAnimating) {
                              [UIView setAnimationRepeatCount:2];
@@ -93,9 +93,9 @@
     if (self.isAnimating) {
         [UIView animateWithDuration:0.1
                               delay:0
-                            options:UIViewAnimationOptionCurveEaseInOut
+                            options:UIViewAnimationOptionCurveLinear
                          animations:^{
-                             CGFloat resizePoint = -(power * 1.25 + 70);
+                             CGFloat resizePoint = -(power + 60) * 1.25;
                              CGRect newFrame = CGRectInset(self.setupFrame, resizePoint, resizePoint);
                              self.powerIndicatorView.frame = newFrame;
                          }

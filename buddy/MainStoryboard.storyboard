@@ -193,83 +193,9 @@
                     <view key="view" contentMode="scaleToFill" id="kfF-vl-Pw0">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-R1-pFK">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="rj4-6r-khP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Record">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapRecordButton:" destination="DSd-ZJ-hIo" eventType="touchUpInside" id="xLB-NV-8Ku"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxk-1V-iOW">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapStopButton:" destination="DSd-ZJ-hIo" eventType="touchUpInside" id="FJs-Ui-xyK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-2R-0GE">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapPlayButton:" destination="DSd-ZJ-hIo" eventType="touchUpInside" id="ltT-sI-uO4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhH-uk-qij">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tm-p6-qqs">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4Tm-p6-qqs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0g8-FO-Pwt"/>
-                            <constraint firstItem="j6q-R1-pFK" firstAttribute="top" secondItem="kfF-vl-Pw0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="D9X-XO-EFW"/>
-                            <constraint firstItem="UXY-2R-0GE" firstAttribute="leading" secondItem="kfF-vl-Pw0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JhX-qq-qKc"/>
-                            <constraint firstItem="UXY-2R-0GE" firstAttribute="top" secondItem="j6q-R1-pFK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JwP-DO-Av0"/>
-                            <constraint firstItem="j6q-R1-pFK" firstAttribute="leading" secondItem="kfF-vl-Pw0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="S0C-bc-UQb"/>
-                            <constraint firstItem="4Tm-p6-qqs" firstAttribute="leading" secondItem="kfF-vl-Pw0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="V6P-FB-HFe"/>
-                            <constraint firstAttribute="trailing" secondItem="qhH-uk-qij" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="WUj-8f-O0M"/>
-                            <constraint firstAttribute="trailing" secondItem="UXY-2R-0GE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wzg-oq-8cv"/>
-                            <constraint firstItem="qhH-uk-qij" firstAttribute="top" secondItem="4Tm-p6-qqs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XwK-03-5a2"/>
-                            <constraint firstItem="Gxk-1V-iOW" firstAttribute="leading" secondItem="j6q-R1-pFK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eiI-eV-cOv"/>
-                            <constraint firstItem="Gxk-1V-iOW" firstAttribute="top" secondItem="kfF-vl-Pw0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="g71-CW-rN1"/>
-                            <constraint firstAttribute="trailing" secondItem="Gxk-1V-iOW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jHz-kb-r3k"/>
-                            <constraint firstItem="qhH-uk-qij" firstAttribute="leading" secondItem="kfF-vl-Pw0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sig-n5-Ywe"/>
-                            <constraint firstItem="4Tm-p6-qqs" firstAttribute="top" secondItem="UXY-2R-0GE" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="taY-Uq-58O"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record Audio" id="2vG-Rp-brf"/>
-                    <connections>
-                        <outlet property="powerLabel" destination="4Tm-p6-qqs" id="aN6-qU-FtI"/>
-                        <outlet property="timeLabel" destination="qhH-uk-qij" id="jE2-xR-V7g"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlJ-Gy-qpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -521,6 +447,57 @@
         <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
     </resources>
+    <classes>
+        <class className="GLBuddyCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLBuddyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLMessageCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="heartImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLMessageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
+        </class>
+        <class className="GLRecordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapPlayButton:"/>
+                <relationship kind="action" name="didTapRecordButton:"/>
+                <relationship kind="action" name="didTapStopButton:"/>
+            </relationships>
+        </class>
+        <class className="GLReminderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
+        </class>
+        <class className="GLReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

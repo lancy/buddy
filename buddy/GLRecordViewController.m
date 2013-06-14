@@ -9,29 +9,83 @@
 #import "GLRecordViewController.h"
 #import "GLAudioManager.h"
 #import "GLAudioPowerIndicatorView.h"
+#import "MCProgressBarView.h"
 
 @interface GLRecordViewController ()
 @property (strong, nonatomic) GLAudioManager *audioManager;
 @property (strong, nonatomic) NSTimer *timer;
 
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *powerLabel;
+@property (strong, nonatomic) UILabel *timeLabel;
+@property (strong, nonatomic) UILabel *stateLabel;
+@property (strong, nonatomic) UILabel *descriptionLabel;
+@property (strong, nonatomic) UIButton *recordToggleButton;
 @property (strong, nonatomic) GLAudioPowerIndicatorView *powerIndicatorView;
+@property (strong, nonatomic) MCProgressBarView *progressBarView;
+
+@property (assign, nonatomic, getter = isRecording) BOOL recording;
 
 @end
 
 @implementation GLRecordViewController
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.audioManager = [[GLAudioManager alloc] init];
-    
-    self.powerIndicatorView = [[GLAudioPowerIndicatorView alloc] initWithFrame:CGRectMake(35, 300, 250, 250)];
-    [self.view addSubview:self.powerIndicatorView];
-
+    [self setRecording:NO];
+    [self initUserinterface];
 }
+
+- (void)initUserinterface
+{
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
+    
+#warning TODO: auto layout
+    self.powerIndicatorView = [[GLAudioPowerIndicatorView alloc] initWithFrame:CGRectMake(10, 250, 300, 300)];
+    [self.view addSubview:self.powerIndicatorView];
+    
+    self.recordToggleButton = [[UIButton alloc] initWithFrame:CGRectMake(120, 385, 80, 80)];
+    [self.recordToggleButton addTarget:self action:@selector(didTapRecordToggleButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.recordToggleButton];
+    
+    UIImage * backgroundImage = [[UIImage imageNamed:@"progress_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    UIImage * foregroundImage = [[UIImage imageNamed:@"progress_fg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    self.progressBarView = [[MCProgressBarView alloc] initWithFrame:CGRectMake(25, 200, 270, 16)
+                                                    backgroundImage:backgroundImage
+                                                    foregroundImage:foregroundImage];
+    [self.view addSubview:self.progressBarView];
+    self.progressBarView.progress = 0;
+    
+    self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 160, 280, 32)];
+    [self.timeLabel setTextColor:[UIColor grayColor]];
+    [self.timeLabel setFont:[UIFont systemFontOfSize:18]];
+    [self.timeLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.timeLabel setBackgroundColor:[UIColor clearColor]];
+    [self.timeLabel setText:@"00:00 / 01:00"];
+    
+    self.stateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 44)];
+    [self.stateLabel setTextColor:[UIColor grayColor]];
+    [self.stateLabel setFont:[UIFont systemFontOfSize:24]];
+    [self.stateLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.stateLabel setBackgroundColor:[UIColor clearColor]];
+    [self.stateLabel setText:NSLocalizedString(@"Tap the microphone", nil)];
+    
+    self.descriptionLabel= [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 280, 44)];
+    [self.descriptionLabel setTextColor:[UIColor grayColor]];
+    [self.descriptionLabel setFont:[UIFont systemFontOfSize:16]];
+    [self.descriptionLabel setNumberOfLines:2];
+    [self.descriptionLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.descriptionLabel setBackgroundColor:[UIColor clearColor]];
+    [self.descriptionLabel setText:NSLocalizedString(@"You could record audio up to 1 min, or stop by tap the microphone again", nil)];
+
+    [self.view addSubview:self.timeLabel];
+    [self.view addSubview:self.stateLabel];
+    [self.view addSubview:self.descriptionLabel];
+}
+
 
 - (void) timerUpdate
 {
@@ -41,26 +95,39 @@
         int s = ((int) self.audioManager.recorder.currentTime) % 60;
         int ss = (self.audioManager.recorder.currentTime - ((int) self.audioManager.recorder.currentTime)) * 100;
         
-        self.timeLabel.text = [NSString stringWithFormat:@"%.2d:%.2d %.2d", m, s, ss];
-        [self.powerLabel setText:[NSString stringWithFormat:@"%f", self.audioManager.micAveragePower]];
+        self.timeLabel.text = [NSString stringWithFormat:@"%.2d:%.2d / 01:00", m, s];
+        
+        CGFloat progress;
+        if (m > 0){
+            progress = 1;
+        } else {
+            progress = (s + ss / 100.0) / 60.0;
+        }
+        [self.progressBarView setProgress:progress];
+        
+        
         [self.powerIndicatorView setPower:self.audioManager.micAveragePower];
     }
 }
 
-- (IBAction)didTapRecordButton:(id)sender {
-    [self.audioManager startRecord];
-    [self.powerIndicatorView startAnimation];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:.1f
-                                              target:self
-                                            selector:@selector(timerUpdate)
-                                            userInfo:nil
-                                             repeats:YES];
+- (void)didTapRecordToggleButton:(id)sender {
+    if (self.isRecording) {
+        [self setRecording:NO];
+        [self.audioManager stopRecord];
+        [self.powerIndicatorView stopAnimation];
+        [self.timer invalidate];
+    } else {
+        [self setRecording:YES];
+        [self.audioManager startRecord];
+        [self.powerIndicatorView startAnimation];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:.01f
+                                                      target:self
+                                                    selector:@selector(timerUpdate)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    }    
 }
-- (IBAction)didTapStopButton:(id)sender {
-    [self.audioManager stopRecord];
-    [self.powerIndicatorView stopAnimation];
-    [self.timer invalidate];
-}
+
 - (IBAction)didTapPlayButton:(id)sender {
     [self.audioManager playCurrentAudio];
 }

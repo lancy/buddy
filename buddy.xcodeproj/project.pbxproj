@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		BF035692176B2575004996DA /* record_mic_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035691176B2575004996DA /* record_mic_icon.png */; };
 		BF035694176B257D004996DA /* record_mic_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035693176B257D004996DA /* record_mic_icon@2x.png */; };
+		BF322308176B53220008C973 /* record_wave_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322306176B53220008C973 /* record_wave_animation.png */; };
+		BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322307176B53220008C973 /* record_wave_animation@2x.png */; };
 		BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */; };
 		BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF35010A1768C95000E3ABD1 /* AVFoundation.framework */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
 		BF9360E3176B2F1700A3A928 /* record_power_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E1176B2F1700A3A928 /* record_power_indicator.png */; };
 		BF9360E4176B2F1700A3A928 /* record_power_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */; };
-		BF9EB800176B0F11002DECE0 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9EB7FD176B0F11002DECE0 /* record_wave_animation@2x.png */; };
+		BF9360F0176B313A00A3A928 /* MCProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9360EF176B313A00A3A928 /* MCProgressBarView.m */; };
+		BF9360F6176B316700A3A928 /* progress_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360F2176B316600A3A928 /* progress_bg.png */; };
+		BF9360F7176B316700A3A928 /* progress_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360F3176B316600A3A928 /* progress_bg@2x.png */; };
+		BF9360F8176B316700A3A928 /* progress_fg.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360F4176B316600A3A928 /* progress_fg.png */; };
+		BF9360F9176B316700A3A928 /* progress_fg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360F5176B316600A3A928 /* progress_fg@2x.png */; };
 		BFCF7FD11768CEAA0083E30B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */; };
 		BFCF7FD41768DB810083E30B /* GLAudioPowerIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCF7FD31768DB810083E30B /* GLAudioPowerIndicatorView.m */; };
 		BFDFA6CC1764E83D006668BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA6CB1764E83D006668BC /* UIKit.framework */; };
@@ -68,6 +74,8 @@
 		7832FC8B3FFC4EBA962DD164 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BF035691176B2575004996DA /* record_mic_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_mic_icon.png; sourceTree = "<group>"; };
 		BF035693176B257D004996DA /* record_mic_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_mic_icon@2x.png"; sourceTree = "<group>"; };
+		BF322306176B53220008C973 /* record_wave_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_wave_animation.png; sourceTree = "<group>"; };
+		BF322307176B53220008C973 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF3501051768C68100E3ABD1 /* GLAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLAudioManager.h; sourceTree = "<group>"; };
 		BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRecordViewController.h; sourceTree = "<group>"; };
 		BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRecordViewController.m; sourceTree = "<group>"; };
@@ -75,7 +83,12 @@
 		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
 		BF9360E1176B2F1700A3A928 /* record_power_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_power_indicator.png; sourceTree = "<group>"; };
 		BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_power_indicator@2x.png"; sourceTree = "<group>"; };
-		BF9EB7FD176B0F11002DECE0 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
+		BF9360EE176B313A00A3A928 /* MCProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProgressBarView.h; sourceTree = "<group>"; };
+		BF9360EF176B313A00A3A928 /* MCProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCProgressBarView.m; sourceTree = "<group>"; };
+		BF9360F2176B316600A3A928 /* progress_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_bg.png; sourceTree = "<group>"; };
+		BF9360F3176B316600A3A928 /* progress_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress_bg@2x.png"; sourceTree = "<group>"; };
+		BF9360F4176B316600A3A928 /* progress_fg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_fg.png; sourceTree = "<group>"; };
+		BF9360F5176B316600A3A928 /* progress_fg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress_fg@2x.png"; sourceTree = "<group>"; };
 		BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BFCF7FD21768DB810083E30B /* GLAudioPowerIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLAudioPowerIndicatorView.h; sourceTree = "<group>"; };
 		BFCF7FD31768DB810083E30B /* GLAudioPowerIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioPowerIndicatorView.m; sourceTree = "<group>"; };
@@ -180,11 +193,30 @@
 			name = Recorder;
 			sourceTree = "<group>";
 		};
+		BF9360ED176B312000A3A928 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				BF9360F1176B314100A3A928 /* ProgressBarView */,
+			);
+			name = "Third Party";
+			path = buddy;
+			sourceTree = "<group>";
+		};
+		BF9360F1176B314100A3A928 /* ProgressBarView */ = {
+			isa = PBXGroup;
+			children = (
+				BF9360EE176B313A00A3A928 /* MCProgressBarView.h */,
+				BF9360EF176B313A00A3A928 /* MCProgressBarView.m */,
+			);
+			name = ProgressBarView;
+			sourceTree = "<group>";
+		};
 		BFDFA6BF1764E83D006668BC = {
 			isa = PBXGroup;
 			children = (
 				BFDFA74E1765B428006668BC /* icon114x114.png */,
 				BFDFA74C1765B425006668BC /* icon57x57.png */,
+				BF9360ED176B312000A3A928 /* Third Party */,
 				BFDFA6D11764E83D006668BC /* buddy */,
 				BFDFA6CA1764E83D006668BC /* Frameworks */,
 				BFDFA6C91764E83D006668BC /* Products */,
@@ -249,11 +281,16 @@
 		BFDFA71F17650215006668BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF322306176B53220008C973 /* record_wave_animation.png */,
+				BF322307176B53220008C973 /* record_wave_animation@2x.png */,
+				BF9360F2176B316600A3A928 /* progress_bg.png */,
+				BF9360F3176B316600A3A928 /* progress_bg@2x.png */,
+				BF9360F4176B316600A3A928 /* progress_fg.png */,
+				BF9360F5176B316600A3A928 /* progress_fg@2x.png */,
 				BF9360E1176B2F1700A3A928 /* record_power_indicator.png */,
 				BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */,
 				BF035693176B257D004996DA /* record_mic_icon@2x.png */,
 				BF035691176B2575004996DA /* record_mic_icon.png */,
-				BF9EB7FD176B0F11002DECE0 /* record_wave_animation@2x.png */,
 				BFDFA75D1765C34C006668BC /* message_tableviewcell_sent@2x.png */,
 				BFDFA75E1765C34C006668BC /* message_tableviewcell_unsend@2x.png */,
 				BFDFA7521765BA22006668BC /* reminder_tableviewcell_bubble_reading1@2x.png */,
@@ -422,11 +459,16 @@
 				BFDFA7591765BA23006668BC /* reminder_tableviewcell_bubble_unread@2x.png in Resources */,
 				BFDFA75F1765C34D006668BC /* message_tableviewcell_sent@2x.png in Resources */,
 				BFDFA7601765C34D006668BC /* message_tableviewcell_unsend@2x.png in Resources */,
-				BF9EB800176B0F11002DECE0 /* record_wave_animation@2x.png in Resources */,
 				BF035692176B2575004996DA /* record_mic_icon.png in Resources */,
 				BF035694176B257D004996DA /* record_mic_icon@2x.png in Resources */,
 				BF9360E3176B2F1700A3A928 /* record_power_indicator.png in Resources */,
 				BF9360E4176B2F1700A3A928 /* record_power_indicator@2x.png in Resources */,
+				BF9360F6176B316700A3A928 /* progress_bg.png in Resources */,
+				BF9360F7176B316700A3A928 /* progress_bg@2x.png in Resources */,
+				BF9360F8176B316700A3A928 /* progress_fg.png in Resources */,
+				BF9360F9176B316700A3A928 /* progress_fg@2x.png in Resources */,
+				BF322308176B53220008C973 /* record_wave_animation.png in Resources */,
+				BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +524,7 @@
 				BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */,
 				BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */,
 				BFCF7FD41768DB810083E30B /* GLAudioPowerIndicatorView.m in Sources */,
+				BF9360F0176B313A00A3A928 /* MCProgressBarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
