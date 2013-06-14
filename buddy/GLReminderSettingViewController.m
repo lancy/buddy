@@ -21,6 +21,9 @@
 @property (strong, nonatomic) NSTimer *timer;
 
 
+@property (strong, nonatomic) AVAudioPlayer *player;
+
+
 @end
 
 @implementation GLReminderSettingViewController
@@ -133,9 +136,18 @@
 }
 
 - (void)didTapDoneButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    NSString *savedFilePath = [self.audioManager saveCurrentAudioToDocument];
+    NSLog(@"%@", savedFilePath);
+    
+    NSError *error;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:savedFilePath] error:&error];
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    [self.player play];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
 }
 
 - (IBAction)didTapPlayButton:(id)sender {

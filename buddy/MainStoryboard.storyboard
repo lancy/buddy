@@ -216,11 +216,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="CBv-20-VAI"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="392913223.65609401">
-                                    <!--2013-06-14 14:33:43 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="392654023.65609401">
+                                    <!--2013-06-11 14:33:43 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -238,7 +238,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-1g-MFW">
@@ -524,59 +524,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
     </resources>
-    <classes>
-        <class className="GLBuddyCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLBuddyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLMessageCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="heartImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLMessageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
-        </class>
-        <class className="GLRecordViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
-        </class>
-        <class className="GLReminderCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
-        </class>
-        <class className="GLReminderSettingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderSettingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didTapPlayButton:"/>
-                <relationship kind="outlet" name="playerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GLReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

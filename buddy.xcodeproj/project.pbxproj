@@ -12,6 +12,8 @@
 		BF322308176B53220008C973 /* record_wave_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322306176B53220008C973 /* record_wave_animation.png */; };
 		BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322307176B53220008C973 /* record_wave_animation@2x.png */; };
 		BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF32230B176B5AE10008C973 /* GLReminderSettingViewController.m */; };
+		BF32230F176B7A9F0008C973 /* GLReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF32230E176B7A9F0008C973 /* GLReminderManager.m */; };
+		BF322312176B7B360008C973 /* NSDictionary+GLReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF322311176B7B360008C973 /* NSDictionary+GLReminder.m */; };
 		BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */; };
 		BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF35010A1768C95000E3ABD1 /* AVFoundation.framework */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
@@ -79,6 +81,10 @@
 		BF322307176B53220008C973 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF32230A176B5AE10008C973 /* GLReminderSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderSettingViewController.h; sourceTree = "<group>"; };
 		BF32230B176B5AE10008C973 /* GLReminderSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLReminderSettingViewController.m; sourceTree = "<group>"; };
+		BF32230D176B7A9F0008C973 /* GLReminderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderManager.h; sourceTree = "<group>"; };
+		BF32230E176B7A9F0008C973 /* GLReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLReminderManager.m; sourceTree = "<group>"; };
+		BF322310176B7B360008C973 /* NSDictionary+GLReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GLReminder.h"; sourceTree = "<group>"; };
+		BF322311176B7B360008C973 /* NSDictionary+GLReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GLReminder.m"; sourceTree = "<group>"; };
 		BF3501051768C68100E3ABD1 /* GLAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLAudioManager.h; sourceTree = "<group>"; };
 		BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRecordViewController.h; sourceTree = "<group>"; };
 		BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRecordViewController.m; sourceTree = "<group>"; };
@@ -380,6 +386,10 @@
 				BFDFA7651765CF68006668BC /* GLBuddyManager.m */,
 				BFDFA7671765D0D9006668BC /* NSDictionary+GLBuddy.h */,
 				BFDFA7681765D0DA006668BC /* NSDictionary+GLBuddy.m */,
+				BF32230D176B7A9F0008C973 /* GLReminderManager.h */,
+				BF32230E176B7A9F0008C973 /* GLReminderManager.m */,
+				BF322310176B7B360008C973 /* NSDictionary+GLReminder.h */,
+				BF322311176B7B360008C973 /* NSDictionary+GLReminder.m */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -531,6 +541,8 @@
 				BFCF7FD41768DB810083E30B /* GLAudioPowerIndicatorView.m in Sources */,
 				BF9360F0176B313A00A3A928 /* MCProgressBarView.m in Sources */,
 				BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */,
+				BF32230F176B7A9F0008C973 /* GLReminderManager.m in Sources */,
+				BF322312176B7B360008C973 /* NSDictionary+GLReminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,8 +53,9 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 
 - (void)startRecord
 {
-    self.recordedFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"RecordedFile"]];
-
+    self.recordedFileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"RecordedFile.bra"]];
+    
+    NSLog(@"%@", self.recordedFileUrl.absoluteString);
     
     NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
                               [NSNumber numberWithFloat: 11025.0],                 AVSampleRateKey,
@@ -113,6 +114,24 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
     }
 }
 
+- (NSString *)saveCurrentAudioToDocument;
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSTimeInterval currentTimeStamp = [[NSDate date] timeIntervalSince1970];
+    NSString *fileName = [NSString stringWithFormat:@"%i.bra", (int)currentTimeStamp];
+    NSString *newPath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    if ([fileManager fileExistsAtPath:newPath] == NO) {
+        [fileManager copyItemAtURL:self.recordedFileUrl toURL:[NSURL fileURLWithPath:newPath] error:&error];        
+        if (error) {
+            NSLog(@"%@", error);
+        }
+    }
+    return newPath;
+}
 
 
 

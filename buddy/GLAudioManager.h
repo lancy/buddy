@@ -28,5 +28,7 @@
 - (void)playCurrentAudio;
 - (void)playAudioWithFileUrl:(NSURL *)fileUrl;
 
+- (NSString *)saveCurrentAudioToDocument;
+
 
 @end
