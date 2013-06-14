@@ -43,6 +43,10 @@
     [self addSubview:self.waveAnimationView];
     
     self.micIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"record_mic_icon.png"]];
+    [self.micIconView.layer setShadowOffset:CGSizeMake(0, 1)];
+    [self.micIconView.layer setShadowRadius:1.0];
+    [self.micIconView.layer setShadowColor:[UIColor grayColor].CGColor];
+    [self.micIconView.layer setShadowOpacity:1];
     [self addSubview:self.micIconView];
 }
 
