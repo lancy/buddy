@@ -36,6 +36,15 @@
 
 - (void)initUserinterface
 {
+    self.title = @"Reminder";
+    
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapRecordAgainButton:)]];
+    
+    
+    
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(didTapDoneButton:)]];
+     
+    
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
     
     [self.playerButton setBackgroundColor:[UIColor colorWithRed:236.0/255.0 green:98.0/255.0 blue:70.0/255.0 alpha:1]];
@@ -117,6 +126,16 @@
         [self.playerButton setHidden:NO];
     }
 
+}
+
+- (void)didTapRecordAgainButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)didTapDoneButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (IBAction)didTapPlayButton:(id)sender {
