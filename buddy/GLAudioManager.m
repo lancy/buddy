@@ -59,7 +59,7 @@ const int kRecordAudioFormat = kAudioFormatMPEG4AAC;
 
     
     NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
+                              [NSNumber numberWithFloat: 11025.0],                 AVSampleRateKey,
                               [NSNumber numberWithInt: kRecordAudioFormat], AVFormatIDKey,
                               [NSNumber numberWithInt: 1],                         AVNumberOfChannelsKey,
                               [NSNumber numberWithInt: AVAudioQualityMin],         AVEncoderAudioQualityKey,

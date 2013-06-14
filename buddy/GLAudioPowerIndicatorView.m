@@ -52,6 +52,7 @@
     self.setupFrame = CGRectMake(87.5, 87.5, 75, 75);
     [self.powerIndicatorView setFrame:self.setupFrame];
     [self.waveAnimationView setFrame:self.setupFrame];
+    self.waveAnimationView.alpha = 1;
     [self.micIconView setFrame:self.setupFrame];
 }
 
@@ -62,10 +63,7 @@
     
     [UIView animateWithDuration: 1.5
                           delay: 0
-                        options: UIViewAnimationOptionOverrideInheritedCurve |
-     UIViewAnimationCurveEaseOut |
-     UIViewAnimationOptionOverrideInheritedDuration |
-     UIViewAnimationOptionRepeat
+                        options: UIViewAnimationCurveEaseOut | UIViewAnimationOptionRepeat
                      animations:^{
                          self.waveAnimationView.frame = CGRectMake(0, 0, 250, 250);
                          self.waveAnimationView.alpha = 0;
@@ -76,8 +74,6 @@
                          }
                      }
                      completion:^(BOOL finished) {
-                         self.waveAnimationView.frame = self.setupFrame;
-                         self.waveAnimationView.alpha = 1;
                      }];
 }
 
@@ -95,7 +91,7 @@
                               delay:0
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
-                             CGFloat resizePoint = -(power + 70);
+                             CGFloat resizePoint = -(power * 1.25 + 70);
                              CGRect newFrame = CGRectInset(self.setupFrame, resizePoint, resizePoint);
                              self.powerIndicatorView.frame = newFrame;
                          }
