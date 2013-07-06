@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5582E4BE-D385-49AF-81A9-7C7CC36743C6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>buddy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>252B3EAB-5F17-4166-853F-C247AAF12FA4</key>
+		<string>https://github.com/lancy/buddy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>buddy.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>252B3EAB-5F17-4166-853F-C247AAF12FA4</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lancy/buddy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>252B3EAB-5F17-4166-853F-C247AAF12FA4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>252B3EAB-5F17-4166-853F-C247AAF12FA4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>buddy</string>
+		</dict>
+	</array>
+</dict>
+</plist>
