@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
 #import "GLAppDelegate.h"
+#import "AFNetworking.h"
 
 @interface GLAppDelegate ()
 @end
@@ -28,6 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     [self customUserinterface];
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     return YES;
 }
 

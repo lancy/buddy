@@ -7,8 +7,11 @@
 //
 
 #import "GLLoginViewController.h"
+#import "GLUserAgent.h"
 
 @interface GLLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -26,6 +29,15 @@
 }
 - (IBAction)didTapCancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)didTapLoginButton:(id)sender {
+    [[GLUserAgent sharedAgent] loginWithPhoneNumber:self.phoneNumberTextField.text
+                                           password:self.passwordTextField.text
+                                          completed:^(APIStatusCode statusCode, NSError *error)
+    {
+          NSLog(@"status code = %d", statusCode);
+    }];
+    
 }
 
 @end

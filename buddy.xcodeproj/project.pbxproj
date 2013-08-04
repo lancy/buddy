@@ -19,6 +19,8 @@
 		BF20BC4A17AE568B00EB1980 /* loginButtonNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC4617AE568B00EB1980 /* loginButtonNormal@2x.png */; };
 		BF20BC4B17AE568B00EB1980 /* loginButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC4717AE568B00EB1980 /* loginButtonNormal.png */; };
 		BF20BC4E17AE56C900EB1980 /* GLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */; };
+		BF20BC5117AE7B9900EB1980 /* GLBuddyApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC5017AE7B9900EB1980 /* GLBuddyApiClient.m */; };
+		BF20BC5417AE7D3A00EB1980 /* GLUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC5317AE7D3A00EB1980 /* GLUserAgent.m */; };
 		BF322308176B53220008C973 /* record_wave_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322306176B53220008C973 /* record_wave_animation.png */; };
 		BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322307176B53220008C973 /* record_wave_animation@2x.png */; };
 		BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF32230B176B5AE10008C973 /* GLReminderSettingViewController.m */; };
@@ -126,6 +128,10 @@
 		BF20BC4717AE568B00EB1980 /* loginButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButtonNormal.png; sourceTree = "<group>"; };
 		BF20BC4C17AE56C900EB1980 /* GLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLoginViewController.h; sourceTree = "<group>"; };
 		BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLoginViewController.m; sourceTree = "<group>"; };
+		BF20BC4F17AE7B9900EB1980 /* GLBuddyApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBuddyApiClient.h; sourceTree = "<group>"; };
+		BF20BC5017AE7B9900EB1980 /* GLBuddyApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBuddyApiClient.m; sourceTree = "<group>"; };
+		BF20BC5217AE7D3A00EB1980 /* GLUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUserAgent.h; sourceTree = "<group>"; };
+		BF20BC5317AE7D3A00EB1980 /* GLUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLUserAgent.m; sourceTree = "<group>"; };
 		BF322306176B53220008C973 /* record_wave_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_wave_animation.png; sourceTree = "<group>"; };
 		BF322307176B53220008C973 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF32230A176B5AE10008C973 /* GLReminderSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderSettingViewController.h; sourceTree = "<group>"; };
@@ -519,6 +525,10 @@
 				BF32230E176B7A9F0008C973 /* GLReminderManager.m */,
 				BF322310176B7B360008C973 /* NSDictionary+GLReminder.h */,
 				BF322311176B7B360008C973 /* NSDictionary+GLReminder.m */,
+				BF20BC4F17AE7B9900EB1980 /* GLBuddyApiClient.h */,
+				BF20BC5017AE7B9900EB1980 /* GLBuddyApiClient.m */,
+				BF20BC5217AE7D3A00EB1980 /* GLUserAgent.h */,
+				BF20BC5317AE7D3A00EB1980 /* GLUserAgent.m */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -709,6 +719,8 @@
 				BFFAD28A17AE0137008F77AA /* GLRegisterFinishViewController.m in Sources */,
 				BF20BC3B17AE058900EB1980 /* GLRegisterMiddleViewController.m in Sources */,
 				BF20BC4E17AE56C900EB1980 /* GLLoginViewController.m in Sources */,
+				BF20BC5117AE7B9900EB1980 /* GLBuddyApiClient.m in Sources */,
+				BF20BC5417AE7D3A00EB1980 /* GLUserAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
