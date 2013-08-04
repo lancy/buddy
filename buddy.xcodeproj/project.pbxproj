@@ -296,10 +296,10 @@
 				BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */,
 				BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */,
 				BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */,
-				BFFAD28817AE0137008F77AA /* GLRegisterFinishViewController.h */,
-				BFFAD28917AE0137008F77AA /* GLRegisterFinishViewController.m */,
 				BF20BC3917AE058900EB1980 /* GLRegisterMiddleViewController.h */,
 				BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */,
+				BFFAD28817AE0137008F77AA /* GLRegisterFinishViewController.h */,
+				BFFAD28917AE0137008F77AA /* GLRegisterFinishViewController.m */,
 				BF20BC4C17AE56C900EB1980 /* GLLoginViewController.h */,
 				BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */,
 			);

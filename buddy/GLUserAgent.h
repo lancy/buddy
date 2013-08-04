@@ -19,9 +19,21 @@ typedef enum {
 
 + (GLUserAgent *)sharedAgent;
 
+// utils methods
+
+@property (assign, nonatomic) GLUserType *userType;
+@property (strong, nonatomic) NSString *phoneNumber;
+@property (strong, nonatomic) NSString *contactName;
+@property (strong, nonatomic) UIImage *avatarImage;
+@property (strong, nonatomic) NSString *password;
+@property (strong, nonatomic) NSString *email;
+
+
+// request methods
+
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber
                     password:(NSString *)password
-                   completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
+                   completed:(void (^)(APIStatusCode statusCode, GLUserType userType, NSError *error))block;
 
 - (void)registerWithUserType:(GLUserType)userType
                  phoneNumber:(NSString *)phoneNumber

@@ -23,7 +23,7 @@
 
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber
                     password:(NSString *)password
-                   completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
+                   completed:(void (^)(APIStatusCode statusCode, GLUserType userType, NSError *error))block
 {
     NSDictionary *parameters = @{
                                      @"phoneNumber": @([phoneNumber integerValue]),
@@ -32,14 +32,16 @@
     [[GLBuddyApiClient sharedClient] postPath:@"login/"
                                   parameters:parameters
                                      success:^(AFHTTPRequestOperation *operation, id JSON) {
-            NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
-        if (block) {
-            block([statusCode integerValue], nil);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if (block) {
-            block(APIStatusCodeError, error);
-        }
+                                                NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
+                                                GLUserType userType = [[JSON valueForKeyPath:@"userType"] integerValue];
+                                                if (block) {
+                                                    block([statusCode integerValue], userType, nil);
+                                                }
+                                            }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                            if (block) {
+                                                block(APIStatusCodeError, 0, error);
+                                            }
     }];
 }
 
@@ -62,7 +64,8 @@
                                           if (block) {
                                               block([statusCode integerValue], nil);
                                           }
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                           if (block) {
                                               block(APIStatusCodeError, error);
                                           }
@@ -82,7 +85,8 @@
                                           if (block) {
                                               block([statusCode integerValue], nil);
                                           }
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                           if (block) {
                                               block(APIStatusCodeError, error);
                                           }
@@ -104,7 +108,8 @@
                                           if (block) {
                                               block([statusCode integerValue], nil);
                                           }
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                           if (block) {
                                               block(APIStatusCodeError, error);
                                           }
@@ -128,7 +133,8 @@
                                           if (block) {
                                               block([statusCode integerValue], nil);
                                           }
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                           if (block) {
                                               block(APIStatusCodeError, error);
                                           }
@@ -144,7 +150,8 @@
                                           if (block) {
                                               block(relatives, nil);
                                           }
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      }
+                                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                           if (block) {
                                               block([NSArray array], error);
                                           }

@@ -33,11 +33,9 @@
 - (IBAction)didTapLoginButton:(id)sender {
     [[GLUserAgent sharedAgent] loginWithPhoneNumber:self.phoneNumberTextField.text
                                            password:self.passwordTextField.text
-                                          completed:^(APIStatusCode statusCode, NSError *error)
-    {
-          NSLog(@"status code = %d", statusCode);
-    }];
-    
+                                          completed:^(APIStatusCode statusCode, GLUserType userType, NSError *error) {
+                                              NSLog(@"status code = %d", statusCode);
+                                          }];
 }
 
 @end
