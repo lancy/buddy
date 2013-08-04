@@ -9,30 +9,39 @@
 #import "GLRegisterViewController.h"
 
 @interface GLRegisterViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *chooseSwitch;
+@property (assign, nonatomic, getter = isChooseOld) BOOL chooseOld;
 @end
 
 @implementation GLRegisterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self setupUserInterface];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setupUserInterface
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
+    [self setTitle:@"注册"];
+}
+
+- (IBAction)didTapChooseSwitch:(id)sender {
+    [self setChooseOld:![sender isSelected]];
+    [sender setSelected:self.chooseOld];
+}
+- (IBAction)didTapNextButton:(id)sender {
+    [self performSegueWithIdentifier:@"next" sender:self];
+}
+- (IBAction)didTapCancelButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"next"]) {
+        [segue.destinationViewController setChooseOld:self.chooseOld];
+    }
 }
 
 @end
