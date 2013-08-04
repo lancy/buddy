@@ -17,6 +17,8 @@
 		BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */; };
 		BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF35010A1768C95000E3ABD1 /* AVFoundation.framework */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
+		BF790BB917ADE9FC007E2FC1 /* GLLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */; };
+		BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */; };
 		BF9360E3176B2F1700A3A928 /* record_power_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E1176B2F1700A3A928 /* record_power_indicator.png */; };
 		BF9360E4176B2F1700A3A928 /* record_power_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */; };
 		BF9360F0176B313A00A3A928 /* MCProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9360EF176B313A00A3A928 /* MCProgressBarView.m */; };
@@ -90,6 +92,10 @@
 		BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRecordViewController.m; sourceTree = "<group>"; };
 		BF35010A1768C95000E3ABD1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
+		BF790BB717ADE9FC007E2FC1 /* GLLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLaunchViewController.h; sourceTree = "<group>"; };
+		BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLaunchViewController.m; sourceTree = "<group>"; };
+		BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterViewController.h; sourceTree = "<group>"; };
+		BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRegisterViewController.m; sourceTree = "<group>"; };
 		BF9360E1176B2F1700A3A928 /* record_power_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_power_indicator.png; sourceTree = "<group>"; };
 		BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_power_indicator@2x.png"; sourceTree = "<group>"; };
 		BF9360EE176B313A00A3A928 /* MCProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProgressBarView.h; sourceTree = "<group>"; };
@@ -202,6 +208,17 @@
 				BF61629B1768C2CE006ED53F /* GLAudioManager.m */,
 			);
 			name = Recorder;
+			sourceTree = "<group>";
+		};
+		BF790BBA17ADEA03007E2FC1 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				BF790BB717ADE9FC007E2FC1 /* GLLaunchViewController.h */,
+				BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */,
+				BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */,
+				BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */,
+			);
+			name = Launch;
 			sourceTree = "<group>";
 		};
 		BF9360ED176B312000A3A928 /* Third Party */ = {
@@ -332,6 +349,7 @@
 				BFDFA74117650D55006668BC /* Reminder */,
 				BFDFA74217650D5F006668BC /* Message */,
 				BFDFA74317650D69006668BC /* More */,
+				BF790BBA17ADEA03007E2FC1 /* Launch */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -543,6 +561,8 @@
 				BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */,
 				BF32230F176B7A9F0008C973 /* GLReminderManager.m in Sources */,
 				BF322312176B7B360008C973 /* NSDictionary+GLReminder.m in Sources */,
+				BF790BB917ADE9FC007E2FC1 /* GLLaunchViewController.m in Sources */,
+				BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
