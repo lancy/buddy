@@ -11,11 +11,12 @@
 
 @interface GLLaunchViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) AKTabBarController *tabBarController;
 
-
-
 @end
+
+NSString * const kPresentRegisterSegueIdentifier = @"presentRegister";
 
 @implementation GLLaunchViewController
 
@@ -28,7 +29,37 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self presentHomeViewController];
+    [self setupScrollView];
+}
+
+#pragma mark - scroll view
+- (void)setupScrollView
+{
+    NSArray *imagesNames = [self introImageNamesOfPrefix:@"LaunchIntroImage-" count:5];
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    [imagesNames enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        UIImage *image = [UIImage imageNamed:obj];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        [imageView setFrame:CGRectMake(pageWidth * idx, 0, pageWidth, image.size.height)];
+        [self.scrollView addSubview:imageView];
+    }];
+    [self.scrollView setContentSize:CGSizeMake(pageWidth * imagesNames.count, self.scrollView.frame.size.height)];
+}
+
+- (NSArray *)introImageNamesOfPrefix:(NSString *)prefix count:(NSInteger)count
+{
+    NSMutableArray *imagesNames = [NSMutableArray array];
+    for (int i = 0; i < count; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"%@%d.png", prefix, i];
+        [imagesNames addObject:imageName];
+    }
+    return [imagesNames copy];
+}
+
+#pragma mark - Register View Controller
+- (void)presentRegisterViewController
+{
+    [self performSegueWithIdentifier:kPresentRegisterSegueIdentifier sender:self];
 }
 
 
@@ -56,6 +87,23 @@
                                             [[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier:@"MoreViewController"]],
                                             nil]];
 }
+
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kPresentRegisterSegueIdentifier]) {
+        
+    }
+}
+
+#pragma mark - action methods
+- (IBAction)didTapRegisterButton:(id)sender {
+    [self presentRegisterViewController];
+}
+
+- (IBAction)didTapLoginButton:(id)sender {
+}
+
 
 - (void)didReceiveMemoryWarning
 {
