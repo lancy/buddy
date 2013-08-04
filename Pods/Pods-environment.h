@@ -6,6 +6,12 @@
 // project.
 
 
+// AFNetworking
+#define COCOAPODS_POD_AVAILABLE_AFNetworking
+#define COCOAPODS_VERSION_MAJOR_AFNetworking 1
+#define COCOAPODS_VERSION_MINOR_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 1
+
 // AKTabBarController
 #define COCOAPODS_POD_AVAILABLE_AKTabBarController
 #define COCOAPODS_VERSION_MAJOR_AKTabBarController 1
