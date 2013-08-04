@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		BF035692176B2575004996DA /* record_mic_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035691176B2575004996DA /* record_mic_icon.png */; };
 		BF035694176B257D004996DA /* record_mic_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035693176B257D004996DA /* record_mic_icon@2x.png */; };
+		BF20BC3B17AE058900EB1980 /* GLRegisterMiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */; };
+		BF20BC4017AE068D00EB1980 /* youngframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3C17AE068D00EB1980 /* youngframe@2x.png */; };
+		BF20BC4117AE068D00EB1980 /* youngframe.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3D17AE068D00EB1980 /* youngframe.png */; };
+		BF20BC4217AE068D00EB1980 /* oldframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3E17AE068D00EB1980 /* oldframe@2x.png */; };
+		BF20BC4317AE068D00EB1980 /* oldframe.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3F17AE068D00EB1980 /* oldframe.png */; };
 		BF322308176B53220008C973 /* record_wave_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322306176B53220008C973 /* record_wave_animation.png */; };
 		BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322307176B53220008C973 /* record_wave_animation@2x.png */; };
 		BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF32230B176B5AE10008C973 /* GLReminderSettingViewController.m */; };
@@ -86,6 +91,17 @@
 		BFDFA76F17662320006668BC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA76D1766231F006668BC /* AddressBook.framework */; };
 		BFDFA77017662320006668BC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA76E17662320006668BC /* AddressBookUI.framework */; };
 		BFDFA77217662E05006668BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDFA77117662E05006668BC /* QuartzCore.framework */; };
+		BFFAD27217ADFFDE008F77AA /* chooseold.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD26E17ADFFDE008F77AA /* chooseold.png */; };
+		BFFAD27317ADFFDE008F77AA /* chooseyoung.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD26F17ADFFDE008F77AA /* chooseyoung.png */; };
+		BFFAD27417ADFFDE008F77AA /* chooseold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27017ADFFDE008F77AA /* chooseold@2x.png */; };
+		BFFAD27517ADFFDE008F77AA /* chooseyoung@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27117ADFFDE008F77AA /* chooseyoung@2x.png */; };
+		BFFAD27C17AE007F008F77AA /* dot1.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27617AE007E008F77AA /* dot1.png */; };
+		BFFAD27D17AE007F008F77AA /* dot2.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27717AE007E008F77AA /* dot2.png */; };
+		BFFAD27E17AE007F008F77AA /* dot3.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27817AE007F008F77AA /* dot3.png */; };
+		BFFAD27F17AE007F008F77AA /* dot3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27917AE007F008F77AA /* dot3@2x.png */; };
+		BFFAD28017AE007F008F77AA /* dot1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27A17AE007F008F77AA /* dot1@2x.png */; };
+		BFFAD28117AE007F008F77AA /* dot2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFAD27B17AE007F008F77AA /* dot2@2x.png */; };
+		BFFAD28A17AE0137008F77AA /* GLRegisterFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFAD28917AE0137008F77AA /* GLRegisterFinishViewController.m */; };
 		D5F6838613F2457881927AC2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD115A314A7248F692A47BF0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +109,12 @@
 		7832FC8B3FFC4EBA962DD164 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BF035691176B2575004996DA /* record_mic_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_mic_icon.png; sourceTree = "<group>"; };
 		BF035693176B257D004996DA /* record_mic_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_mic_icon@2x.png"; sourceTree = "<group>"; };
+		BF20BC3917AE058900EB1980 /* GLRegisterMiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterMiddleViewController.h; sourceTree = "<group>"; };
+		BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRegisterMiddleViewController.m; sourceTree = "<group>"; };
+		BF20BC3C17AE068D00EB1980 /* youngframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youngframe@2x.png"; sourceTree = "<group>"; };
+		BF20BC3D17AE068D00EB1980 /* youngframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youngframe.png; sourceTree = "<group>"; };
+		BF20BC3E17AE068D00EB1980 /* oldframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oldframe@2x.png"; sourceTree = "<group>"; };
+		BF20BC3F17AE068D00EB1980 /* oldframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oldframe.png; sourceTree = "<group>"; };
 		BF322306176B53220008C973 /* record_wave_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_wave_animation.png; sourceTree = "<group>"; };
 		BF322307176B53220008C973 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF32230A176B5AE10008C973 /* GLReminderSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderSettingViewController.h; sourceTree = "<group>"; };
@@ -192,6 +214,18 @@
 		BFDFA76D1766231F006668BC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		BFDFA76E17662320006668BC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		BFDFA77117662E05006668BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BFFAD26E17ADFFDE008F77AA /* chooseold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooseold.png; sourceTree = "<group>"; };
+		BFFAD26F17ADFFDE008F77AA /* chooseyoung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooseyoung.png; sourceTree = "<group>"; };
+		BFFAD27017ADFFDE008F77AA /* chooseold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseold@2x.png"; sourceTree = "<group>"; };
+		BFFAD27117ADFFDE008F77AA /* chooseyoung@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooseyoung@2x.png"; sourceTree = "<group>"; };
+		BFFAD27617AE007E008F77AA /* dot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot1.png; sourceTree = "<group>"; };
+		BFFAD27717AE007E008F77AA /* dot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot2.png; sourceTree = "<group>"; };
+		BFFAD27817AE007F008F77AA /* dot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot3.png; sourceTree = "<group>"; };
+		BFFAD27917AE007F008F77AA /* dot3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot3@2x.png"; sourceTree = "<group>"; };
+		BFFAD27A17AE007F008F77AA /* dot1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot1@2x.png"; sourceTree = "<group>"; };
+		BFFAD27B17AE007F008F77AA /* dot2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot2@2x.png"; sourceTree = "<group>"; };
+		BFFAD28817AE0137008F77AA /* GLRegisterFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterFinishViewController.h; sourceTree = "<group>"; };
+		BFFAD28917AE0137008F77AA /* GLRegisterFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRegisterFinishViewController.m; sourceTree = "<group>"; };
 		FD115A314A7248F692A47BF0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -245,6 +279,10 @@
 				BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */,
 				BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */,
 				BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */,
+				BFFAD28817AE0137008F77AA /* GLRegisterFinishViewController.h */,
+				BFFAD28917AE0137008F77AA /* GLRegisterFinishViewController.m */,
+				BF20BC3917AE058900EB1980 /* GLRegisterMiddleViewController.h */,
+				BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */,
 			);
 			name = Launch;
 			sourceTree = "<group>";
@@ -337,6 +375,20 @@
 		BFDFA71F17650215006668BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF20BC3C17AE068D00EB1980 /* youngframe@2x.png */,
+				BF20BC3D17AE068D00EB1980 /* youngframe.png */,
+				BF20BC3E17AE068D00EB1980 /* oldframe@2x.png */,
+				BF20BC3F17AE068D00EB1980 /* oldframe.png */,
+				BFFAD27617AE007E008F77AA /* dot1.png */,
+				BFFAD27717AE007E008F77AA /* dot2.png */,
+				BFFAD27817AE007F008F77AA /* dot3.png */,
+				BFFAD27917AE007F008F77AA /* dot3@2x.png */,
+				BFFAD27A17AE007F008F77AA /* dot1@2x.png */,
+				BFFAD27B17AE007F008F77AA /* dot2@2x.png */,
+				BFFAD26E17ADFFDE008F77AA /* chooseold.png */,
+				BFFAD26F17ADFFDE008F77AA /* chooseyoung.png */,
+				BFFAD27017ADFFDE008F77AA /* chooseold@2x.png */,
+				BFFAD27117ADFFDE008F77AA /* chooseyoung@2x.png */,
 				BF790C0317ADF957007E2FC1 /* LaunchWhiteButtonPressed.png */,
 				BF790C0417ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png */,
 				BF790C0617ADF957007E2FC1 /* LaunchWhiteButtonNormal.png */,
@@ -558,6 +610,20 @@
 				BF790C0C17ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png in Resources */,
 				BF790C0E17ADF957007E2FC1 /* LaunchWhiteButtonNormal.png in Resources */,
 				BF790C1017ADF957007E2FC1 /* LaunchWhiteButtonPressed@2x.png in Resources */,
+				BFFAD27217ADFFDE008F77AA /* chooseold.png in Resources */,
+				BFFAD27317ADFFDE008F77AA /* chooseyoung.png in Resources */,
+				BFFAD27417ADFFDE008F77AA /* chooseold@2x.png in Resources */,
+				BFFAD27517ADFFDE008F77AA /* chooseyoung@2x.png in Resources */,
+				BFFAD27C17AE007F008F77AA /* dot1.png in Resources */,
+				BFFAD27D17AE007F008F77AA /* dot2.png in Resources */,
+				BFFAD27E17AE007F008F77AA /* dot3.png in Resources */,
+				BFFAD27F17AE007F008F77AA /* dot3@2x.png in Resources */,
+				BFFAD28017AE007F008F77AA /* dot1@2x.png in Resources */,
+				BFFAD28117AE007F008F77AA /* dot2@2x.png in Resources */,
+				BF20BC4017AE068D00EB1980 /* youngframe@2x.png in Resources */,
+				BF20BC4117AE068D00EB1980 /* youngframe.png in Resources */,
+				BF20BC4217AE068D00EB1980 /* oldframe@2x.png in Resources */,
+				BF20BC4317AE068D00EB1980 /* oldframe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +685,8 @@
 				BF322312176B7B360008C973 /* NSDictionary+GLReminder.m in Sources */,
 				BF790BB917ADE9FC007E2FC1 /* GLLaunchViewController.m in Sources */,
 				BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */,
+				BFFAD28A17AE0137008F77AA /* GLRegisterFinishViewController.m in Sources */,
+				BF20BC3B17AE058900EB1980 /* GLRegisterMiddleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
