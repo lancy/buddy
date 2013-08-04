@@ -17,6 +17,8 @@
 @end
 
 NSString * const kPresentRegisterSegueIdentifier = @"presentRegister";
+NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
+
 
 @implementation GLLaunchViewController
 
@@ -62,6 +64,12 @@ NSString * const kPresentRegisterSegueIdentifier = @"presentRegister";
     [self performSegueWithIdentifier:kPresentRegisterSegueIdentifier sender:self];
 }
 
+#pragma mark - Login View Controller
+- (void)presentLoginViewController
+{
+    [self performSegueWithIdentifier:kPresentLoginSegueIdentifier sender:self];
+}
+
 
 #pragma mark - Home View Controller
 
@@ -102,6 +110,7 @@ NSString * const kPresentRegisterSegueIdentifier = @"presentRegister";
 }
 
 - (IBAction)didTapLoginButton:(id)sender {
+    [self presentLoginViewController];
 }
 
 

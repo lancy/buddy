@@ -14,6 +14,11 @@
 		BF20BC4117AE068D00EB1980 /* youngframe.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3D17AE068D00EB1980 /* youngframe.png */; };
 		BF20BC4217AE068D00EB1980 /* oldframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3E17AE068D00EB1980 /* oldframe@2x.png */; };
 		BF20BC4317AE068D00EB1980 /* oldframe.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3F17AE068D00EB1980 /* oldframe.png */; };
+		BF20BC4817AE568B00EB1980 /* loginButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC4417AE568B00EB1980 /* loginButtonPressed@2x.png */; };
+		BF20BC4917AE568B00EB1980 /* loginButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC4517AE568B00EB1980 /* loginButtonPressed.png */; };
+		BF20BC4A17AE568B00EB1980 /* loginButtonNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC4617AE568B00EB1980 /* loginButtonNormal@2x.png */; };
+		BF20BC4B17AE568B00EB1980 /* loginButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC4717AE568B00EB1980 /* loginButtonNormal.png */; };
+		BF20BC4E17AE56C900EB1980 /* GLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */; };
 		BF322308176B53220008C973 /* record_wave_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322306176B53220008C973 /* record_wave_animation.png */; };
 		BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322307176B53220008C973 /* record_wave_animation@2x.png */; };
 		BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF32230B176B5AE10008C973 /* GLReminderSettingViewController.m */; };
@@ -115,6 +120,12 @@
 		BF20BC3D17AE068D00EB1980 /* youngframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youngframe.png; sourceTree = "<group>"; };
 		BF20BC3E17AE068D00EB1980 /* oldframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oldframe@2x.png"; sourceTree = "<group>"; };
 		BF20BC3F17AE068D00EB1980 /* oldframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oldframe.png; sourceTree = "<group>"; };
+		BF20BC4417AE568B00EB1980 /* loginButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginButtonPressed@2x.png"; sourceTree = "<group>"; };
+		BF20BC4517AE568B00EB1980 /* loginButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButtonPressed.png; sourceTree = "<group>"; };
+		BF20BC4617AE568B00EB1980 /* loginButtonNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginButtonNormal@2x.png"; sourceTree = "<group>"; };
+		BF20BC4717AE568B00EB1980 /* loginButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButtonNormal.png; sourceTree = "<group>"; };
+		BF20BC4C17AE56C900EB1980 /* GLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLoginViewController.h; sourceTree = "<group>"; };
+		BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLoginViewController.m; sourceTree = "<group>"; };
 		BF322306176B53220008C973 /* record_wave_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_wave_animation.png; sourceTree = "<group>"; };
 		BF322307176B53220008C973 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF32230A176B5AE10008C973 /* GLReminderSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderSettingViewController.h; sourceTree = "<group>"; };
@@ -283,6 +294,8 @@
 				BFFAD28917AE0137008F77AA /* GLRegisterFinishViewController.m */,
 				BF20BC3917AE058900EB1980 /* GLRegisterMiddleViewController.h */,
 				BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */,
+				BF20BC4C17AE56C900EB1980 /* GLLoginViewController.h */,
+				BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */,
 			);
 			name = Launch;
 			sourceTree = "<group>";
@@ -375,6 +388,10 @@
 		BFDFA71F17650215006668BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF20BC4417AE568B00EB1980 /* loginButtonPressed@2x.png */,
+				BF20BC4517AE568B00EB1980 /* loginButtonPressed.png */,
+				BF20BC4617AE568B00EB1980 /* loginButtonNormal@2x.png */,
+				BF20BC4717AE568B00EB1980 /* loginButtonNormal.png */,
 				BF20BC3C17AE068D00EB1980 /* youngframe@2x.png */,
 				BF20BC3D17AE068D00EB1980 /* youngframe.png */,
 				BF20BC3E17AE068D00EB1980 /* oldframe@2x.png */,
@@ -624,6 +641,10 @@
 				BF20BC4117AE068D00EB1980 /* youngframe.png in Resources */,
 				BF20BC4217AE068D00EB1980 /* oldframe@2x.png in Resources */,
 				BF20BC4317AE068D00EB1980 /* oldframe.png in Resources */,
+				BF20BC4817AE568B00EB1980 /* loginButtonPressed@2x.png in Resources */,
+				BF20BC4917AE568B00EB1980 /* loginButtonPressed.png in Resources */,
+				BF20BC4A17AE568B00EB1980 /* loginButtonNormal@2x.png in Resources */,
+				BF20BC4B17AE568B00EB1980 /* loginButtonNormal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +708,7 @@
 				BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */,
 				BFFAD28A17AE0137008F77AA /* GLRegisterFinishViewController.m in Sources */,
 				BF20BC3B17AE058900EB1980 /* GLRegisterMiddleViewController.m in Sources */,
+				BF20BC4E17AE56C900EB1980 /* GLLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
