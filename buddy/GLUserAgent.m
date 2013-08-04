@@ -55,7 +55,7 @@
                                  @"userTpye": @(userType),
                                  @"phoneNumber": @([phoneNumber integerValue]),
                                  @"password": password,
-                                 @"email": email,
+                                 @"email": (email? email: @""),
                                  };
     [[GLBuddyApiClient sharedClient] postPath:@"register/"
                                    parameters:parameters

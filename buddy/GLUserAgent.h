@@ -21,7 +21,7 @@ typedef enum {
 
 // utils methods
 
-@property (assign, nonatomic) GLUserType *userType;
+@property (assign, nonatomic) GLUserType userType;
 @property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) NSString *contactName;
 @property (strong, nonatomic) UIImage *avatarImage;

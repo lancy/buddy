@@ -7,6 +7,7 @@
 //
 
 #import "GLRegisterMiddleViewController.h"
+#import "GLUserAgent.h"
 
 @interface GLRegisterMiddleViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *avatarBackgroundView;
@@ -37,7 +38,19 @@
 }
 
 - (IBAction)didTapNextButton:(id)sender {
+    [self saveUserInfo];
     [self performSegueWithIdentifier:@"next" sender:self];
+}
+
+- (void)saveUserInfo
+{
+    GLUserAgent *userAgent = [GLUserAgent sharedAgent];
+    if ([self isChooseOld]) {
+        [userAgent setUserType:GLUserTypeOld];
+    } else {
+        [userAgent setUserType:GLUserTypeYoung];
+    }
+    [userAgent setContactName:self.nameTextField.text];
 }
 
 - (void)didReceiveMemoryWarning
