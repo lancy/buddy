@@ -24,14 +24,10 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 1.3)
   - AKTabBarController
-  - CYHelper (from `~/Developer/Specs/CYHelper/1.1.0/CYHelper.podspec`)
+  - CYHelper
   - KZPropertyMapper
   - RETableViewManager
   - SDWebImage
-
-EXTERNAL SOURCES:
-  CYHelper:
-    :podspec: ~/Developer/Specs/CYHelper/1.1.0/CYHelper.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
