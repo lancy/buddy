@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>413153BD-C58D-4C72-9440-D29DAF6664A2</string>
+	<string>3E8B5E26-EB0A-4B23-B06F-055AE722CC17</string>
 	<key>IDESourceControlProjectName</key>
 	<string>buddy</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/lancy/buddy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>buddy.xcworkspace</string>
+	<string>buddy.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>252B3EAB-5F17-4166-853F-C247AAF12FA4</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/lancy/buddy.git</string>
