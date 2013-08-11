@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BF035692176B2575004996DA /* record_mic_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035691176B2575004996DA /* record_mic_icon.png */; };
 		BF035694176B257D004996DA /* record_mic_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035693176B257D004996DA /* record_mic_icon@2x.png */; };
+		BF067BFD17B77D8E0051E8B7 /* GLBuddy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF067BFC17B77D8E0051E8B7 /* GLBuddy.m */; };
+		BF067C0017B782880051E8B7 /* GLBuddyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF067BFF17B782880051E8B7 /* GLBuddyItem.m */; };
+		BF067C0617B78FB40051E8B7 /* KZPropertyMapper+boxValueAsString.m in Sources */ = {isa = PBXBuildFile; fileRef = BF067C0517B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.m */; };
 		BF20BC3B17AE058900EB1980 /* GLRegisterMiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */; };
 		BF20BC4017AE068D00EB1980 /* youngframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3C17AE068D00EB1980 /* youngframe@2x.png */; };
 		BF20BC4117AE068D00EB1980 /* youngframe.png in Resources */ = {isa = PBXBuildFile; fileRef = BF20BC3D17AE068D00EB1980 /* youngframe.png */; };
@@ -31,7 +34,7 @@
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
 		BF790BB917ADE9FC007E2FC1 /* GLLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */; };
 		BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */; };
-		BF790BF717ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png.png */; };
+		BF790BF717ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png */; };
 		BF790BF817ADF45F007E2FC1 /* LaunchIntroImage-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790BEE17ADF45F007E2FC1 /* LaunchIntroImage-3@2x.png */; };
 		BF790BF917ADF45F007E2FC1 /* LaunchIntroImage-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790BEF17ADF45F007E2FC1 /* LaunchIntroImage-4@2x.png */; };
 		BF790BFA17ADF45F007E2FC1 /* LaunchIntroImage-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790BF017ADF45F007E2FC1 /* LaunchIntroImage-1@2x.png */; };
@@ -116,6 +119,12 @@
 		7832FC8B3FFC4EBA962DD164 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BF035691176B2575004996DA /* record_mic_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_mic_icon.png; sourceTree = "<group>"; };
 		BF035693176B257D004996DA /* record_mic_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_mic_icon@2x.png"; sourceTree = "<group>"; };
+		BF067BFB17B77D8E0051E8B7 /* GLBuddy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBuddy.h; sourceTree = "<group>"; };
+		BF067BFC17B77D8E0051E8B7 /* GLBuddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBuddy.m; sourceTree = "<group>"; };
+		BF067BFE17B782880051E8B7 /* GLBuddyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBuddyItem.h; sourceTree = "<group>"; };
+		BF067BFF17B782880051E8B7 /* GLBuddyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBuddyItem.m; sourceTree = "<group>"; };
+		BF067C0417B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KZPropertyMapper+boxValueAsString.h"; sourceTree = "<group>"; };
+		BF067C0517B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KZPropertyMapper+boxValueAsString.m"; sourceTree = "<group>"; };
 		BF20BC3917AE058900EB1980 /* GLRegisterMiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterMiddleViewController.h; sourceTree = "<group>"; };
 		BF20BC3A17AE058900EB1980 /* GLRegisterMiddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRegisterMiddleViewController.m; sourceTree = "<group>"; };
 		BF20BC3C17AE068D00EB1980 /* youngframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youngframe@2x.png"; sourceTree = "<group>"; };
@@ -149,7 +158,7 @@
 		BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLaunchViewController.m; sourceTree = "<group>"; };
 		BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterViewController.h; sourceTree = "<group>"; };
 		BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRegisterViewController.m; sourceTree = "<group>"; };
-		BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage-0@2x.png.png"; sourceTree = "<group>"; };
+		BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage-0@2x.png"; sourceTree = "<group>"; };
 		BF790BEE17ADF45F007E2FC1 /* LaunchIntroImage-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage-3@2x.png"; sourceTree = "<group>"; };
 		BF790BEF17ADF45F007E2FC1 /* LaunchIntroImage-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage-4@2x.png"; sourceTree = "<group>"; };
 		BF790BF017ADF45F007E2FC1 /* LaunchIntroImage-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage-1@2x.png"; sourceTree = "<group>"; };
@@ -267,6 +276,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF067BFA17B77D790051E8B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF067BFB17B77D8E0051E8B7 /* GLBuddy.h */,
+				BF067BFC17B77D8E0051E8B7 /* GLBuddy.m */,
+				BF067C0417B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.h */,
+				BF067C0517B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BF3501091768C8A200E3ABD1 /* Record */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +436,7 @@
 				BF790C0417ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png */,
 				BF790C0617ADF957007E2FC1 /* LaunchWhiteButtonNormal.png */,
 				BF790C0817ADF957007E2FC1 /* LaunchWhiteButtonPressed@2x.png */,
-				BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png.png */,
+				BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png */,
 				BF790BEE17ADF45F007E2FC1 /* LaunchIntroImage-3@2x.png */,
 				BF790BEF17ADF45F007E2FC1 /* LaunchIntroImage-4@2x.png */,
 				BF790BF017ADF45F007E2FC1 /* LaunchIntroImage-1@2x.png */,
@@ -478,6 +498,8 @@
 				BFDFA72117650288006668BC /* GLBuddyViewController.m */,
 				BFDFA738176509E4006668BC /* GLBuddyCell.h */,
 				BFDFA739176509E4006668BC /* GLBuddyCell.m */,
+				BF067BFE17B782880051E8B7 /* GLBuddyItem.h */,
+				BF067BFF17B782880051E8B7 /* GLBuddyItem.m */,
 			);
 			name = Buddy;
 			sourceTree = "<group>";
@@ -517,6 +539,7 @@
 		BFDFA76A1765D3B6006668BC /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				BF067BFA17B77D790051E8B7 /* Model */,
 				BFDFA7641765CF67006668BC /* GLBuddyManager.h */,
 				BFDFA7651765CF68006668BC /* GLBuddyManager.m */,
 				BFDFA7671765D0D9006668BC /* NSDictionary+GLBuddy.h */,
@@ -623,7 +646,7 @@
 				BF9360F9176B316700A3A928 /* progress_fg@2x.png in Resources */,
 				BF322308176B53220008C973 /* record_wave_animation.png in Resources */,
 				BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */,
-				BF790BF717ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png.png in Resources */,
+				BF790BF717ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png in Resources */,
 				BF790BF817ADF45F007E2FC1 /* LaunchIntroImage-3@2x.png in Resources */,
 				BF790BF917ADF45F007E2FC1 /* LaunchIntroImage-4@2x.png in Resources */,
 				BF790BFA17ADF45F007E2FC1 /* LaunchIntroImage-1@2x.png in Resources */,
@@ -721,6 +744,9 @@
 				BF20BC4E17AE56C900EB1980 /* GLLoginViewController.m in Sources */,
 				BF20BC5117AE7B9900EB1980 /* GLBuddyApiClient.m in Sources */,
 				BF20BC5417AE7D3A00EB1980 /* GLUserAgent.m in Sources */,
+				BF067BFD17B77D8E0051E8B7 /* GLBuddy.m in Sources */,
+				BF067C0017B782880051E8B7 /* GLBuddyItem.m in Sources */,
+				BF067C0617B78FB40051E8B7 /* KZPropertyMapper+boxValueAsString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

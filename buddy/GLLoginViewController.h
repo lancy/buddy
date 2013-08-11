@@ -10,4 +10,6 @@
 
 @interface GLLoginViewController : UIViewController
 
+@property (copy, readwrite, nonatomic) void (^loginSuccessHandler)();
+
 @end

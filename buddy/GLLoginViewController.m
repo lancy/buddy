@@ -34,7 +34,10 @@
     [[GLUserAgent sharedAgent] loginWithPhoneNumber:self.phoneNumberTextField.text
                                            password:self.passwordTextField.text
                                           completed:^(APIStatusCode statusCode, GLUserType userType, NSError *error) {
-                                              NSLog(@"status code = %d", statusCode);
+                                              NSLog(@"login api, status code = %d", statusCode);
+                                              if (statusCode == APIStatusCodeOK) {
+                                                  [self dismissViewControllerAnimated:NO completion:[self loginSuccessHandler]];
+                                              }
                                           }];
 }
 

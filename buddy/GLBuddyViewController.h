@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RETableViewManager.h"
+
 
 @interface GLBuddyViewController : UIViewController
+
+@property (strong, readonly, nonatomic) RETableViewManager *manager;
 
 @end

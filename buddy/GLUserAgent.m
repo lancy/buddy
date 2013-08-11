@@ -8,7 +8,7 @@
 
 #import "GLUserAgent.h"
 #import "GLBuddyApiClient.h"
-
+#import "GLBuddy.h"
 @implementation GLUserAgent
 
 + (GLUserAgent *)sharedAgent
@@ -143,10 +143,10 @@
 
 - (void)requestRelativesListWithCompletedBlock:(void (^)(NSArray *relatives, NSError *error))block
 {
-    [[GLBuddyApiClient sharedClient] getPath:@"add_relatives/"
+    [[GLBuddyApiClient sharedClient] getPath:@"get_relatives_list/"
                                    parameters:nil
                                       success:^(AFHTTPRequestOperation *operation, id JSON) {
-                                          NSArray *relatives = JSON;
+                                          NSArray *relatives = [GLBuddy buddysWithJsonObject:JSON];
                                           if (block) {
                                               block(relatives, nil);
                                           }

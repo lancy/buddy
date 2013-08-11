@@ -13,7 +13,7 @@
 #import "NSDictionary+GLBuddy.h"
 
 #import "GLBuddyCell.h"
-
+#import "GLUserAgent.h"
 
 @interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate>
 
@@ -23,15 +23,6 @@
 @end
 
 @implementation GLBuddyViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (NSString *)tabImageName
 {
@@ -44,12 +35,7 @@
     [self customUserinterface];
     [self registerNotificationHandler];
     [self initGestureRecognizer];
-    
-//    #warning test methods, need to remove
-//    [[GLBuddyManager shareManager] clearAllBuddys];
-
-    [self loadBuddyData];
-	// Do any additional setup after loading the view.
+    [self requestRemoteBuddyData];
 }
 
 - (void)initGestureRecognizer
@@ -76,13 +62,28 @@
     negativeSeperator.width = -5;
     
     [self.navigationItem setRightBarButtonItems:@[negativeSeperator, plusBarButton]];
-    
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setupTableViewWithBuddys:(NSArray *)buddys;
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _manager = [[RETableViewManager alloc] initWithTableView:self.tableview];
+    [_manager registerClass:@"GLBuddyItem" forCellWithReuseIdentifier:@"GLBuddyCell"];
+    
+    
+    RETableViewSection *section = [RETableViewSection section];
+    for (GLBuddy *buddy in buddys) {
+        GLBuddyItem *item = [[GLBuddyItem alloc] initWithBuddy:buddy];
+        [item setSelectionHandler:^(GLBuddyItem *item) {
+            [item deselectRowAnimated:YES];
+            GLBuddy *buddy = item.buddy;
+            NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
+            NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", cleanedString]];
+            [[UIApplication sharedApplication] openURL:telURL];
+        }];
+        [section addItem:item];
+    }
+    [_manager addSection:section];
+    [_tableview reloadData];
 }
 
 #pragma mark - data methods
@@ -91,10 +92,12 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadBuddyData) name:BuddysDidChangedNotification object:nil];
 }
-- (void)loadBuddyData
+
+- (void)requestRemoteBuddyData
 {
-    self.buddys = [[GLBuddyManager shareManager] allBuddys];
-    [self.tableview reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [[GLUserAgent sharedAgent] requestRelativesListWithCompletedBlock:^(NSArray *relatives, NSError *error) {
+        [self setupTableViewWithBuddys:relatives];
+    }];
 }
 
 #pragma mark - View Methods
@@ -139,56 +142,6 @@
         [[GLBuddyManager shareManager] removeBuddyWithIndex:actionSheet.tag];
     }
     
-}
-
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.buddys.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"BuddyCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    
-    NSDictionary *buddy = self.buddys[indexPath.row];
-    [(GLBuddyCell *)cell bindBuddyData:buddy];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSDictionary *buddy = self.buddys[indexPath.row];
-    NSString *cleanedString = [[buddy.buddyPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
-    NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", cleanedString]];
-    [[UIApplication sharedApplication] openURL:telURL];
-
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
 }
 
 #pragma mark - People Picker Navagation Delegate

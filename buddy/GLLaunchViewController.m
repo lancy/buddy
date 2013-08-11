@@ -8,6 +8,7 @@
 
 #import "GLLaunchViewController.h"
 #import "AKTabBarController.h"
+#import "GLLoginViewController.h"
 
 @interface GLLaunchViewController ()
 
@@ -101,6 +102,10 @@ NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
 {
     if ([segue.identifier isEqualToString:kPresentRegisterSegueIdentifier]) {
         
+    } else if ([segue.identifier isEqualToString:kPresentLoginSegueIdentifier]) {
+        [(GLLoginViewController *)segue.destinationViewController setLoginSuccessHandler:^{
+            [self presentHomeViewController];
+        }];
     }
 }
 

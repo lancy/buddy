@@ -139,5 +139,15 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
 
 }
 
+- (BOOL)hasBuddyWithPhoneNumber:(NSString *)phoneNumber
+{
+    for (NSDictionary *buddy in _buddys) {
+        if ([buddy.buddyPhoneNumber isEqualToString:phoneNumber]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 
 @end

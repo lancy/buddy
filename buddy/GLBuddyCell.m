@@ -6,41 +6,56 @@
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "GLBuddyCell.h"
 #import "NSDictionary+GLBuddy.h"
-#import <QuartzCore/QuartzCore.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@interface GLBuddyCell()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+
+@end
+
+
 
 @implementation GLBuddyCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
++ (CGFloat)heightWithItem:(NSObject *)item tableViewManager:(RETableViewManager *)tableViewManager
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    return 100;
+}
+
+- (void)cellDidLoad
+{
+    [super cellDidLoad];
+    [self.avatarImageView.layer setCornerRadius:32];
+    [self.avatarImageView.layer setMasksToBounds:YES];
+}
+
+- (void)cellWillAppear
+{
+    [super cellWillAppear];
+    GLBuddy *buddy = self.item.buddy;
+    if (buddy.contactName) {
+        [_nameLabel setText:buddy.contactName];
+    } else {
+        [_nameLabel setText:buddy.phoneNumber];
     }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-- (void)bindBuddyData:(NSDictionary *)buddy
-{
-    [self.nameLabel setText:buddy.buddyName];
     [self.descriptionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
-    if (buddy.avatarPath) {
-        UIImage *avatarImage = [UIImage imageWithContentsOfFile:buddy.avatarPath];
-        [self.avatarImageView.layer setCornerRadius:32];
-        [self.avatarImageView.layer setMasksToBounds:YES];
-        [self.avatarImageView setImage:avatarImage];
+    if (buddy.avatarUrl) {
+        [self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         [self.avatarImageView setHidden:NO];
     } else {
         [self.avatarImageView setHidden:YES];
     }
+}
+
+- (void)cellDidDisappear
+{
+    [super cellDidDisappear];
 }
 
 

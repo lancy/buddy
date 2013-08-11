@@ -15,7 +15,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-Ye-FGF">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="BuddyCell" rowHeight="100" id="fUT-Xx-zm8" customClass="GLBuddyCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="RETableViewManager_GLBuddyItem_0" rowHeight="100" id="fUT-Xx-zm8" customClass="GLBuddyCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -88,10 +88,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="RlJ-5h-4dp" id="dlR-Ka-PUN"/>
-                                    <outlet property="delegate" destination="RlJ-5h-4dp" id="ft1-Mi-zce"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -900,105 +896,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
         <image name="youngframe.png" width="95" height="96"/>
     </resources>
-    <classes>
-        <class className="GLBuddyCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLBuddyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLLaunchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLLaunchViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="GLLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didTapCancelButton:"/>
-                <relationship kind="action" name="didTapLoginButton:"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="GLMessageCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="heartImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLMessageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
-        </class>
-        <class className="GLRecordViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
-        </class>
-        <class className="GLRegisterFinishViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterFinishViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didTapNextButton:"/>
-                <relationship kind="outlet" name="againPasswordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="GLRegisterMiddleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterMiddleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarBackgroundView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="subtitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLRegisterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chooseSwitch" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GLReminderCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="fireDateLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLReminderSettingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderSettingViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="playerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GLReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

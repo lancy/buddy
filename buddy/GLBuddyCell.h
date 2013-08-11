@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RETableViewCell.h"
+#import "GLBuddyItem.h"
 
-@interface GLBuddyCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@interface GLBuddyCell : RETableViewCell
 
-- (void)bindBuddyData:(NSDictionary *)buddy;
+@property (strong, nonatomic) GLBuddyItem *item;
 
 @end

@@ -22,4 +22,6 @@ extern NSString * const BuddysDidChangedNotification;
 - (void)removeBuddyWithIndex:(NSUInteger)index;
 - (void)clearAllBuddys;
 
+- (BOOL)hasBuddyWithPhoneNumber:(NSString *)phoneNumber;
+
 @end
