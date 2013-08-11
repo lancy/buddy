@@ -96,6 +96,7 @@
 - (void)requestRemoteBuddyData
 {
     [[GLUserAgent sharedAgent] requestRelativesListWithCompletedBlock:^(NSArray *relatives, NSError *error) {
+        NSLog(@"relatives = %@", relatives);
         [self setupTableViewWithBuddys:relatives];
     }];
 }

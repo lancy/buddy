@@ -143,7 +143,7 @@
 
 - (void)requestRelativesListWithCompletedBlock:(void (^)(NSArray *relatives, NSError *error))block
 {
-    [[GLBuddyApiClient sharedClient] getPath:@"get_relatives_list/"
+    [[GLBuddyApiClient sharedClient] postPath:@"get_relatives_list/"
                                    parameters:nil
                                       success:^(AFHTTPRequestOperation *operation, id JSON) {
                                           NSArray *relatives = [GLBuddy buddysWithJsonObject:JSON];
