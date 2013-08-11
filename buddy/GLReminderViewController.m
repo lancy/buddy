@@ -12,7 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "GLReminder.h"
 
-@interface GLReminderViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface GLReminderViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSArray *reminders;

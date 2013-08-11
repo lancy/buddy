@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         _buddy = buddy;
+        self.cellIdentifier = @"GLBuddyCell";
     }
     return self;
 }

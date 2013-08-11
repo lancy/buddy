@@ -10,7 +10,7 @@
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
-#define COCOAPODS_VERSION_PATCH_AFNetworking 1
+#define COCOAPODS_VERSION_PATCH_AFNetworking 2
 
 // AKTabBarController
 #define COCOAPODS_POD_AVAILABLE_AKTabBarController
@@ -39,8 +39,8 @@
 // RETableViewManager
 #define COCOAPODS_POD_AVAILABLE_RETableViewManager
 #define COCOAPODS_VERSION_MAJOR_RETableViewManager 1
-#define COCOAPODS_VERSION_MINOR_RETableViewManager 0
-#define COCOAPODS_VERSION_PATCH_RETableViewManager 5
+#define COCOAPODS_VERSION_MINOR_RETableViewManager 1
+#define COCOAPODS_VERSION_PATCH_RETableViewManager 0
 
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage

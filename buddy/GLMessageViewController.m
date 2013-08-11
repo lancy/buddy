@@ -12,7 +12,7 @@
 #import "GLMessageCell.h"
 #import "GLBuddy.h"
 #import "GLMessageItem.h"
-@interface GLMessageViewController () <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate>
+@interface GLMessageViewController () <MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
