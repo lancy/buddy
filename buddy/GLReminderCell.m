@@ -8,22 +8,37 @@
 
 #import "GLReminderCell.h"
 
+@interface GLReminderCell()
+@property (weak, nonatomic) IBOutlet UILabel *fireDateLabel;
+
+@end
+
 @implementation GLReminderCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
++ (CGFloat)heightWithItem:(NSObject *)item tableViewManager:(RETableViewManager *)tableViewManager
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    return 100;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)cellDidLoad
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [super cellDidLoad];
 }
+
+- (void)cellWillAppear
+{
+    [super cellWillAppear];
+    GLReminder *reminder = self.item.reminder;
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateStyle:NSDateFormatterShortStyle];
+    [dateFormater setTimeStyle:NSDateFormatterShortStyle];
+    [_fireDateLabel setText:[dateFormater stringFromDate:reminder.fireDate]];
+}
+
+- (void)cellDidDisappear
+{
+    [super cellDidDisappear];
+}
+
 
 @end

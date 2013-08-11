@@ -25,7 +25,7 @@
             @"contactName": @"contactName",
             @"phoneNumber": @"@String(phoneNumber)",
             @"avatarUrl": @"avatarUrl"
-         }];
+         }];        
     }
     return self;
 }

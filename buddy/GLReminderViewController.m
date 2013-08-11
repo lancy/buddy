@@ -11,7 +11,7 @@
 #import "GLReminderCell.h"
 #import "NSDictionary+GLReminder.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "GLReminder.h"
 
 @interface GLReminderViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -23,15 +23,6 @@
 @end
 
 @implementation GLReminderViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (NSString *)tabImageName
 {
@@ -57,13 +48,27 @@
 - (void)loadRemidnersData
 {
     self.reminders = [[GLReminderManager shareManager] allLocalReminders];
-    [self.tableview reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self setupTableViewWithReminders:self.reminders];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setupTableViewWithReminders:(NSArray *)reminders
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _manager = [[RETableViewManager alloc] initWithTableView:self.tableview];
+    [_manager registerClass:@"GLReminderItem" forCellWithReuseIdentifier:@"GLReminderCell"];
+    
+    RETableViewSection *section = [RETableViewSection section];
+    for (GLReminder *reminder in reminders) {
+        GLReminderItem *item = [[GLReminderItem alloc] initWithReminder:reminder];
+        [item setSelectionHandler:^(GLReminderItem *item) {
+            [item deselectRowAnimated:YES];
+            GLReminder *reminder = item.reminder;
+            self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:reminder.audioFilePath] error:nil];
+            [self.player play];
+        }];
+        [section addItem:item];
+    }
+    [_manager addSection:section];
+    [_tableview reloadData];
 }
 
 - (void)customUserinterface
@@ -91,60 +96,6 @@
 {
     [self performSegueWithIdentifier:@"ShowAudioRecordView" sender:self];
 }
-
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.reminders.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"ReminderCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    NSDictionary *reminder = self.reminders[indexPath.row];
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-    [dateFormater setDateStyle:NSDateFormatterShortStyle];
-    [dateFormater setTimeStyle:NSDateFormatterShortStyle];
-    [[(GLReminderCell *)cell fireDateLabel] setText:[dateFormater stringFromDate:reminder.fireDate]];
-    
-    return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSDictionary *reminder = self.reminders[indexPath.row];
-    
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:reminder.audioFilePath] error:nil];
-    [self.player play];
-}
-
-
 
 - (void)dealloc
 {

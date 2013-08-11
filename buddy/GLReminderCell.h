@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RETableViewCell.h"
+#import "GLReminderItem.h"
 
-@interface GLReminderCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *fireDateLabel;
+@interface GLReminderCell : RETableViewCell
+
+@property (strong, nonatomic) GLReminderItem *item;
 
 @end

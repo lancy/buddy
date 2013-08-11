@@ -31,6 +31,8 @@
 		BF322312176B7B360008C973 /* NSDictionary+GLReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF322311176B7B360008C973 /* NSDictionary+GLReminder.m */; };
 		BF3501081768C89B00E3ABD1 /* GLRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */; };
 		BF35010B1768C95000E3ABD1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF35010A1768C95000E3ABD1 /* AVFoundation.framework */; };
+		BF46F49F17B79F60007B9B04 /* GLReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF46F49E17B79F60007B9B04 /* GLReminder.m */; };
+		BF46F4A217B7A5A7007B9B04 /* GLReminderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF46F4A117B7A5A7007B9B04 /* GLReminderItem.m */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
 		BF790BB917ADE9FC007E2FC1 /* GLLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */; };
 		BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */; };
@@ -153,6 +155,10 @@
 		BF3501061768C89B00E3ABD1 /* GLRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRecordViewController.h; sourceTree = "<group>"; };
 		BF3501071768C89B00E3ABD1 /* GLRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRecordViewController.m; sourceTree = "<group>"; };
 		BF35010A1768C95000E3ABD1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BF46F49D17B79F60007B9B04 /* GLReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminder.h; sourceTree = "<group>"; };
+		BF46F49E17B79F60007B9B04 /* GLReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLReminder.m; sourceTree = "<group>"; };
+		BF46F4A017B7A5A7007B9B04 /* GLReminderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderItem.h; sourceTree = "<group>"; };
+		BF46F4A117B7A5A7007B9B04 /* GLReminderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLReminderItem.m; sourceTree = "<group>"; };
 		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
 		BF790BB717ADE9FC007E2FC1 /* GLLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLaunchViewController.h; sourceTree = "<group>"; };
 		BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLaunchViewController.m; sourceTree = "<group>"; };
@@ -283,6 +289,8 @@
 				BF067BFC17B77D8E0051E8B7 /* GLBuddy.m */,
 				BF067C0417B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.h */,
 				BF067C0517B78FB30051E8B7 /* KZPropertyMapper+boxValueAsString.m */,
+				BF46F49D17B79F60007B9B04 /* GLReminder.h */,
+				BF46F49E17B79F60007B9B04 /* GLReminder.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -512,6 +520,8 @@
 				BFDFA72417650414006668BC /* GLReminderViewController.m */,
 				BFDFA75A1765BA46006668BC /* GLReminderCell.h */,
 				BFDFA75B1765BA46006668BC /* GLReminderCell.m */,
+				BF46F4A017B7A5A7007B9B04 /* GLReminderItem.h */,
+				BF46F4A117B7A5A7007B9B04 /* GLReminderItem.m */,
 			);
 			name = Reminder;
 			sourceTree = "<group>";
@@ -747,6 +757,8 @@
 				BF067BFD17B77D8E0051E8B7 /* GLBuddy.m in Sources */,
 				BF067C0017B782880051E8B7 /* GLBuddyItem.m in Sources */,
 				BF067C0617B78FB40051E8B7 /* KZPropertyMapper+boxValueAsString.m in Sources */,
+				BF46F49F17B79F60007B9B04 /* GLReminder.m in Sources */,
+				BF46F4A217B7A5A7007B9B04 /* GLReminderItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

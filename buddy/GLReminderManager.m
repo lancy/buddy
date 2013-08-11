@@ -8,7 +8,7 @@
 
 #import "GLReminderManager.h"
 #import "NSDictionary+GLReminder.h"
-
+#import "GLReminder.h"
 NSString * const LocalRemindersDidChangedNotification = @"GLLocalRemindersDidChangedNotificaton";
 
 
@@ -49,11 +49,15 @@ NSString * const LocalRemindersDidChangedNotification = @"GLLocalRemindersDidCha
 
 - (void)addNewLocalReminderWithFireDate:(NSDate *)fireDate audioFilePath:(NSString *)audioFilePath
 {
-    NSMutableDictionary *newReminder = [[NSMutableDictionary alloc] init];
+    GLReminder *newReminder = [[GLReminder alloc] init];
     [newReminder setFireDate:fireDate];
     [newReminder setAudioFilePath:audioFilePath];
     [self.localReminders addObject:newReminder];
-    [self.localReminders sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"fireDate" ascending:YES]]];
+    [self.localReminders sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        GLReminder *reminder1 = (GLReminder *)obj1;
+        GLReminder *reminder2 = (GLReminder *)obj2;
+        return [reminder1.fireDate compare:reminder2.fireDate];
+    }];
     
     [self saveLocalRemindersToFile];
 }
@@ -62,22 +66,27 @@ NSString * const LocalRemindersDidChangedNotification = @"GLLocalRemindersDidCha
 
 - (void)loadLocalRemindersFromFile
 {
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"localReminders.plist"];
-    self.localReminders = [NSMutableArray arrayWithContentsOfFile:plistPath];
+    NSString *plistPath = [self plistPath];
+    NSArray *dictionaryValues = [NSMutableArray arrayWithContentsOfFile:plistPath];
+    self.localReminders = [[GLReminder remindersFromDictionaryValues:dictionaryValues] mutableCopy];
 }
 
 - (void)saveLocalRemindersToFile
 {
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"localReminders.plist"];
-    [self.localReminders writeToFile:plistPath atomically:YES];
+    NSString *plistPath = [self plistPath];
+    NSArray *dictionaryValues = [GLReminder dictionaryValuesFromReminders:self.localReminders];
+    [dictionaryValues writeToFile:plistPath atomically:YES];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:LocalRemindersDidChangedNotification
                                                         object:self
                                                       userInfo:@{@"newLocalReminders": [self allLocalReminders]}];
 }
 
-
+- (NSString *)plistPath
+{
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"localReminders.plist"];
+    return plistPath;
+}
 
 @end

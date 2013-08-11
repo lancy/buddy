@@ -15,7 +15,6 @@
 @property (copy, nonatomic) NSString *avatarUrl;
 
 - (id)initWithJsonObject:(NSDictionary *)jsonObject;
-
 + (NSArray *)buddysWithJsonObject:(NSDictionary *)jsonObject;
 
 @end

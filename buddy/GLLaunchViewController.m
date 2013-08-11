@@ -69,6 +69,7 @@ NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
 - (void)presentLoginViewController
 {
     [self performSegueWithIdentifier:kPresentLoginSegueIdentifier sender:self];
+//    [self presentHomeViewController];
 }
 
 
