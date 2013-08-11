@@ -12,12 +12,17 @@
 #import "GLBuddyCell.h"
 #import "GLUserAgent.h"
 
-@interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate>
+@interface GLBuddyViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
+@property (strong, nonatomic) UITextField *nameTextField;
+@property (strong, nonatomic) UITextField *phoneTextField;
+
 @end
+
+const NSInteger kActionSheetTagAddBuddy = 1014;
 
 @implementation GLBuddyViewController
 
@@ -101,9 +106,15 @@
 #pragma mark - View Methods
 - (void)didTapPlusButton:(id)sender
 {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"添加伙伴" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"从通讯录添加", @"输入号码", nil];
+    [actionSheet setTag:kActionSheetTagAddBuddy];
+    [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
+}
+
+- (void)presentPeoplePicker
+{
     ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
-    
     [self presentViewController:picker animated:YES completion:nil];
 }
 
@@ -132,12 +143,56 @@
     [actionSheet showInView:[[UIApplication sharedApplication] keyWindow]];
 }
 
+- (void)showAddPeopleAlertView
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"添加伙伴" message:@"   " delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"添加", nil];
+    [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    _nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
+    [_nameTextField setBackgroundColor:[UIColor whiteColor]];
+    [_nameTextField setPlaceholder:@"姓名"];
+    [alertView addSubview:_nameTextField];
+    
+    _phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 85.0, 260.0, 25.0)];
+    [_phoneTextField setBackgroundColor:[UIColor whiteColor]];
+    [_phoneTextField setPlaceholder:@"电话号码"];
+    [alertView addSubview:_phoneTextField];
+    
+    [alertView show];
+    [_nameTextField becomeFirstResponder];
+}
+
+#pragma mark - Alert View Delegate Methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        // add contact
+        [[GLUserAgent sharedAgent] addRelativeWithPhoneNumber:_phoneTextField.text contactName:_nameTextField.text completed:^(APIStatusCode statusCode, NSError *error) {
+            NSLog(@"Add Relative API, statue = %d", statusCode);
+            if (statusCode == APIStatusCodeFriendAddedSuccess) {
+                [self requestRemoteBuddyData];
+            }
+        }];
+    }
+}
+
 #pragma mark - Action Sheet Delegate methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == actionSheet.destructiveButtonIndex) {
-        [[GLBuddyManager shareManager] removeBuddyWithIndex:actionSheet.tag];
+    if (actionSheet.tag == kActionSheetTagAddBuddy) {
+        if (buttonIndex == actionSheet.cancelButtonIndex) {
+            // cancle
+        } else if (buttonIndex == 0) {
+            // add from address book
+            [self presentPeoplePicker];
+        } else if (buttonIndex == 1) {
+            [self showAddPeopleAlertView];
+        }
+    } else {
+        if (buttonIndex == actionSheet.destructiveButtonIndex) {
+            [[GLBuddyManager shareManager] removeBuddyWithIndex:actionSheet.tag];
+        }
     }
 }
 
