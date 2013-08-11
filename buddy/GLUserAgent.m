@@ -8,7 +8,9 @@
 
 #import "GLUserAgent.h"
 #import "GLBuddyApiClient.h"
+#import "GLBuddyManager.h"
 #import "GLBuddy.h"
+
 @implementation GLUserAgent
 
 + (GLUserAgent *)sharedAgent
@@ -117,6 +119,45 @@
 
 }
 
+- (void)addRelativeWithPersonRef:(ABRecordRef)person
+                         completed:(void (^)(APIStatusCode statusCode, NSError *error))block
+
+{
+    // get full name
+    NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+                                                                         kABPersonFirstNameProperty);
+    NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person,
+                                                                        kABPersonLastNameProperty);
+    NSString *fullName;
+    if (firstName && lastName) {
+        fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    } else if (firstName) {
+        fullName = firstName;
+    } else {
+        fullName = lastName;
+    }
+    
+    // get phone number
+    NSString* phone = nil;
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
+                                                     kABPersonPhoneProperty);
+    if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        phone = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+    } else {
+        phone = @"[None]";
+    }
+    CFRelease(phoneNumbers);
+    
+    // get avatar image
+    NSData  *imgData = (__bridge_transfer NSData *) ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *avatarPath = [documentsDirectory stringByAppendingPathComponent:fullName];
+    [imgData writeToFile:avatarPath atomically:YES];
+    
+    [self addRelativeWithPhoneNumber:phone contactName:fullName completed:block];
+}
+
 - (void)addRelativeWithPhoneNumber:(NSString *)phoneNumber
                        contactName:(NSString *)contactName
                          completed:(void (^)(APIStatusCode statusCode, NSError *error))block
@@ -147,6 +188,7 @@
                                    parameters:nil
                                       success:^(AFHTTPRequestOperation *operation, id JSON) {
                                           NSArray *relatives = [GLBuddy buddysWithJsonObject:JSON];
+                                          [[GLBuddyManager shareManager] setRemotesBuddys:relatives];
                                           if (block) {
                                               block(relatives, nil);
                                           }

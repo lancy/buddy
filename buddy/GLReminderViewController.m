@@ -9,7 +9,6 @@
 #import "GLReminderViewController.h"
 #import "GLReminderManager.h"
 #import "GLReminderCell.h"
-#import "NSDictionary+GLReminder.h"
 #import <AVFoundation/AVFoundation.h>
 #import "GLReminder.h"
 

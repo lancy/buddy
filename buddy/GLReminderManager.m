@@ -7,7 +7,6 @@
 //
 
 #import "GLReminderManager.h"
-#import "NSDictionary+GLReminder.h"
 #import "GLReminder.h"
 NSString * const LocalRemindersDidChangedNotification = @"GLLocalRemindersDidChangedNotificaton";
 

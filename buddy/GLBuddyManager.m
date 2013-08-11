@@ -7,9 +7,7 @@
 //
 
 #import "GLBuddyManager.h"
-
-#import "NSDictionary+GLBuddy.h"
-
+#import "GLBuddy.h"
 NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton";
 
 @interface GLBuddyManager()
@@ -89,20 +87,23 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
                 phoneNumber:(NSString *)phoneNumber
                  avatarPath:(NSString *)avatarPath
 {
-    NSMutableDictionary *newBuddy = [[NSMutableDictionary alloc] init];
-    [newBuddy setBuddyName:name];
-    [newBuddy setBuddyPhoneNumber:phoneNumber];
-    [newBuddy setAvatarPath:avatarPath];
-    
-    [self.buddys addObject:newBuddy];
-    [self saveBuddysToFile];
+//    GLBuddy *buddy = [[GLBuddy alloc] init];
+//    [buddy setContactName:name];
+//    [buddy setPhoneNumber:phoneNumber];
+//        NSMutableDictionary *newBuddy = [[NSMutableDictionary alloc] init];
+//    [newBuddy setBuddyName:name];
+//    [newBuddy setBuddyPhoneNumber:phoneNumber];
+//    [newBuddy setAvatarPath:avatarPath];
+//    
+//    [self.buddys addObject:newBuddy];
+//    [self saveBuddysToFile];
 }
 
 - (void)updateBuddyMessageTimeWithIndex:(NSUInteger)index
 {
-    NSTimeInterval currentTimeStamp = [[NSDate date] timeIntervalSince1970];
-    [self.buddys[index] setLastMessageTimeStamp:currentTimeStamp];
-    [self saveBuddysToFile];
+//    NSTimeInterval currentTimeStamp = [[NSDate date] timeIntervalSince1970];
+//    [self.buddys[index] setLastMessageTimeStamp:currentTimeStamp];
+//    [self saveBuddysToFile];
 }
 
 - (void)removeBuddyWithIndex:(NSUInteger)index
@@ -141,8 +142,8 @@ NSString * const BuddysDidChangedNotification = @"GLBuddysDidChangedNotificaton"
 
 - (BOOL)hasBuddyWithPhoneNumber:(NSString *)phoneNumber
 {
-    for (NSDictionary *buddy in _buddys) {
-        if ([buddy.buddyPhoneNumber isEqualToString:phoneNumber]) {
+    for (GLBuddy *buddy in _buddys) {
+        if ([buddy.phoneNumber isEqualToString:phoneNumber]) {
             return YES;
         }
     }

@@ -7,49 +7,55 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "SDWebImage/UIImageView+WebCache.h"
 #import "GLMessageCell.h"
-#import "NSDictionary+GLBuddy.h"
+
+@interface GLMessageCell()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *heartImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@end
 
 @implementation GLMessageCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+
++ (CGFloat)heightWithItem:(NSObject *)item tableViewManager:(RETableViewManager *)tableViewManager
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    return 100;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)cellDidLoad
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [super cellDidLoad];
+    [_avatarImageView.layer setCornerRadius:32];
+    [_avatarImageView.layer setMasksToBounds:YES];
 }
 
-- (void)bindBuddyData:(NSDictionary *)buddy
+- (void)cellWillAppear
 {
-    [self.nameLabel setText:buddy.buddyName];
-    [self.descriptionLabel setText:NSLocalizedString(@"Click here to message him/her.", nil)];
-    NSTimeInterval secondsOfADay = 24 * 60 * 60;
-    NSTimeInterval currentTimeStamp = [[NSDate date] timeIntervalSince1970];
-    if (currentTimeStamp - buddy.lastMessageTimeStamp >  secondsOfADay) {
-        [self.heartImageView setImage:[UIImage imageNamed:@"message_tableviewcell_unsend.png"]];
+    [super cellWillAppear];
+    GLBuddy *buddy = self.item.buddy;
+    if (buddy.contactName) {
+        [_nameLabel setText:buddy.contactName];
     } else {
-        [self.heartImageView setImage:[UIImage imageNamed:@"message_tableviewcell_sent.png"]];
+        [_nameLabel setText:buddy.phoneNumber];
     }
-    if (buddy.avatarPath) {
-        UIImage *avatarImage = [UIImage imageWithContentsOfFile:buddy.avatarPath];
-        [self.avatarImageView.layer setCornerRadius:32];
-        [self.avatarImageView.layer setMasksToBounds:YES];
-        [self.avatarImageView setImage:avatarImage];
-        [self.avatarImageView setHidden:NO];
+    [_descriptionLabel setText:NSLocalizedString(@"Click here to message him/her.", nil)];
+    if (buddy.avatarUrl) {
+        [_avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
+        [_avatarImageView setHidden:NO];
     } else {
-        [self.avatarImageView setHidden:YES];
+        [_avatarImageView setHidden:YES];
     }
-
 }
+
+- (void)cellDidDisappear
+{
+    [super cellDidDisappear];
+}
+
 
 
 @end

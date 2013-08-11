@@ -6,32 +6,20 @@
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
 
+#import <MessageUI/MessageUI.h>
 #import "GLMessageViewController.h"
 #import "GLBuddyManager.h"
 #import "GLMessageCell.h"
-#import "NSDictionary+GLBuddy.h"
-
-#import <MessageUI/MessageUI.h>
-
+#import "GLBuddy.h"
+#import "GLMessageItem.h"
 @interface GLMessageViewController () <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
-@property (assign) NSUInteger currentSelectedBuddyIndex;
-
 @end
 
 @implementation GLMessageViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (NSString *)tabImageName
 {
@@ -45,13 +33,6 @@
     [self loadBuddyData];
     [self registerNotificationHandler];
     [self customUserinterface];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)customUserinterface
@@ -61,8 +42,6 @@
 
 #pragma mark - data methods
 
-#warning TODO: need reload after a day
-
 - (void)registerNotificationHandler
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadBuddyData) name:BuddysDidChangedNotification object:nil];
@@ -70,67 +49,41 @@
 
 - (void)loadBuddyData
 {
-    self.buddys = [[GLBuddyManager shareManager] allBuddys];
-    [self.tableview reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    self.buddys = [[GLBuddyManager shareManager] remotesBuddys];
+    [self setupTableViewWithBuddys:self.buddys];
 }
 
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)setupTableViewWithBuddys:(NSArray *)buddys;
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.buddys.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100;
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"MessageCell";
+    _manager = [[RETableViewManager alloc] initWithTableView:self.tableview];
+    [_manager registerClass:@"GLMessageItem" forCellWithReuseIdentifier:@"GLMessageCell"];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
     
-    NSDictionary *buddy = self.buddys[indexPath.row];
-    [(GLMessageCell *)cell bindBuddyData:buddy];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.currentSelectedBuddyIndex = indexPath.row;
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSDictionary *buddy = self.buddys[indexPath.row];
-    NSString *cleanedString = [[buddy.buddyPhoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
-    
-    if ([MFMessageComposeViewController canSendText]) {
-        MFMessageComposeViewController *messageComposer =
-        [[MFMessageComposeViewController alloc] init];
-        NSString *message = NSLocalizedString(@"I miss you dear, call me if you have time.", nil);
-        [messageComposer setRecipients:@[cleanedString]];
-        [messageComposer setBody:message];
-        messageComposer.messageComposeDelegate = self;
-        [self presentViewController:messageComposer animated:YES completion:nil];
-    } else {
+    RETableViewSection *section = [RETableViewSection section];
+    for (GLBuddy *buddy in buddys) {
+        GLMessageItem *item = [[GLMessageItem alloc] initWithBuddy:buddy];
+        [item setSelectionHandler:^(GLMessageItem *item) {
+            [item deselectRowAnimated:YES];
+            GLBuddy *buddy = item.buddy;
+            NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
+            
+            if ([MFMessageComposeViewController canSendText]) {
+                MFMessageComposeViewController *messageComposer =
+                [[MFMessageComposeViewController alloc] init];
+                NSString *message = NSLocalizedString(@"I miss you dear, call me if you have time.", nil);
+                [messageComposer setRecipients:@[cleanedString]];
+                [messageComposer setBody:message];
+                messageComposer.messageComposeDelegate = self;
+                [self presentViewController:messageComposer animated:YES completion:nil];
+            } else {
 #warning DOTO: exception handle;
-    }
-}
+            }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+        }];
+        [section addItem:item];
+    }
+    [_manager addSection:section];
+    [_tableview reloadData];
 }
 
 #pragma mark - message delegate methods
@@ -144,14 +97,8 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     } else if (result == MessageComposeResultSent) {
         // give current buddy a red heart
-        [[GLBuddyManager shareManager] updateBuddyMessageTimeWithIndex:self.currentSelectedBuddyIndex];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-}
-
-- (void)updateRecentlyMessageTimeOfCurrentSelectedBuddy
-{
-    
 }
 
 - (void)dealloc

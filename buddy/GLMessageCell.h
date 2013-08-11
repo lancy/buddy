@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RETableViewCell.h"
+#import "GLMessageItem.h"
 
-@interface GLMessageCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *heartImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@interface GLMessageCell : RETableViewCell
 
-- (void)bindBuddyData:(NSDictionary *)buddy;
+@property (strong, nonatomic) GLMessageItem *item;
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AddressBookUI/AddressBookUI.h>
 #import "GLBuddyApiClient.h"
 
 
@@ -46,6 +47,9 @@ typedef enum {
 
 - (void)updateAvatarWithAvatarImage:(UIImage *)avatarImage
                           completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
+
+- (void)addRelativeWithPersonRef:(ABRecordRef)person
+                       completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
 
 - (void)addRelativeWithPhoneNumber:(NSString *)phoneNumber
                        contactName:(NSString *)contactName

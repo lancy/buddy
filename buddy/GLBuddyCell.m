@@ -7,9 +7,8 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "SDWebImage/UIImageView+WebCache.h"
 #import "GLBuddyCell.h"
-#import "NSDictionary+GLBuddy.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface GLBuddyCell()
 

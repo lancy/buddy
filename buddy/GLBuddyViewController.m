@@ -8,10 +8,7 @@
 
 #import <AddressBookUI/AddressBookUI.h>
 #import "GLBuddyViewController.h"
-
 #import "GLBuddyManager.h"
-#import "NSDictionary+GLBuddy.h"
-
 #import "GLBuddyCell.h"
 #import "GLUserAgent.h"
 
@@ -126,8 +123,8 @@
 
 - (void)showActionSheetWithBuddyIndex:(NSUInteger)index
 {
-    NSDictionary *buddy = self.buddys[index];
-    NSString *actionSheetTitle = [NSString stringWithFormat:@"%@%@?", NSLocalizedString(@"Remove ", nil), buddy.buddyName];
+    GLBuddy *buddy = self.buddys[index];
+    NSString *actionSheetTitle = [NSString stringWithFormat:@"%@%@?", NSLocalizedString(@"Remove ", nil), buddy.contactName];
     NSString *cancelTitle = NSLocalizedString(@"Cancle", nil);
     NSString *removeTitle = NSLocalizedString(@"Remove", nil);
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle delegate:self cancelButtonTitle:cancelTitle destructiveButtonTitle:removeTitle otherButtonTitles:nil];
@@ -142,7 +139,6 @@
     if (buttonIndex == actionSheet.destructiveButtonIndex) {
         [[GLBuddyManager shareManager] removeBuddyWithIndex:actionSheet.tag];
     }
-    
 }
 
 #pragma mark - People Picker Navagation Delegate
@@ -157,10 +153,10 @@
 - (BOOL)peoplePickerNavigationController:
 (ABPeoplePickerNavigationController *)peoplePicker
       shouldContinueAfterSelectingPerson:(ABRecordRef)person {
-    
     [[GLBuddyManager shareManager] addNewBuddyWithPerson:person];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[GLUserAgent sharedAgent] addRelativeWithPersonRef:person completed:^(APIStatusCode statusCode, NSError *error) {
+        NSLog(@"add relative api, status = %d", statusCode);
+    }];
     return NO;
 }
 

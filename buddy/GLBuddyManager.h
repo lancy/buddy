@@ -15,6 +15,8 @@ extern NSString * const BuddysDidChangedNotification;
 
 + (GLBuddyManager *)shareManager;
 
+@property (strong, nonatomic) NSArray *remotesBuddys;
+
 - (NSArray *)allBuddys;
 - (void)addNewBuddyWithPerson:(ABRecordRef)person;
 - (void)addNewBuddyWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber avatarPath:(NSString *)avatarPath;
