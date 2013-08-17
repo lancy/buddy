@@ -584,7 +584,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstAttribute="trailing" secondItem="8RC-TR-yzD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ycr-dT-lxd"/>
                             <constraint firstItem="8RC-TR-yzD" firstAttribute="centerX" secondItem="dk5-j4-du6" secondAttribute="centerX" type="default" id="cOz-mi-mpi"/>
                             <constraint firstAttribute="bottom" secondItem="dk5-j4-du6" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="hzO-Ay-fXq"/>
-                            <constraint firstItem="q1U-Pb-18D" firstAttribute="top" secondItem="6oj-yZ-AIi" secondAttribute="top" constant="99" id="lnF-a2-Y3Y"/>
+                            <constraint firstItem="q1U-Pb-18D" firstAttribute="top" secondItem="6oj-yZ-AIi" secondAttribute="top" constant="39" id="kpz-VJ-DAk"/>
                             <constraint firstItem="Pct-9V-yQS" firstAttribute="centerX" secondItem="q1U-Pb-18D" secondAttribute="centerX" type="default" id="nRx-de-BDw"/>
                             <constraint firstItem="dk5-j4-du6" firstAttribute="top" secondItem="8RC-TR-yzD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pEy-Vo-hbb"/>
                             <constraint firstItem="ajz-Pt-uAh" firstAttribute="centerX" secondItem="Pct-9V-yQS" secondAttribute="centerX" type="default" id="qdN-z7-1zm"/>
@@ -953,6 +953,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="GLRegisterMiddleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterMiddleViewController.h"/>
             <relationships>
+                <relationship kind="action" name="didTapNextButton:"/>
                 <relationship kind="outlet" name="avatarBackgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="subtitleLabel" candidateClass="UILabel"/>
