@@ -203,8 +203,7 @@
 }
 
 - (NSString *) getAPIStatusCodeDescription:(APIStatusCode)APIStatusCode {
-    //Why i cannot make the mapping static
-    NSDictionary *mapping = @{
+    const NSDictionary *mapping = @{
                               @(APIStatusCodeError): @"系统错误",
                               @(APIStatusCodeFileError): @"文件大小错误(>2MB)",
                               @(APIStatusCodeFileMiss): @"文件丢失",
@@ -215,7 +214,7 @@
                               @(APIStatusCodeOK): @"成功",
                               @(APIStatusCodeParamsError): @"参数类型错误",
                               @(APIStatusCodePasswordError): @"密码错误",
-                              @(APIStatusCodeUsernameError): @"用户名已存在",
+                              @(APIStatusCodeUsernameError): @"用户名错误",
                               };
     return [mapping objectForKey:@(APIStatusCode)];
 }
