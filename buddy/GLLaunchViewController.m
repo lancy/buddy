@@ -9,6 +9,7 @@
 #import "GLLaunchViewController.h"
 #import "AKTabBarController.h"
 #import "GLLoginViewController.h"
+#import "GLUserAgent.h"
 
 @interface GLLaunchViewController ()
 
@@ -27,12 +28,34 @@ NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleUserRegisterSuccess:) name:GLUserRegisterDidSuccessNotificaton object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:GLUserRegisterDidSuccessNotificaton object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self setupScrollView];
+}
+
+#pragma mark - Notification handler
+- (void)handleUserRegisterSuccess:(NSNotification *)notification
+{
+    GLUserAgent *agent = [GLUserAgent sharedAgent];
+    [[GLUserAgent sharedAgent] loginWithPhoneNumber:agent.phoneNumber
+                                           password:agent.password
+                                          completed:^(APIStatusCode statusCode, GLUserType userType, NSError *error) {
+                                              NSLog(@"login api, status code = %d", statusCode);
+                                              if (statusCode == APIStatusCodeOK) {
+                                                  [self presentHomeViewController];
+                                              }else{
+                                                  [ [GLUserAgent sharedAgent] showErrorDialog:statusCode ];
+                                              }
+                                          }];
 }
 
 #pragma mark - scroll view

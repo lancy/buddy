@@ -11,6 +11,8 @@
 #import "GLBuddyApiClient.h"
 
 
+extern NSString * const GLUserRegisterDidSuccessNotificaton;
+
 typedef enum {
     GLUserTypeOld = 0,
     GLUserTypeYoung = 1

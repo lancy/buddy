@@ -11,6 +11,9 @@
 #import "GLBuddyManager.h"
 #import "GLBuddy.h"
 
+NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSuccessNotificaton";
+
+
 @implementation GLUserAgent
 
 + (GLUserAgent *)sharedAgent

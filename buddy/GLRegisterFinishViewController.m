@@ -52,14 +52,13 @@
     NSString *userName = userAgent.contactName;
     
     [userAgent registerWithUserType:userType userName:userName phoneNumber:phoneNumber password:password email:email completed:^(APIStatusCode statusCode, NSError *error) {
-
         if(statusCode == APIStatusCodeOK){
-            UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"OK" message:@"注册成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [av show];
-        }else {
+            [self dismissViewControllerAnimated:NO completion:^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:GLUserRegisterDidSuccessNotificaton object:nil];
+            }];
+        } else {
             [userAgent showErrorDialog:statusCode];
         }
-        
             NSLog(@"status code = %d", statusCode);
     }];
 }
