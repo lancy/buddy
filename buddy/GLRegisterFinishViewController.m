@@ -57,8 +57,7 @@
             UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"OK" message:@"注册成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [av show];
         }else {
-            UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"错误" message:[NSString stringWithFormat:@"错误代码：%d",statusCode] delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
-            [av show];
+            [userAgent showErrorDialog:statusCode];
         }
         
             NSLog(@"status code = %d", statusCode);

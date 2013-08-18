@@ -202,5 +202,27 @@
                                       }];
 }
 
+- (NSString *) getAPIStatusCodeDescription:(APIStatusCode)APIStatusCode {
+    //Why i cannot make the mapping static
+    NSDictionary *mapping = @{
+                              @(APIStatusCodeError): @"系统错误",
+                              @(APIStatusCodeFileError): @"文件大小错误(>2MB)",
+                              @(APIStatusCodeFileMiss): @"文件丢失",
+                              @(APIStatusCodeFriendAddedError): @"添加好友错误",
+                              @(APIStatusCodeFriendAddedSuccess): @"添加好友成功",
+                              @(APIStatusCodeFriendNotRegistered): @"好友未注册",
+                              @(APIStatusCodeNeedParams): @"参数不足",
+                              @(APIStatusCodeOK): @"成功",
+                              @(APIStatusCodeParamsError): @"参数类型错误",
+                              @(APIStatusCodePasswordError): @"密码错误",
+                              @(APIStatusCodeUsernameError): @"用户名已存在",
+                              };
+    return [mapping objectForKey:@(APIStatusCode)];
+}
+
+- (void) showErrorDialog:(APIStatusCode)statusCode {
+    UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"错误" message:[NSString stringWithFormat:@"错误代码：%d\n 错误原因：%@", statusCode, [[GLUserAgent sharedAgent] getAPIStatusCodeDescription:statusCode]  ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [av show];
+}
 
 @end

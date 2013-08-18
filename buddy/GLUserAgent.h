@@ -60,4 +60,7 @@ typedef enum {
 
 - (void)requestRelativesListWithCompletedBlock:(void (^)(NSArray *relatives, NSError *error))block;
 
+- (NSString *) getAPIStatusCodeDescription : (APIStatusCode) APIStatusCode;
+
+- (void) showErrorDialog:(APIStatusCode) APIStatusCode;
 @end

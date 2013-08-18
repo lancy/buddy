@@ -37,6 +37,8 @@
                                               NSLog(@"login api, status code = %d", statusCode);
                                               if (statusCode == APIStatusCodeOK) {
                                                   [self dismissViewControllerAnimated:NO completion:[self loginSuccessHandler]];
+                                              }else{
+                                                  [ [GLUserAgent sharedAgent] showErrorDialog:statusCode ];
                                               }
                                           }];
 }
