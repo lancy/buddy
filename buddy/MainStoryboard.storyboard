@@ -772,6 +772,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="INO-NB-eGV" firstAttribute="top" secondItem="XCC-2x-J7F" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="yMf-eC-mIo"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fiX-qq-3aW"/>
                     <connections>
                         <outlet property="passwordTextField" destination="XCC-2x-J7F" id="Ld3-9M-fsN"/>
                         <outlet property="phoneNumberTextField" destination="O5a-gQ-3DT" id="zOh-cX-Zah"/>
@@ -953,7 +954,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="GLRegisterMiddleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterMiddleViewController.h"/>
             <relationships>
-                <relationship kind="action" name="didTapNextButton:"/>
                 <relationship kind="outlet" name="avatarBackgroundView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="subtitleLabel" candidateClass="UILabel"/>

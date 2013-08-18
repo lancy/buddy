@@ -37,10 +37,13 @@ typedef enum {
                    completed:(void (^)(APIStatusCode statusCode, GLUserType userType, NSError *error))block;
 
 - (void)registerWithUserType:(GLUserType)userType
+                    userName:(NSString *)userName
                  phoneNumber:(NSString *)phoneNumber
                     password:(NSString *)password
                        email:(NSString *)email
                    completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
+
+
 
 - (void)updatePushTokenWithPushToken:(NSString *)pushToken
                            completed:(void (^)(APIStatusCode statusCode, NSError *error))block;

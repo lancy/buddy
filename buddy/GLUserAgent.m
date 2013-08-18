@@ -48,16 +48,18 @@
 }
 
 - (void)registerWithUserType:(GLUserType)userType
+                    userName:(NSString *)userName
                  phoneNumber:(NSString *)phoneNumber
                     password:(NSString *)password
                        email:(NSString *)email
                    completed:(void (^)(APIStatusCode statusCode, NSError *error))block
 {
     NSDictionary *parameters = @{
-                                 @"userTpye": @(userType),
-                                 @"phoneNumber": @([phoneNumber integerValue]),
+                                 @"userType": @(userType),
+                                 @"phoneNumber": @([phoneNumber longLongValue]),
                                  @"password": password,
                                  @"email": (email? email: @""),
+                                 @"userName": userName,
                                  };
     [[GLBuddyApiClient sharedClient] postPath:@"register/"
                                    parameters:parameters

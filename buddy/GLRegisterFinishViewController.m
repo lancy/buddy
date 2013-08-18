@@ -49,8 +49,18 @@
     NSString *phoneNumber = userAgent.phoneNumber;
     NSString *password = userAgent.password;
     NSString *email = userAgent.email;
+    NSString *userName = userAgent.contactName;
     
-    [userAgent registerWithUserType:userType phoneNumber:phoneNumber password:password email:email completed:^(APIStatusCode statusCode, NSError *error) {
+    [userAgent registerWithUserType:userType userName:userName phoneNumber:phoneNumber password:password email:email completed:^(APIStatusCode statusCode, NSError *error) {
+
+        if(statusCode == APIStatusCodeOK){
+            UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"OK" message:@"注册成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [av show];
+        }else {
+            UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"错误" message:[NSString stringWithFormat:@"错误代码：%d",statusCode] delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+            [av show];
+        }
+        
             NSLog(@"status code = %d", statusCode);
     }];
 }
