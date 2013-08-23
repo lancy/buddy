@@ -170,7 +170,11 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
         [[GLUserAgent sharedAgent] addRelativeWithPhoneNumber:_phoneTextField.text contactName:_nameTextField.text completed:^(APIStatusCode statusCode, NSError *error) {
             NSLog(@"Add Relative API, statue = %d", statusCode);
             if (statusCode == APIStatusCodeFriendAddedSuccess) {
+                UIAlertView *av=[[UIAlertView alloc]initWithTitle:@"信息" message:@"添加成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [av show];
                 [self requestRemoteBuddyData];
+            }else{
+                [[GLUserAgent sharedAgent] showErrorDialog:statusCode];
             }
         }];
     }
@@ -210,6 +214,13 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
       shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     [[GLBuddyManager shareManager] addNewBuddyWithPerson:person];
     [[GLUserAgent sharedAgent] addRelativeWithPersonRef:person completed:^(APIStatusCode statusCode, NSError *error) {
+        if(statusCode==APIStatusCodeFriendAddedSuccess) {
+            UIAlertView *av=[[UIAlertView alloc]initWithTitle:@"信息" message:@"添加成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [av show];
+        }else{
+            [[GLUserAgent sharedAgent] showErrorDialog:statusCode];
+        }
+        
         NSLog(@"add relative api, status = %d", statusCode);
     }];
     return NO;
