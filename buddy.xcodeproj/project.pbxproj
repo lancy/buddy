@@ -25,6 +25,41 @@
 		BF20BC4E17AE56C900EB1980 /* GLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC4D17AE56C900EB1980 /* GLLoginViewController.m */; };
 		BF20BC5117AE7B9900EB1980 /* GLBuddyApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC5017AE7B9900EB1980 /* GLBuddyApiClient.m */; };
 		BF20BC5417AE7D3A00EB1980 /* GLUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20BC5317AE7D3A00EB1980 /* GLUserAgent.m */; };
+		BF2B3A7617C85FD4001685E5 /* dropDownBG.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7417C85FD4001685E5 /* dropDownBG.png */; };
+		BF2B3A7717C85FD4001685E5 /* dropDownBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7517C85FD4001685E5 /* dropDownBG@2x.png */; };
+		BF2B3A8417C86136001685E5 /* DropDownMessageNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7817C86136001685E5 /* DropDownMessageNormal.png */; };
+		BF2B3A8517C86136001685E5 /* DropDownMessageNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7917C86136001685E5 /* DropDownMessageNormal@2x.png */; };
+		BF2B3A8617C86136001685E5 /* DropDownPhonePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7A17C86136001685E5 /* DropDownPhonePressed.png */; };
+		BF2B3A8717C86136001685E5 /* DropDownPhonePressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7B17C86136001685E5 /* DropDownPhonePressed@2x.png */; };
+		BF2B3A8817C86136001685E5 /* DropDownReminderPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7C17C86136001685E5 /* DropDownReminderPressed.png */; };
+		BF2B3A8917C86136001685E5 /* DropDownMessagePressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7D17C86136001685E5 /* DropDownMessagePressed@2x.png */; };
+		BF2B3A8A17C86136001685E5 /* DropDownReminderPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7E17C86136001685E5 /* DropDownReminderPressed@2x.png */; };
+		BF2B3A8B17C86136001685E5 /* DropDownPhoneNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A7F17C86136001685E5 /* DropDownPhoneNormal@2x.png */; };
+		BF2B3A8C17C86136001685E5 /* DropDownMessagePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A8017C86136001685E5 /* DropDownMessagePressed.png */; };
+		BF2B3A8D17C86136001685E5 /* DropDownReminderNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A8117C86136001685E5 /* DropDownReminderNormal.png */; };
+		BF2B3A8E17C86136001685E5 /* DropDownReminderNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A8217C86136001685E5 /* DropDownReminderNormal@2x.png */; };
+		BF2B3A8F17C86136001685E5 /* DropDownPhoneNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A8317C86136001685E5 /* DropDownPhoneNormal.png */; };
+		BF2B3A9E17C86336001685E5 /* mood20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9017C86336001685E5 /* mood20@2x.png */; };
+		BF2B3A9F17C86336001685E5 /* missYouHeart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9117C86336001685E5 /* missYouHeart@2x.png */; };
+		BF2B3AA017C86336001685E5 /* mood40.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9217C86336001685E5 /* mood40.png */; };
+		BF2B3AA117C86336001685E5 /* missYouHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9317C86336001685E5 /* missYouHeart.png */; };
+		BF2B3AA217C86336001685E5 /* mood0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9417C86336001685E5 /* mood0.png */; };
+		BF2B3AA317C86336001685E5 /* mood80@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9517C86336001685E5 /* mood80@2x.png */; };
+		BF2B3AA417C86336001685E5 /* mood80.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9617C86336001685E5 /* mood80.png */; };
+		BF2B3AA517C86336001685E5 /* mood20.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9717C86336001685E5 /* mood20.png */; };
+		BF2B3AA617C86336001685E5 /* mood60.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9817C86336001685E5 /* mood60.png */; };
+		BF2B3AA717C86336001685E5 /* mood100.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9917C86336001685E5 /* mood100.png */; };
+		BF2B3AA817C86336001685E5 /* mood100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9A17C86336001685E5 /* mood100@2x.png */; };
+		BF2B3AA917C86336001685E5 /* mood40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9B17C86336001685E5 /* mood40@2x.png */; };
+		BF2B3AAA17C86336001685E5 /* mood60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9C17C86336001685E5 /* mood60@2x.png */; };
+		BF2B3AAB17C86336001685E5 /* mood0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3A9D17C86336001685E5 /* mood0@2x.png */; };
+		BF2B3AB017C86379001685E5 /* moodProgress.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3AAC17C86379001685E5 /* moodProgress.png */; };
+		BF2B3AB117C86379001685E5 /* moodProgressBG.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3AAD17C86379001685E5 /* moodProgressBG.png */; };
+		BF2B3AB217C86379001685E5 /* moodProgressBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3AAE17C86379001685E5 /* moodProgressBG@2x.png */; };
+		BF2B3AB317C86379001685E5 /* moodProgress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2B3AAF17C86379001685E5 /* moodProgress@2x.png */; };
+		BF2B3AB717C8650D001685E5 /* GLChildBuddyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B3AB617C8650D001685E5 /* GLChildBuddyViewController.m */; };
+		BF2B3ABA17C86542001685E5 /* GLChildBuddyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B3AB917C86542001685E5 /* GLChildBuddyCell.m */; };
+		BF2B3ABD17C8655B001685E5 /* GLChildBuddyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B3ABC17C8655B001685E5 /* GLChildBuddyItem.m */; };
 		BF322308176B53220008C973 /* record_wave_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322306176B53220008C973 /* record_wave_animation.png */; };
 		BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF322307176B53220008C973 /* record_wave_animation@2x.png */; };
 		BF32230C176B5AE10008C973 /* GLReminderSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF32230B176B5AE10008C973 /* GLReminderSettingViewController.m */; };
@@ -34,6 +69,8 @@
 		BF46F49F17B79F60007B9B04 /* GLReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = BF46F49E17B79F60007B9B04 /* GLReminder.m */; };
 		BF46F4A217B7A5A7007B9B04 /* GLReminderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF46F4A117B7A5A7007B9B04 /* GLReminderItem.m */; };
 		BF61629C1768C2CE006ED53F /* GLAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61629B1768C2CE006ED53F /* GLAudioManager.m */; };
+		BF6844F617C86F2E0003B1C5 /* GLDropDownItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6844F517C86F2E0003B1C5 /* GLDropDownItem.m */; };
+		BF6844F917C86F400003B1C5 /* GLDropDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6844F817C86F400003B1C5 /* GLDropDownCell.m */; };
 		BF790BB917ADE9FC007E2FC1 /* GLLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */; };
 		BF790BBD17ADEA11007E2FC1 /* GLRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF790BBC17ADEA11007E2FC1 /* GLRegisterViewController.m */; };
 		BF790BF717ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790BED17ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png */; };
@@ -144,6 +181,44 @@
 		BF20BC5017AE7B9900EB1980 /* GLBuddyApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBuddyApiClient.m; sourceTree = "<group>"; };
 		BF20BC5217AE7D3A00EB1980 /* GLUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUserAgent.h; sourceTree = "<group>"; };
 		BF20BC5317AE7D3A00EB1980 /* GLUserAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLUserAgent.m; sourceTree = "<group>"; };
+		BF2B3A7417C85FD4001685E5 /* dropDownBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropDownBG.png; sourceTree = "<group>"; };
+		BF2B3A7517C85FD4001685E5 /* dropDownBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dropDownBG@2x.png"; sourceTree = "<group>"; };
+		BF2B3A7817C86136001685E5 /* DropDownMessageNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownMessageNormal.png; sourceTree = "<group>"; };
+		BF2B3A7917C86136001685E5 /* DropDownMessageNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownMessageNormal@2x.png"; sourceTree = "<group>"; };
+		BF2B3A7A17C86136001685E5 /* DropDownPhonePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownPhonePressed.png; sourceTree = "<group>"; };
+		BF2B3A7B17C86136001685E5 /* DropDownPhonePressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownPhonePressed@2x.png"; sourceTree = "<group>"; };
+		BF2B3A7C17C86136001685E5 /* DropDownReminderPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownReminderPressed.png; sourceTree = "<group>"; };
+		BF2B3A7D17C86136001685E5 /* DropDownMessagePressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownMessagePressed@2x.png"; sourceTree = "<group>"; };
+		BF2B3A7E17C86136001685E5 /* DropDownReminderPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownReminderPressed@2x.png"; sourceTree = "<group>"; };
+		BF2B3A7F17C86136001685E5 /* DropDownPhoneNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownPhoneNormal@2x.png"; sourceTree = "<group>"; };
+		BF2B3A8017C86136001685E5 /* DropDownMessagePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownMessagePressed.png; sourceTree = "<group>"; };
+		BF2B3A8117C86136001685E5 /* DropDownReminderNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownReminderNormal.png; sourceTree = "<group>"; };
+		BF2B3A8217C86136001685E5 /* DropDownReminderNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DropDownReminderNormal@2x.png"; sourceTree = "<group>"; };
+		BF2B3A8317C86136001685E5 /* DropDownPhoneNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DropDownPhoneNormal.png; sourceTree = "<group>"; };
+		BF2B3A9017C86336001685E5 /* mood20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mood20@2x.png"; sourceTree = "<group>"; };
+		BF2B3A9117C86336001685E5 /* missYouHeart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "missYouHeart@2x.png"; sourceTree = "<group>"; };
+		BF2B3A9217C86336001685E5 /* mood40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mood40.png; sourceTree = "<group>"; };
+		BF2B3A9317C86336001685E5 /* missYouHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missYouHeart.png; sourceTree = "<group>"; };
+		BF2B3A9417C86336001685E5 /* mood0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mood0.png; sourceTree = "<group>"; };
+		BF2B3A9517C86336001685E5 /* mood80@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mood80@2x.png"; sourceTree = "<group>"; };
+		BF2B3A9617C86336001685E5 /* mood80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mood80.png; sourceTree = "<group>"; };
+		BF2B3A9717C86336001685E5 /* mood20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mood20.png; sourceTree = "<group>"; };
+		BF2B3A9817C86336001685E5 /* mood60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mood60.png; sourceTree = "<group>"; };
+		BF2B3A9917C86336001685E5 /* mood100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mood100.png; sourceTree = "<group>"; };
+		BF2B3A9A17C86336001685E5 /* mood100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mood100@2x.png"; sourceTree = "<group>"; };
+		BF2B3A9B17C86336001685E5 /* mood40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mood40@2x.png"; sourceTree = "<group>"; };
+		BF2B3A9C17C86336001685E5 /* mood60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mood60@2x.png"; sourceTree = "<group>"; };
+		BF2B3A9D17C86336001685E5 /* mood0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mood0@2x.png"; sourceTree = "<group>"; };
+		BF2B3AAC17C86379001685E5 /* moodProgress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moodProgress.png; sourceTree = "<group>"; };
+		BF2B3AAD17C86379001685E5 /* moodProgressBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moodProgressBG.png; sourceTree = "<group>"; };
+		BF2B3AAE17C86379001685E5 /* moodProgressBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodProgressBG@2x.png"; sourceTree = "<group>"; };
+		BF2B3AAF17C86379001685E5 /* moodProgress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodProgress@2x.png"; sourceTree = "<group>"; };
+		BF2B3AB517C8650D001685E5 /* GLChildBuddyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLChildBuddyViewController.h; sourceTree = "<group>"; };
+		BF2B3AB617C8650D001685E5 /* GLChildBuddyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLChildBuddyViewController.m; sourceTree = "<group>"; };
+		BF2B3AB817C86542001685E5 /* GLChildBuddyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLChildBuddyCell.h; sourceTree = "<group>"; };
+		BF2B3AB917C86542001685E5 /* GLChildBuddyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLChildBuddyCell.m; sourceTree = "<group>"; };
+		BF2B3ABB17C8655A001685E5 /* GLChildBuddyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLChildBuddyItem.h; sourceTree = "<group>"; };
+		BF2B3ABC17C8655B001685E5 /* GLChildBuddyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLChildBuddyItem.m; sourceTree = "<group>"; };
 		BF322306176B53220008C973 /* record_wave_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_wave_animation.png; sourceTree = "<group>"; };
 		BF322307176B53220008C973 /* record_wave_animation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_wave_animation@2x.png"; sourceTree = "<group>"; };
 		BF32230A176B5AE10008C973 /* GLReminderSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderSettingViewController.h; sourceTree = "<group>"; };
@@ -159,6 +234,10 @@
 		BF46F4A017B7A5A7007B9B04 /* GLReminderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLReminderItem.h; sourceTree = "<group>"; };
 		BF46F4A117B7A5A7007B9B04 /* GLReminderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLReminderItem.m; sourceTree = "<group>"; };
 		BF61629B1768C2CE006ED53F /* GLAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLAudioManager.m; sourceTree = "<group>"; };
+		BF6844F417C86F2E0003B1C5 /* GLDropDownItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDropDownItem.h; sourceTree = "<group>"; };
+		BF6844F517C86F2E0003B1C5 /* GLDropDownItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDropDownItem.m; sourceTree = "<group>"; };
+		BF6844F717C86F400003B1C5 /* GLDropDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDropDownCell.h; sourceTree = "<group>"; };
+		BF6844F817C86F400003B1C5 /* GLDropDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDropDownCell.m; sourceTree = "<group>"; };
 		BF790BB717ADE9FC007E2FC1 /* GLLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLaunchViewController.h; sourceTree = "<group>"; };
 		BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLaunchViewController.m; sourceTree = "<group>"; };
 		BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterViewController.h; sourceTree = "<group>"; };
@@ -292,6 +371,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BF2B3AB417C864DD001685E5 /* BuddyInChild */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B3AB517C8650D001685E5 /* GLChildBuddyViewController.h */,
+				BF2B3AB617C8650D001685E5 /* GLChildBuddyViewController.m */,
+				BF2B3AB817C86542001685E5 /* GLChildBuddyCell.h */,
+				BF2B3AB917C86542001685E5 /* GLChildBuddyCell.m */,
+				BF2B3ABB17C8655A001685E5 /* GLChildBuddyItem.h */,
+				BF2B3ABC17C8655B001685E5 /* GLChildBuddyItem.m */,
+				BF6844F417C86F2E0003B1C5 /* GLDropDownItem.h */,
+				BF6844F517C86F2E0003B1C5 /* GLDropDownItem.m */,
+				BF6844F717C86F400003B1C5 /* GLDropDownCell.h */,
+				BF6844F817C86F400003B1C5 /* GLDropDownCell.m */,
+			);
+			name = BuddyInChild;
+			sourceTree = "<group>";
+		};
 		BF3501091768C8A200E3ABD1 /* Record */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +515,38 @@
 		BFDFA71F17650215006668BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF2B3AAC17C86379001685E5 /* moodProgress.png */,
+				BF2B3AAD17C86379001685E5 /* moodProgressBG.png */,
+				BF2B3AAE17C86379001685E5 /* moodProgressBG@2x.png */,
+				BF2B3AAF17C86379001685E5 /* moodProgress@2x.png */,
+				BF2B3A9017C86336001685E5 /* mood20@2x.png */,
+				BF2B3A9117C86336001685E5 /* missYouHeart@2x.png */,
+				BF2B3A9217C86336001685E5 /* mood40.png */,
+				BF2B3A9317C86336001685E5 /* missYouHeart.png */,
+				BF2B3A9417C86336001685E5 /* mood0.png */,
+				BF2B3A9517C86336001685E5 /* mood80@2x.png */,
+				BF2B3A9617C86336001685E5 /* mood80.png */,
+				BF2B3A9717C86336001685E5 /* mood20.png */,
+				BF2B3A9817C86336001685E5 /* mood60.png */,
+				BF2B3A9917C86336001685E5 /* mood100.png */,
+				BF2B3A9A17C86336001685E5 /* mood100@2x.png */,
+				BF2B3A9B17C86336001685E5 /* mood40@2x.png */,
+				BF2B3A9C17C86336001685E5 /* mood60@2x.png */,
+				BF2B3A9D17C86336001685E5 /* mood0@2x.png */,
+				BF2B3A7817C86136001685E5 /* DropDownMessageNormal.png */,
+				BF2B3A7917C86136001685E5 /* DropDownMessageNormal@2x.png */,
+				BF2B3A7A17C86136001685E5 /* DropDownPhonePressed.png */,
+				BF2B3A7B17C86136001685E5 /* DropDownPhonePressed@2x.png */,
+				BF2B3A7C17C86136001685E5 /* DropDownReminderPressed.png */,
+				BF2B3A7D17C86136001685E5 /* DropDownMessagePressed@2x.png */,
+				BF2B3A7E17C86136001685E5 /* DropDownReminderPressed@2x.png */,
+				BF2B3A7F17C86136001685E5 /* DropDownPhoneNormal@2x.png */,
+				BF2B3A8017C86136001685E5 /* DropDownMessagePressed.png */,
+				BF2B3A8117C86136001685E5 /* DropDownReminderNormal.png */,
+				BF2B3A8217C86136001685E5 /* DropDownReminderNormal@2x.png */,
+				BF2B3A8317C86136001685E5 /* DropDownPhoneNormal.png */,
+				BF2B3A7417C85FD4001685E5 /* dropDownBG.png */,
+				BF2B3A7517C85FD4001685E5 /* dropDownBG@2x.png */,
 				BF20BC4417AE568B00EB1980 /* loginButtonPressed@2x.png */,
 				BF20BC4517AE568B00EB1980 /* loginButtonPressed.png */,
 				BF20BC4617AE568B00EB1980 /* loginButtonNormal@2x.png */,
@@ -487,6 +615,7 @@
 		BFDFA72C17650603006668BC /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF2B3AB417C864DD001685E5 /* BuddyInChild */,
 				BFDFA72D17650637006668BC /* Buddy */,
 				BFDFA74117650D55006668BC /* Reminder */,
 				BFDFA74217650D5F006668BC /* Message */,
@@ -683,6 +812,38 @@
 				BF20BC4917AE568B00EB1980 /* loginButtonPressed.png in Resources */,
 				BF20BC4A17AE568B00EB1980 /* loginButtonNormal@2x.png in Resources */,
 				BF20BC4B17AE568B00EB1980 /* loginButtonNormal.png in Resources */,
+				BF2B3A7617C85FD4001685E5 /* dropDownBG.png in Resources */,
+				BF2B3A7717C85FD4001685E5 /* dropDownBG@2x.png in Resources */,
+				BF2B3A8417C86136001685E5 /* DropDownMessageNormal.png in Resources */,
+				BF2B3A8517C86136001685E5 /* DropDownMessageNormal@2x.png in Resources */,
+				BF2B3A8617C86136001685E5 /* DropDownPhonePressed.png in Resources */,
+				BF2B3A8717C86136001685E5 /* DropDownPhonePressed@2x.png in Resources */,
+				BF2B3A8817C86136001685E5 /* DropDownReminderPressed.png in Resources */,
+				BF2B3A8917C86136001685E5 /* DropDownMessagePressed@2x.png in Resources */,
+				BF2B3A8A17C86136001685E5 /* DropDownReminderPressed@2x.png in Resources */,
+				BF2B3A8B17C86136001685E5 /* DropDownPhoneNormal@2x.png in Resources */,
+				BF2B3A8C17C86136001685E5 /* DropDownMessagePressed.png in Resources */,
+				BF2B3A8D17C86136001685E5 /* DropDownReminderNormal.png in Resources */,
+				BF2B3A8E17C86136001685E5 /* DropDownReminderNormal@2x.png in Resources */,
+				BF2B3A8F17C86136001685E5 /* DropDownPhoneNormal.png in Resources */,
+				BF2B3A9E17C86336001685E5 /* mood20@2x.png in Resources */,
+				BF2B3A9F17C86336001685E5 /* missYouHeart@2x.png in Resources */,
+				BF2B3AA017C86336001685E5 /* mood40.png in Resources */,
+				BF2B3AA117C86336001685E5 /* missYouHeart.png in Resources */,
+				BF2B3AA217C86336001685E5 /* mood0.png in Resources */,
+				BF2B3AA317C86336001685E5 /* mood80@2x.png in Resources */,
+				BF2B3AA417C86336001685E5 /* mood80.png in Resources */,
+				BF2B3AA517C86336001685E5 /* mood20.png in Resources */,
+				BF2B3AA617C86336001685E5 /* mood60.png in Resources */,
+				BF2B3AA717C86336001685E5 /* mood100.png in Resources */,
+				BF2B3AA817C86336001685E5 /* mood100@2x.png in Resources */,
+				BF2B3AA917C86336001685E5 /* mood40@2x.png in Resources */,
+				BF2B3AAA17C86336001685E5 /* mood60@2x.png in Resources */,
+				BF2B3AAB17C86336001685E5 /* mood0@2x.png in Resources */,
+				BF2B3AB017C86379001685E5 /* moodProgress.png in Resources */,
+				BF2B3AB117C86379001685E5 /* moodProgressBG.png in Resources */,
+				BF2B3AB217C86379001685E5 /* moodProgressBG@2x.png in Resources */,
+				BF2B3AB317C86379001685E5 /* moodProgress@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +914,11 @@
 				BF46F49F17B79F60007B9B04 /* GLReminder.m in Sources */,
 				BF46F4A217B7A5A7007B9B04 /* GLReminderItem.m in Sources */,
 				BF05958A17B7B8CA00C4921A /* GLMessageItem.m in Sources */,
+				BF2B3AB717C8650D001685E5 /* GLChildBuddyViewController.m in Sources */,
+				BF2B3ABA17C86542001685E5 /* GLChildBuddyCell.m in Sources */,
+				BF2B3ABD17C8655B001685E5 /* GLChildBuddyItem.m in Sources */,
+				BF6844F617C86F2E0003B1C5 /* GLDropDownItem.m in Sources */,
+				BF6844F917C86F400003B1C5 /* GLDropDownCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

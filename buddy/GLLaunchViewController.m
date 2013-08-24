@@ -9,6 +9,7 @@
 #import "GLLaunchViewController.h"
 #import "AKTabBarController.h"
 #import "GLLoginViewController.h"
+#import "GLChildBuddyViewController.h"
 #import "GLUserAgent.h"
 
 @interface GLLaunchViewController ()
@@ -20,6 +21,7 @@
 
 NSString * const kPresentRegisterSegueIdentifier = @"presentRegister";
 NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
+NSString * const kPresentChildBuddySegueIdentifier = @"presentChild";
 
 
 @implementation GLLaunchViewController
@@ -105,6 +107,11 @@ NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
     [self presentViewController:_tabBarController animated:YES completion:nil];
 }
 
+- (void)presentChildBuddyViewController
+{
+    [self performSegueWithIdentifier:kPresentChildBuddySegueIdentifier sender:self];
+}
+
 - (void)setupTabbarController
 {
     _tabBarController = [[AKTabBarController alloc] initWithTabBarHeight:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 70 : 53];
@@ -128,7 +135,8 @@ NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
         
     } else if ([segue.identifier isEqualToString:kPresentLoginSegueIdentifier]) {
         [(GLLoginViewController *)segue.destinationViewController setLoginSuccessHandler:^{
-            [self presentHomeViewController];
+//            [self presentHomeViewController];
+            [self presentChildBuddyViewController];
         }];
     }
 }

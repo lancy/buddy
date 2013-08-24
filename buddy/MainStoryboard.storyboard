@@ -290,6 +290,184 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2112" y="1001"/>
         </scene>
+        <!--Child Buddy View Controller-->
+        <scene sceneID="2Jf-Sj-o6t">
+            <objects>
+                <viewController id="4cs-yG-Rxh" customClass="GLChildBuddyViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="en6-nj-fU9">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N81-lX-oAh">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="GLChildBuddyCell" rowHeight="100" id="dV7-FH-4FY" customClass="GLChildBuddyCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buddy_tableviewcell_bg@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="woe-CJ-YJy">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="84" id="EqJ-ih-jWG"/>
+                                                        <constraint firstAttribute="width" constant="313" id="TvP-TZ-BQe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=" 妈妈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfx-qj-Uqr">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="JFe-2w-y9P"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" red="0.16342426839999999" green="0.1694075763" blue="0.18279610569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="buddy_tableviewcell_default_avatar@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="tfF-zM-cTN">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="72" id="hHQ-ra-IgH"/>
+                                                        <constraint firstAttribute="height" constant="72" id="vC9-YW-2bU"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-mT-Yxs">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="488-kD-CSf"/>
+                                                        <constraint firstAttribute="height" constant="65" id="6Oq-gk-Ccc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="missYouHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-PW-Xgc"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="moodProgressBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-Wk-eQc"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="moodProgress.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-Y9-EvY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="Bz1-Ln-KOj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mood40.png" translatesAutoresizingMaskIntoConstraints="NO" id="XeA-Mq-fKQ"/>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="wfx-qj-Uqr" firstAttribute="leading" secondItem="hzN-PW-Xgc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="1K0-jA-vsy"/>
+                                            <constraint firstAttribute="bottom" secondItem="XeA-Mq-fKQ" secondAttribute="bottom" constant="18" id="4QB-Ep-99Z"/>
+                                            <constraint firstItem="tfF-zM-cTN" firstAttribute="leading" secondItem="dV7-FH-4FY" secondAttribute="leading" constant="11" id="Au4-Eo-paj"/>
+                                            <constraint firstItem="woe-CJ-YJy" firstAttribute="top" secondItem="dV7-FH-4FY" secondAttribute="top" constant="15" id="B6Z-1N-EeP"/>
+                                            <constraint firstItem="woe-CJ-YJy" firstAttribute="centerX" secondItem="dV7-FH-4FY" secondAttribute="centerX" type="default" id="DGn-td-9rH"/>
+                                            <constraint firstItem="gWu-mT-Yxs" firstAttribute="centerX" secondItem="tfF-zM-cTN" secondAttribute="centerX" type="default" id="EKO-7T-4IE"/>
+                                            <constraint firstItem="xQc-Y9-EvY" firstAttribute="leading" secondItem="JKO-Wk-eQc" secondAttribute="leading" type="default" id="JXk-sb-P1R"/>
+                                            <constraint firstItem="xQc-Y9-EvY" firstAttribute="leading" secondItem="dV7-FH-4FY" secondAttribute="leading" constant="103" id="Ucf-DD-gpr"/>
+                                            <constraint firstItem="wfx-qj-Uqr" firstAttribute="leading" secondItem="tfF-zM-cTN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="VI0-Td-4fq"/>
+                                            <constraint firstItem="hzN-PW-Xgc" firstAttribute="top" secondItem="dV7-FH-4FY" secondAttribute="top" constant="22" id="X72-Ni-MCh"/>
+                                            <constraint firstItem="hzN-PW-Xgc" firstAttribute="top" secondItem="wfx-qj-Uqr" secondAttribute="top" type="default" id="aKm-aa-bvh"/>
+                                            <constraint firstItem="XeA-Mq-fKQ" firstAttribute="leading" secondItem="hzN-PW-Xgc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="jfK-qC-1Pg"/>
+                                            <constraint firstItem="gWu-mT-Yxs" firstAttribute="top" secondItem="dV7-FH-4FY" secondAttribute="top" constant="24" id="ndv-Hv-OCv"/>
+                                            <constraint firstItem="XeA-Mq-fKQ" firstAttribute="centerY" secondItem="JKO-Wk-eQc" secondAttribute="centerY" type="default" id="py3-sh-M1p"/>
+                                            <constraint firstItem="xQc-Y9-EvY" firstAttribute="top" secondItem="JKO-Wk-eQc" secondAttribute="top" type="default" id="vX2-ET-pE9"/>
+                                            <constraint firstItem="woe-CJ-YJy" firstAttribute="centerY" secondItem="tfF-zM-cTN" secondAttribute="centerY" type="default" id="wcI-cc-OIM"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="gWu-mT-Yxs" id="Vrg-fi-9tC"/>
+                                            <outlet property="missYouImageView" destination="hzN-PW-Xgc" id="05f-Ib-fLu"/>
+                                            <outlet property="moodProgressImageView" destination="xQc-Y9-EvY" id="2Vx-Id-vV2"/>
+                                            <outlet property="nameLabel" destination="wfx-qj-Uqr" id="feo-xv-g6j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GLDropDownCell" rowHeight="50" id="6LD-iO-pqY" customClass="GLDropDownCell">
+                                        <rect key="frame" x="0.0" y="122" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dropDownBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-4s-2Gi">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="249" id="hgM-Xy-fDh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfQ-jx-Kob">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="3Y7-6M-wIi"/>
+                                                        <constraint firstAttribute="height" constant="44" id="R5d-DA-89g"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="DropDownPhoneNormal.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted" image="DropDownPhonePressed.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="phoneButtonPressed:" destination="6LD-iO-pqY" eventType="touchUpInside" id="i8q-Tv-4VL"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lII-5k-4AV">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="DropDownReminderNormal.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted" image="DropDownReminderPressed.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="reminderButtonPressed:" destination="6LD-iO-pqY" eventType="touchUpInside" id="U3G-il-MxV"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z9-Ts-eKZ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="Rxx-aY-mdF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" image="DropDownMessageNormal.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted" image="DropDownMessagePressed.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="messageButtonPressed:" destination="6LD-iO-pqY" eventType="touchUpInside" id="BQY-mZ-Zk4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="3cz-4s-2Gi" firstAttribute="bottom" secondItem="6LD-iO-pqY" secondAttribute="bottom" type="default" id="5jf-Ug-g0y"/>
+                                            <constraint firstItem="3cz-4s-2Gi" firstAttribute="centerX" secondItem="6LD-iO-pqY" secondAttribute="centerX" type="default" id="Aq5-VS-F3E"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Z9-Ts-eKZ" secondAttribute="trailing" constant="40" id="Awu-wO-xvk"/>
+                                            <constraint firstItem="dfQ-jx-Kob" firstAttribute="leading" secondItem="3cz-4s-2Gi" secondAttribute="leading" type="default" id="B6f-50-dFc"/>
+                                            <constraint firstItem="3cz-4s-2Gi" firstAttribute="top" secondItem="6LD-iO-pqY" secondAttribute="top" type="default" id="GNc-M8-Pud"/>
+                                            <constraint firstItem="lII-5k-4AV" firstAttribute="baseline" secondItem="0Z9-Ts-eKZ" secondAttribute="baseline" type="default" id="Keq-aP-20s"/>
+                                            <constraint firstItem="lII-5k-4AV" firstAttribute="leading" secondItem="6LD-iO-pqY" secondAttribute="leading" constant="118" id="SN9-mu-Vdx"/>
+                                            <constraint firstItem="dfQ-jx-Kob" firstAttribute="top" secondItem="6LD-iO-pqY" secondAttribute="top" constant="2" id="UF5-uM-SRM"/>
+                                            <constraint firstItem="0Z9-Ts-eKZ" firstAttribute="top" secondItem="lII-5k-4AV" secondAttribute="top" type="default" id="Xbe-D2-jRd"/>
+                                            <constraint firstItem="dfQ-jx-Kob" firstAttribute="bottom" secondItem="lII-5k-4AV" secondAttribute="bottom" type="default" id="cY3-V0-rdU"/>
+                                            <constraint firstItem="lII-5k-4AV" firstAttribute="bottom" secondItem="0Z9-Ts-eKZ" secondAttribute="bottom" type="default" id="fqi-u6-662"/>
+                                            <constraint firstItem="lII-5k-4AV" firstAttribute="top" secondItem="dfQ-jx-Kob" secondAttribute="top" type="default" id="uJs-kM-IVk"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N81-lX-oAh" firstAttribute="top" secondItem="en6-nj-fU9" secondAttribute="top" type="default" id="33x-uu-z2H"/>
+                            <constraint firstItem="N81-lX-oAh" firstAttribute="leading" secondItem="en6-nj-fU9" secondAttribute="leading" type="default" id="Tyy-xs-gkO"/>
+                            <constraint firstItem="N81-lX-oAh" firstAttribute="bottom" secondItem="en6-nj-fU9" secondAttribute="bottom" type="default" id="ZlR-hI-0sL"/>
+                            <constraint firstItem="N81-lX-oAh" firstAttribute="trailing" secondItem="en6-nj-fU9" secondAttribute="trailing" type="default" id="crt-Ee-BkB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Te-M9-oBO"/>
+                    <connections>
+                        <outlet property="tableview" destination="N81-lX-oAh" id="ps6-Lx-LB6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egz-m9-Lo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="-1374"/>
+        </scene>
         <!--Message View Controller - Messages-->
         <scene sceneID="DOq-as-EFC">
             <objects>
@@ -478,6 +656,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="scrollView" destination="xTo-Y3-2on" id="K42-Mb-MCJ"/>
                         <segue destination="aCX-np-MIy" kind="modal" identifier="presentRegister" modalTransitionStyle="flipHorizontal" id="PqG-MQ-YCZ"/>
                         <segue destination="wcR-Gc-ePk" kind="modal" identifier="presentLogin" modalTransitionStyle="flipHorizontal" id="TH9-M4-0of"/>
+                        <segue destination="ScT-is-uEk" kind="modal" identifier="presentChild" id="20u-If-Gnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mT-3N-E4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -875,8 +1054,32 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-576" y="765"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="utZ-kb-U20">
+            <objects>
+                <navigationController id="ScT-is-uEk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dkW-DA-Pjw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4cs-yG-Rxh" kind="relationship" relationship="rootViewController" id="HEa-9d-TCm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04T-dh-pcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-576" y="-1374"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="DropDownMessageNormal.png" width="80" height="45"/>
+        <image name="DropDownMessagePressed.png" width="80" height="45"/>
+        <image name="DropDownPhoneNormal.png" width="80" height="45"/>
+        <image name="DropDownPhonePressed.png" width="80" height="45"/>
+        <image name="DropDownReminderNormal.png" width="81" height="45"/>
+        <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="buddy_tableviewcell_bg@2x.png" width="626" height="168"/>
@@ -887,111 +1090,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dot1.png" width="40" height="8"/>
         <image name="dot2.png" width="40" height="8"/>
         <image name="dot3.png" width="40" height="8"/>
+        <image name="dropDownBG.png" width="247" height="51"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend@2x.png" width="110" height="111"/>
+        <image name="missYouHeart.png" width="26" height="23"/>
+        <image name="mood40.png" width="24" height="24"/>
+        <image name="moodProgress.png" width="36" height="14"/>
+        <image name="moodProgressBG.png" width="178" height="18"/>
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
         <image name="youngframe.png" width="95" height="96"/>
     </resources>
-    <classes>
-        <class className="GLBuddyCell" superclassName="RETableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLBuddyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLLaunchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLLaunchViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="GLLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLLoginViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="GLMessageCell" superclassName="RETableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="heartImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLMessageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GLMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
-        </class>
-        <class className="GLRecordViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
-        </class>
-        <class className="GLRegisterFinishViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterFinishViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="againPasswordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="GLRegisterMiddleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterMiddleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="avatarBackgroundView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="subtitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLRegisterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chooseSwitch" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GLReminderCell" superclassName="RETableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="fireDateLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GLReminderSettingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderSettingViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="playerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GLReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RETableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RETableViewCell.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
