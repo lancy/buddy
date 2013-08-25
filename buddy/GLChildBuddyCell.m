@@ -32,6 +32,7 @@
     [super cellDidLoad];
     [self.avatarImageView.layer setCornerRadius:32];
     [self.avatarImageView.layer setMasksToBounds:YES];
+    NSLog(@"called cellDidLoad");
 }
 
 - (void)cellWillAppear
@@ -44,7 +45,12 @@
         [_nameLabel setText:buddy.phoneNumber];
     }
     if (buddy.avatarUrl) {
-        [self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
+        //[self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
+        
+        //For testing purpose only
+        [self.avatarImageView setImageWithURL:[NSURL URLWithString:@"http://tp1.sinaimg.cn/1666109020/180/40013962754/1"]];
+        [self.avatarImageView.layer setCornerRadius:32];
+        [self.avatarImageView.layer setMasksToBounds:YES];
         [self.avatarImageView setHidden:NO];
     } else {
         [self.avatarImageView setHidden:YES];
