@@ -45,6 +45,8 @@
     }
     [self.descriptionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
     if (buddy.avatarUrl) {
+        [self.avatarImageView.layer setCornerRadius:32];
+        [self.avatarImageView.layer setMasksToBounds:YES];
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         [self.avatarImageView setHidden:NO];
     } else {
