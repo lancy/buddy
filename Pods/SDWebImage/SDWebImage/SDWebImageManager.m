@@ -14,6 +14,7 @@
 
 @property (assign, nonatomic, getter = isCancelled) BOOL cancelled;
 @property (copy, nonatomic) void (^cancelBlock)();
+@property (strong, nonatomic) NSOperation *cacheOperation;
 
 @end
 
@@ -93,8 +94,11 @@
     {
         if (completedBlock)
         {
-            NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorFileDoesNotExist userInfo:nil];
-            completedBlock(nil, error, SDImageCacheTypeNone, YES);
+            dispatch_main_sync_safe(^
+            {
+                NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorFileDoesNotExist userInfo:nil];
+                completedBlock(nil, error, SDImageCacheTypeNone, YES);
+            });
         }
         return operation;
     }
@@ -105,17 +109,28 @@
     }
     NSString *key = [self cacheKeyForURL:url];
 
-    [self.imageCache queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType)
+    operation.cacheOperation = [self.imageCache queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType)
     {
-        if (operation.isCancelled) return;
+        if (operation.isCancelled)
+        {
+            @synchronized(self.runningOperations)
+            {
+                [self.runningOperations removeObject:operation];
+            }
+
+            return;
+        }
 
         if ((!image || options & SDWebImageRefreshCached) && (![self.delegate respondsToSelector:@selector(imageManager:shouldDownloadImageForURL:)] || [self.delegate imageManager:self shouldDownloadImageForURL:url]))
         {
             if (image && options & SDWebImageRefreshCached)
             {
-                // If image was found in the cache bug SDWebImageRefreshCached is provided, notify about the cached image
-                // AND try to re-download it in order to let a chance to NSURLCache to refresh it from server.
-                completedBlock(image, nil, cacheType, YES);
+                dispatch_main_sync_safe(^
+                {
+                    // If image was found in the cache bug SDWebImageRefreshCached is provided, notify about the cached image
+                    // AND try to re-download it in order to let a chance to NSURLCache to refresh it from server.
+                    completedBlock(image, nil, cacheType, YES);
+                });
             }
 
             // download if no image or requested to refresh anyway, and download allowed by delegate
@@ -130,15 +145,21 @@
                 // ignore image read from NSURLCache if image if cached but force refreshing
                 downloaderOptions |= SDWebImageDownloaderIgnoreCachedResponse;
             }
-            __block id<SDWebImageOperation> subOperation = [self.imageDownloader downloadImageWithURL:url options:downloaderOptions progress:progressBlock completed:^(UIImage *downloadedImage, NSData *data, NSError *error, BOOL finished)
+            id<SDWebImageOperation> subOperation = [self.imageDownloader downloadImageWithURL:url options:downloaderOptions progress:progressBlock completed:^(UIImage *downloadedImage, NSData *data, NSError *error, BOOL finished)
             {                
-                if (weakOperation.cancelled)
+                if (weakOperation.isCancelled)
                 {
-                    completedBlock(nil, nil, SDImageCacheTypeNone, finished);
+                    dispatch_main_sync_safe(^
+                    {
+                        completedBlock(nil, nil, SDImageCacheTypeNone, finished);
+                    });
                 }
                 else if (error)
                 {
-                    completedBlock(nil, error, SDImageCacheTypeNone, finished);
+                    dispatch_main_sync_safe(^
+                    {
+                        completedBlock(nil, error, SDImageCacheTypeNone, finished);
+                    });
 
                     if (error.code != NSURLErrorNotConnectedToInternet)
                     {
@@ -163,7 +184,7 @@
                         {
                             UIImage *transformedImage = [self.delegate imageManager:self transformDownloadedImage:downloadedImage withURL:url];
 
-                            dispatch_async(dispatch_get_main_queue(), ^
+                            dispatch_main_sync_safe(^
                             {
                                 completedBlock(transformedImage, nil, SDImageCacheTypeNone, finished);
                             });
@@ -177,7 +198,10 @@
                     }
                     else
                     {
-                        completedBlock(downloadedImage, nil, SDImageCacheTypeNone, finished);
+                        dispatch_main_sync_safe(^
+                        {
+                            completedBlock(downloadedImage, nil, SDImageCacheTypeNone, finished);
+                        });
 
                         if (downloadedImage && finished)
                         {
@@ -198,7 +222,10 @@
         }
         else if (image)
         {
-            completedBlock(image, nil, cacheType, YES);
+            dispatch_main_sync_safe(^
+            {
+                completedBlock(image, nil, cacheType, YES);
+            });
             @synchronized(self.runningOperations)
             {
                 [self.runningOperations removeObject:operation];
@@ -207,7 +234,10 @@
         else
         {
             // Image not in cache and download disallowed by delegate
-            completedBlock(nil, nil, SDImageCacheTypeNone, YES);
+            dispatch_main_sync_safe(^
+            {
+                completedBlock(nil, nil, SDImageCacheTypeNone, YES);
+            });
             @synchronized(self.runningOperations)
             {
                 [self.runningOperations removeObject:operation];
@@ -251,6 +281,11 @@
 - (void)cancel
 {
     self.cancelled = YES;
+    if (self.cacheOperation)
+    {
+        [self.cacheOperation cancel];
+        self.cacheOperation = nil;
+    }
     if (self.cancelBlock)
     {
         self.cancelBlock();

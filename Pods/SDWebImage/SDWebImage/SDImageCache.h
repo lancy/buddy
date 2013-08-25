@@ -98,7 +98,7 @@ typedef enum SDImageCacheType SDImageCacheType;
  *
  * @param key The unique key used to store the wanted image
  */
-- (void)queryDiskCacheForKey:(NSString *)key done:(void (^)(UIImage *image, SDImageCacheType cacheType))doneBlock;
+- (NSOperation *)queryDiskCacheForKey:(NSString *)key done:(void (^)(UIImage *image, SDImageCacheType cacheType))doneBlock;
 
 /**
  * Query the memory cache synchronously.
@@ -153,5 +153,10 @@ typedef enum SDImageCacheType SDImageCacheType;
  * Get the number of images in the disk cache
  */
 - (int)getDiskCount;
+
+/**
+ * Asynchronously calculate the disk cache's size.
+ */
+- (void)calculateSizeWithCompletionBlock:(void (^)(NSUInteger fileCount, unsigned long long totalSize))completionBlock;
 
 @end

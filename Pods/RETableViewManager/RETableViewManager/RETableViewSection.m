@@ -31,27 +31,27 @@
 #pragma mark -
 #pragma mark Creating and Initializing Sections
 
-+ (id)section
++ (instancetype)section
 {
     return [[self alloc] init];
 }
 
-+ (id)sectionWithHeaderTitle:(NSString *)headerTitle
++ (instancetype)sectionWithHeaderTitle:(NSString *)headerTitle
 {
     return [[self alloc ] initWithHeaderTitle:headerTitle];
 }
 
-+ (id)sectionWithHeaderTitle:(NSString *)headerTitle footerTitle:(NSString *)footerTitle
++ (instancetype)sectionWithHeaderTitle:(NSString *)headerTitle footerTitle:(NSString *)footerTitle
 {
     return [[self alloc] initWithHeaderTitle:headerTitle footerTitle:footerTitle];
 }
 
-+ (id)sectionWithHeaderView:(UIView *)headerView
++ (instancetype)sectionWithHeaderView:(UIView *)headerView
 {
     return [[self alloc] initWithHeaderView:headerView footerView:nil];
 }
 
-+ (id)sectionWithHeaderView:(UIView *)headerView footerView:(UIView *)footerView
++ (instancetype)sectionWithHeaderView:(UIView *)headerView footerView:(UIView *)footerView
 {
     return [[self alloc] initWithHeaderView:headerView footerView:footerView];
 }
@@ -279,6 +279,24 @@
 - (void)reloadSectionWithAnimation:(UITableViewRowAnimation)animation
 {
     [self.tableViewManager.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:animation];
+}
+
+#pragma mark -
+#pragma mark Checking for errors
+
+- (NSArray *)errors
+{
+    NSMutableArray *errors;
+    for (RETableViewItem *item in self.items) {
+        if ([item respondsToSelector:@selector(errors)] && item.errors) {
+            if (!errors) {
+                errors = [[NSMutableArray alloc] init];
+            }
+            if (item.errors.count > 0)
+                [errors addObject:item.errors[0]];
+        }
+    }
+    return errors;
 }
 
 @end

@@ -78,7 +78,7 @@ Build and run the `RETableViewManagerExample` project in Xcode to see `RETableVi
 ### CocoaPods
 
 The recommended approach for installating `RETableViewManager` is via the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
-For best results, it is recommended that you install via CocoaPods >= **0.15.2** using Git >= **1.8.0** installed via Homebrew.
+For best results, it is recommended that you install via CocoaPods >= **0.23.0** using Git >= **1.8.0** installed via Homebrew.
 
 Install CocoaPods if not already available:
 
@@ -99,7 +99,7 @@ Edit your Podfile and add RETableViewManager:
 
 ``` bash
 platform :ios, '6.0'
-pod 'RETableViewManager', '~> 1.1'
+pod 'RETableViewManager', '~> 1.2'
 ```
 
 Install into your Xcode project:
@@ -364,6 +364,25 @@ RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"Test"
 [section addItem:[REDateTimeItem itemWithTitle:@"Date / Time" value:[NSDate date] placeholder:nil format:@"MM/dd/yyyy hh:mm a" datePickerMode:UIDatePickerModeDateAndTime]];
 ```
 
+### Validations
+
+Validations are performed using [REValidation](https://github.com/romaonthego/REValidation) library.
+
+Example:
+
+```objective-c
+self.textItem = [RETextItem itemWithTitle:@"Text" value:@"" placeholder:@"Text item"];
+self.textItem.validators = @[@"presence", @"length(3, 10)"];
+
+self.emailItem = [RETextItem itemWithTitle:@"Email" value:@"" placeholder:@"Email item"];
+self.emailItem.name = @"Your email";
+self.emailItem.validators = @[@"presence", @"email"];
+```
+
+Each item, each section and the manager have property `errors`. This property is always up to date with errors on each level.
+For example, an `RETableViewItem` would only have its own validation errors, `RETableViewSection` would have all errors that occured in that section (one per item).
+`RETableViewManager`'s property `errors` would reflect all errors.
+
 ### Custom Cells
 
 `RETableViewManager` allows to map custom objects to custom cells. In order to map your custom object (an item) to a cell,
@@ -455,9 +474,20 @@ Quick example:
 }
 ```
 
+### Interface Builder Support
+
+Interface builder cells are supported out of the box, no special set up needed.
+Cells and items are being automatically registered like any other custom cell in `RETableViewManager`:
+
+```objective-c
+_manager[@"XIBTestItem"] = @"XIBTestCell";
+```
+
+Here `XIBTestItem` would be your cell identifier and you should have the `XIBTestCell.xib` file in your bundle. That's it.
+
 ### Styling
 
-It's super easy to customize different offsets, cell background images, etc. of
+It's super easy to customize different offsets and cell background images of
 the entire `UITableView` (or any particular section) with `RETableViewManager`.
 
 `RETableViewManager` and `RETableViewSection` both have the `style` property (an instance of the `RETableViewCellStyle` class).

@@ -151,7 +151,6 @@ static NSString *const kCompletedCallbackKey = @"completed";
         {
             if (!wself) return;
             SDWebImageDownloader *sself = wself;
-            [sself callbacksForURL:url];
             [sself removeCallbacksForURL:url];
         }];
         [wself.downloadQueue addOperation:operation];
@@ -209,7 +208,7 @@ static NSString *const kCompletedCallbackKey = @"completed";
     {
         callbacksForURL = self.URLCallbacks[url];
     });
-    return callbacksForURL;
+    return [callbacksForURL copy];
 }
 
 - (void)removeCallbacksForURL:(NSURL *)url

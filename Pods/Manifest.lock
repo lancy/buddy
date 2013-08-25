@@ -13,12 +13,14 @@ PODS:
   - libwebp/utils (0.3.0-rc7)
   - libwebp/webp (0.3.0-rc7)
   - REFormattedNumberField (1.0.4)
-  - RETableViewManager (1.1):
+  - RETableViewManager (1.2):
     - REFormattedNumberField (~> 1.0.4)
-  - SDWebImage (3.3):
+    - REValidation (~> 0.1.0)
+  - REValidation (0.1.1)
+  - SDWebImage (3.4):
     - libwebp
     - SDWebImage/MapKit
-  - SDWebImage/MapKit (3.3):
+  - SDWebImage/MapKit (3.4):
     - libwebp
 
 DEPENDENCIES:
@@ -36,7 +38,8 @@ SPEC CHECKSUMS:
   KZPropertyMapper: 51db74b4c21009cbddce5b74225713a604882dbc
   libwebp: 40517fa1fd3716eded73b4696c45fc0b66e4b414
   REFormattedNumberField: 74ac0f5ce7001102a461dd025d34c93be7794a00
-  RETableViewManager: 4579c47d832271f7e72ccfb2828482cbe0db69fa
-  SDWebImage: 79a8bac9ccf85b269100b294f7b43684dab8bf8a
+  RETableViewManager: 7bcb71638cf6680c10019484eeba6c0c20bbdeef
+  REValidation: 157ff1a1c5f7576c10a5f1f2756fd66b29db59c5
+  SDWebImage: f13f791e411c632489824aa7f129e230b52bf5c4
 
 COCOAPODS: 0.20.2

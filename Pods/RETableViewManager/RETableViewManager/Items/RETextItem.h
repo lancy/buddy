@@ -34,10 +34,8 @@
 
 // TextField
 //
-@property (assign, readwrite, nonatomic) NSTextAlignment textFieldTextAlignment;              // default is NSTextAlignmentLeft
-@property (retain, readwrite, nonatomic) UIColor *textFieldTextColor;                         // default is nil. use opaque black
-@property (assign, readwrite, nonatomic) UITextFieldViewMode textFieldClearButtonMode;        // default is UITextFieldViewModeNever
-@property(assign, readwrite, nonatomic) BOOL textFieldClearsOnBeginEditing;                   // default is NO which moves cursor to location clicked. if YES, all text cleared
+@property (assign, readwrite, nonatomic) UITextFieldViewMode clearButtonMode;        // default is UITextFieldViewModeNever
+@property (assign, readwrite, nonatomic) BOOL clearsOnBeginEditing;                   // default is NO which moves cursor to location clicked. if YES, all text cleared
 
 // Keyboard
 //
@@ -55,8 +53,8 @@
 @property (copy, readwrite, nonatomic) void (^onChange)(RETextItem *item);
 @property (copy, readwrite, nonatomic) void (^onReturn)(RETextItem *item);
 
-+ (id)itemWithTitle:(NSString *)title value:(NSString *)value;
-+ (id)itemWithTitle:(NSString *)title value:(NSString *)value  placeholder:(NSString *)placeholder;
++ (instancetype)itemWithTitle:(NSString *)title value:(NSString *)value;
++ (instancetype)itemWithTitle:(NSString *)title value:(NSString *)value  placeholder:(NSString *)placeholder;
 - (id)initWithTitle:(NSString *)title value:(NSString *)value;
 - (id)initWithTitle:(NSString *)title value:(NSString *)value placeholder:(NSString *)placeholder;
 
