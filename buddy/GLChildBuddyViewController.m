@@ -5,7 +5,6 @@
 //  Created by Lancy on 24/8/13.
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
-
 #import <MessageUI/MessageUI.h>
 #import "GLChildBuddyViewController.h"
 #import "GLUserAgent.h"
@@ -14,6 +13,7 @@
 #import "GLChildBuddyItem.h"
 #import "GLDropDownCell.h"
 #import "GLDropDownItem.h"
+#import "GLRecordViewController.h"
 
 @interface GLChildBuddyViewController () <MFMessageComposeViewControllerDelegate>
 
@@ -23,6 +23,7 @@
 
 @implementation GLChildBuddyViewController {
     GLDropDownItem *_lastItem;
+    GLBuddy *_selectedBuddy;
 }
 
 - (void)viewDidLoad
@@ -80,7 +81,8 @@
     }];
     
     [item setReminderHandler:^(GLDropDownItem *item) {
-        
+        _selectedBuddy = item.buddy;
+        [self performSegueWithIdentifier:@"ShowAudioRecordView" sender:self];
     }];
     
     [item setMessageHandler:^(GLDropDownItem *item) {
@@ -114,5 +116,11 @@
     }
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowAudioRecordView"]) {
+        GLRecordViewController *vc = (GLRecordViewController *)[(UINavigationController *)segue.destinationViewController topViewController];
+        [vc setSelectedBuddy:_selectedBuddy];
+    }
+}
 @end

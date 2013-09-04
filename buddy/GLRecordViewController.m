@@ -34,7 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     self.audioManager = [[GLAudioManager alloc] init];
     [self setRecording:NO];
     [self initUserinterface];
@@ -167,6 +166,7 @@
 {
     if ([segue.identifier isEqualToString:@"FinishedRecording"]) {
         [segue.destinationViewController setAudioManager:self.audioManager];
+        [segue.destinationViewController setSelectedBuddy:_selectedBuddy];
     }
 }
 

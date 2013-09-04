@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GLBuddy.h"
 @interface GLRecordViewController : UIViewController
-
+@property (strong, nonatomic) GLBuddy *selectedBuddy;
 @end

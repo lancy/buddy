@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "GLAudioManager.h"
+#import "GLBuddy.h"
 
 @interface GLReminderSettingViewController : UIViewController
 
+@property (strong, nonatomic) GLBuddy *selectedBuddy;
 @property (strong, nonatomic) GLAudioManager *audioManager;
 
 @end

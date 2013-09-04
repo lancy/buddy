@@ -30,15 +30,6 @@
 
 @implementation GLReminderSettingViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)initUserinterface
 {
     self.title = @"Reminder";
@@ -139,11 +130,13 @@
 
 - (void)didTapDoneButton:(id)sender {
     NSString *savedFilePath = [self.audioManager saveCurrentAudioToDocument];
-    [[GLReminderManager shareManager] addNewLocalReminderWithFireDate:self.datePicker.date audioFilePath:savedFilePath];
-    
-    [self dismissViewControllerAnimated:YES completion:^{
+    if (_selectedBuddy) {
+        // TODO: send remote audio reminder
+    } else {
+        [[GLReminderManager shareManager] addNewLocalReminderWithFireDate:self.datePicker.date audioFilePath:savedFilePath];
         
-    }];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (IBAction)didTapPlayButton:(id)sender {
@@ -159,14 +152,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     [self initUserinterface];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
