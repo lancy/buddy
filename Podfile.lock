@@ -12,11 +12,12 @@ PODS:
   - libwebp/dsp (0.3.0-rc7)
   - libwebp/utils (0.3.0-rc7)
   - libwebp/webp (0.3.0-rc7)
+  - MBProgressHUD (0.7)
   - REFormattedNumberField (1.0.4)
   - RETableViewManager (1.2):
     - REFormattedNumberField (~> 1.0.4)
     - REValidation (~> 0.1.0)
-  - REValidation (0.1.1)
+  - REValidation (0.1.3)
   - SDWebImage (3.4):
     - libwebp
     - SDWebImage/MapKit
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - AKTabBarController
   - CYHelper
   - KZPropertyMapper
+  - MBProgressHUD
   - RETableViewManager
   - SDWebImage
 
@@ -37,9 +39,10 @@ SPEC CHECKSUMS:
   CYHelper: bcd9e0a93fe71364c6d392287e37d0858ecc6ef8
   KZPropertyMapper: 51db74b4c21009cbddce5b74225713a604882dbc
   libwebp: 40517fa1fd3716eded73b4696c45fc0b66e4b414
+  MBProgressHUD: 1fd8591a2216d5dec6de24e09187bb03bcbe9946
   REFormattedNumberField: 74ac0f5ce7001102a461dd025d34c93be7794a00
   RETableViewManager: 7bcb71638cf6680c10019484eeba6c0c20bbdeef
-  REValidation: 157ff1a1c5f7576c10a5f1f2756fd66b29db59c5
+  REValidation: 2368d2f4d3b44777a938ab2650a6e0c5c3d1fbba
   SDWebImage: f13f791e411c632489824aa7f129e230b52bf5c4
 
 COCOAPODS: 0.20.2

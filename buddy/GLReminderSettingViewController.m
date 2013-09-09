@@ -9,6 +9,7 @@
 #import "GLReminderSettingViewController.h"
 #import "MCProgressBarView.h"
 #import "GLReminderManager.h"
+#import "GLUserAgent.h"
 
 @interface GLReminderSettingViewController ()
 
@@ -131,7 +132,13 @@
 - (void)didTapDoneButton:(id)sender {
     NSString *savedFilePath = [self.audioManager saveCurrentAudioToDocument];
     if (_selectedBuddy) {
-        // TODO: send remote audio reminder
+        NSTimeInterval fireDate = [self.datePicker.date timeIntervalSince1970];
+        [[GLUserAgent sharedAgent] requestSendRemindToRelativeWithPhoneNumber:_selectedBuddy.phoneNumber remindTime:fireDate audioFilePath:savedFilePath completed:^(APIStatusCode statusCode, NSError *error) {
+            NSLog(@"statusCode = %d", statusCode);
+            if (statusCode == APIStatusCodeOK) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }];
     } else {
         [[GLReminderManager shareManager] addNewLocalReminderWithFireDate:self.datePicker.date audioFilePath:savedFilePath];
         

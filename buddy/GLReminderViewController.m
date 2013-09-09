@@ -8,6 +8,7 @@
 
 #import "GLReminderViewController.h"
 #import "GLReminderManager.h"
+#import "GLUserAgent.h"
 #import "GLReminderCell.h"
 #import <AVFoundation/AVFoundation.h>
 #import "GLReminder.h"
@@ -46,8 +47,11 @@
 
 - (void)loadRemidnersData
 {
-    self.reminders = [[GLReminderManager shareManager] allLocalReminders];
-    [self setupTableViewWithReminders:self.reminders];
+//    self.reminders = [[GLReminderManager shareManager] allLocalReminders];
+    [[GLUserAgent sharedAgent] requestRemindsWithCompletedBlock:^(APIStatusCode statusCode, NSArray *reminds, NSError *error) {
+        self.reminders = reminds;
+        [self setupTableViewWithReminders:self.reminders];
+    }];
 }
 
 - (void)setupTableViewWithReminders:(NSArray *)reminders
@@ -61,8 +65,13 @@
         [item setSelectionHandler:^(GLReminderItem *item) {
             [item deselectRowAnimated:YES];
             GLReminder *reminder = item.reminder;
-            self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:reminder.audioFilePath] error:nil];
-            [self.player play];
+            if (reminder.audioFileUrl) {
+                self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:reminder.audioFileUrl] error:nil];
+                [self.player play];
+            } else if (reminder.audioFilePath) {
+                self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:reminder.audioFilePath] error:nil];
+                [self.player play];
+            }
         }];
         [section addItem:item];
     }

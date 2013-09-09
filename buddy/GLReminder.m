@@ -22,8 +22,9 @@
     self = [super init];
     if (self) {
         [KZPropertyMapper mapValuesFrom:jsonObject toInstance:self usingMapping:@{
-             @"fireDate": @"fireDate",
-             @"audioFileUrl": @"audioFileUrl"
+             @"remindTime": @"fireDate",
+             @"audio": @"audioFileUrl",
+             @"phoneNumber": @"phoneNumber"
          }];
     }
     return self;
@@ -68,5 +69,14 @@
     return [reminders copy];
 }
 
++ (NSArray *)remindersFromJsonValues:(NSArray *)jsonValues
+{
+    NSMutableArray *reminders = [[NSMutableArray alloc] initWithCapacity:jsonValues.count];
+    for (NSDictionary *value in jsonValues) {
+        GLReminder *reminder = [[GLReminder alloc] initWithJsonObject:value];
+        [reminders addObject:reminder];
+    }
+    return [reminders copy];
+}
 
 @end

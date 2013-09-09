@@ -10,6 +10,7 @@
 #import "GLBuddyApiClient.h"
 #import "GLBuddyManager.h"
 #import "GLBuddy.h"
+#import "GLReminder.h"
 
 NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSuccessNotificaton";
 
@@ -39,6 +40,7 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
                                      success:^(AFHTTPRequestOperation *operation, id JSON) {
                                                 NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
                                                 GLUserType userType = [[JSON valueForKeyPath:@"userType"] integerValue];
+                                                [self setUserType:userType];
                                                 if (block) {
                                                     block([statusCode integerValue], userType, nil);
                                                 }
@@ -192,7 +194,7 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
     [[GLBuddyApiClient sharedClient] postPath:@"get_relatives_list/"
                                    parameters:nil
                                       success:^(AFHTTPRequestOperation *operation, id JSON) {
-                                          NSArray *relatives = [GLBuddy buddysWithJsonObject:JSON];
+                                          NSArray *relatives = [GLBuddy buddysWithJsonObject:JSON[@"data"]];
                                           [[GLBuddyManager shareManager] setRemotesBuddys:relatives];
                                           if (block) {
                                               block(relatives, nil);
@@ -203,6 +205,52 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
                                               block([NSArray array], error);
                                           }
                                       }];
+}
+
+- (void)requestSendRemindToRelativeWithPhoneNumber:(NSString *)phoneNumber
+                                        remindTime:(NSTimeInterval)remindTime
+                                     audioFilePath:(NSString *)filePath
+                                         completed:(void (^)(APIStatusCode statusCode, NSError *error))block
+{
+    NSData *audioData = [[NSData alloc] initWithContentsOfFile:filePath];
+    NSDictionary *parameters = @{
+                                 @"friendPhoneNumber": @([phoneNumber integerValue]),
+                                 @"remindTime": @(remindTime),
+                                 @"audio": audioData
+                                 };
+    [[GLBuddyApiClient sharedClient] postPath:@"send_remind_to_relative/"
+                                   parameters:parameters
+                                      success:^(AFHTTPRequestOperation *operation, id JSON) {
+                                          NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
+                                          if (block) {
+                                              block([statusCode integerValue], nil);
+                                          }
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          if (block) {
+                                              block(APIStatusCodeError, error);
+                                          }
+                                      }];
+}
+
+- (void)requestRemindsWithCompletedBlock:(void (^)(APIStatusCode statusCode, NSArray *reminds, NSError *error))block
+{
+    [[GLBuddyApiClient sharedClient] postPath:@"get_remind/"
+                                   parameters:nil
+                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                          NSNumber *statusCode = responseObject[@"status_code"];
+                                          NSArray *reminds = [GLReminder remindersFromJsonValues:responseObject[@"data"]];
+                                          if (block) {
+                                              block([statusCode integerValue], reminds, nil);
+                                          }
+    }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          if (block) {
+                                              block(APIStatusCodeError, nil, error);
+                                          }
+        
+    }];
+    
 }
 
 - (NSString *) getAPIStatusCodeDescription:(APIStatusCode)APIStatusCode {
@@ -222,7 +270,29 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
     return [mapping objectForKey:@(APIStatusCode)];
 }
 
-- (void) showErrorDialog:(APIStatusCode)statusCode {
+- (void)requestSendMissToRelativeWithPhoneNumber:(NSString *)phoneNumber completed:(void (^)(APIStatusCode statusCode, NSError *error))block
+{
+    NSDictionary *parameters = @{
+                                 @"friendPhoneNumber": @([phoneNumber integerValue]),
+                                 };
+    
+    [[GLBuddyApiClient sharedClient] postPath:@"send_miss_to_relative/"
+                                   parameters:parameters
+                                      success:^(AFHTTPRequestOperation *operation, id JSON) {
+                                          NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
+                                          if (block) {
+                                              block([statusCode integerValue], nil);
+                                          }
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          if (block) {
+                                              block(APIStatusCodeError, error);
+                                          }
+                                      }];
+    
+}
+
+- (void)showErrorDialog:(APIStatusCode)statusCode {
     UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"错误" message:[NSString stringWithFormat:@"错误代码：%d\n 错误原因：%@", statusCode, [[GLUserAgent sharedAgent] getAPIStatusCodeDescription:statusCode]  ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [av show];
 }

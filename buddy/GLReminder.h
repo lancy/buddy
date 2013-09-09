@@ -10,6 +10,7 @@
 
 @interface GLReminder : NSObject
 
+@property (copy, nonatomic) NSString *phoneNumber;
 @property (copy, nonatomic) NSDate *fireDate;
 @property (copy, nonatomic) NSString *audioFilePath;
 @property (copy, nonatomic) NSString *audioFileUrl;
@@ -20,5 +21,6 @@
 
 + (NSArray *)dictionaryValuesFromReminders:(NSArray *)reminders;
 + (NSArray *)remindersFromDictionaryValues:(NSArray *)values;
++ (NSArray *)remindersFromJsonValues:(NSArray *)jsonValues;
 
 @end

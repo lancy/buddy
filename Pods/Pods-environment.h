@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_KZPropertyMapper 1
 #define COCOAPODS_VERSION_PATCH_KZPropertyMapper 0
 
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 7
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
 // REFormattedNumberField
 #define COCOAPODS_POD_AVAILABLE_REFormattedNumberField
 #define COCOAPODS_VERSION_MAJOR_REFormattedNumberField 1
@@ -46,7 +52,7 @@
 #define COCOAPODS_POD_AVAILABLE_REValidation
 #define COCOAPODS_VERSION_MAJOR_REValidation 0
 #define COCOAPODS_VERSION_MINOR_REValidation 1
-#define COCOAPODS_VERSION_PATCH_REValidation 1
+#define COCOAPODS_VERSION_PATCH_REValidation 3
 
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage

@@ -12,6 +12,7 @@
 #import "GLMessageCell.h"
 #import "GLBuddy.h"
 #import "GLMessageItem.h"
+#import "GLUserAgent.h"
 @interface GLMessageViewController () <MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
@@ -65,20 +66,22 @@
         [item setSelectionHandler:^(GLMessageItem *item) {
             [item deselectRowAnimated:YES];
             GLBuddy *buddy = item.buddy;
-            NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
-            
-            if ([MFMessageComposeViewController canSendText]) {
-                MFMessageComposeViewController *messageComposer =
-                [[MFMessageComposeViewController alloc] init];
-                NSString *message = NSLocalizedString(@"I miss you dear, call me if you have time.", nil);
-                [messageComposer setRecipients:@[cleanedString]];
-                [messageComposer setBody:message];
-                messageComposer.messageComposeDelegate = self;
-                [self presentViewController:messageComposer animated:YES completion:nil];
-            } else {
-#warning DOTO: exception handle;
-            }
-
+            [[GLUserAgent sharedAgent] requestSendMissToRelativeWithPhoneNumber:buddy.phoneNumber completed:^(APIStatusCode statusCode, NSError *error) {
+                    NSLog(@"statusCode = %d", statusCode);
+            }];
+//            NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
+//            
+//            if ([MFMessageComposeViewController canSendText]) {
+//                MFMessageComposeViewController *messageComposer =
+//                [[MFMessageComposeViewController alloc] init];
+//                NSString *message = NSLocalizedString(@"I miss you dear, call me if you have time.", nil);
+//                [messageComposer setRecipients:@[cleanedString]];
+//                [messageComposer setBody:message];
+//                messageComposer.messageComposeDelegate = self;
+//                [self presentViewController:messageComposer animated:YES completion:nil];
+//            } else {
+//#warning DOTO: exception handle;
+//            }
         }];
         [section addItem:item];
     }

@@ -31,7 +31,6 @@ typedef enum {
 @property (strong, nonatomic) NSString *password;
 @property (strong, nonatomic) NSString *email;
 
-
 // request methods
 
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber
@@ -62,7 +61,17 @@ typedef enum {
 
 - (void)requestRelativesListWithCompletedBlock:(void (^)(NSArray *relatives, NSError *error))block;
 
+- (void)requestSendRemindToRelativeWithPhoneNumber:(NSString *)phoneNumber
+                                        remindTime:(NSTimeInterval)remindTime
+                                     audioFilePath:(NSString *)filePath
+                                         completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
+
+- (void)requestRemindsWithCompletedBlock:(void (^)(APIStatusCode statusCode, NSArray *reminds, NSError *error))block;
+
+- (void)requestSendMissToRelativeWithPhoneNumber:(NSString *)phoneNumber completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
+
 - (NSString *) getAPIStatusCodeDescription : (APIStatusCode) APIStatusCode;
 
 - (void) showErrorDialog:(APIStatusCode) APIStatusCode;
+
 @end

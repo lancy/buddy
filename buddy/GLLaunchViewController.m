@@ -135,8 +135,11 @@ NSString * const kPresentChildBuddySegueIdentifier = @"presentChild";
         
     } else if ([segue.identifier isEqualToString:kPresentLoginSegueIdentifier]) {
         [(GLLoginViewController *)segue.destinationViewController setLoginSuccessHandler:^{
-//            [self presentHomeViewController];
-            [self presentChildBuddyViewController];
+            if ([[GLUserAgent sharedAgent] userType] == GLUserTypeOld) {
+                [self presentHomeViewController];
+            } else {
+                [self presentChildBuddyViewController];
+            }
         }];
     }
 }
