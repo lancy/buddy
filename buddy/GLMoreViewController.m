@@ -7,6 +7,7 @@
 //
 
 #import "GLMoreViewController.h"
+#import "GLChildBuddyViewController.h"
 
 @interface GLMoreViewController ()
 
@@ -32,13 +33,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
+    
+    if ([self shouldShowDoneButton]) {
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDoneButton:)];
+        [self.navigationItem setLeftBarButtonItem:doneButton];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)didTapDoneButton:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end

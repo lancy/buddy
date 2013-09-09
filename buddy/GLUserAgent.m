@@ -39,7 +39,7 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
                                   parameters:parameters
                                      success:^(AFHTTPRequestOperation *operation, id JSON) {
                                                 NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
-                                                GLUserType userType = [[JSON valueForKeyPath:@"userType"] integerValue];
+                                                GLUserType userType = [[JSON valueForKeyPath:@"user_type"] integerValue];
                                                 [self setUserType:userType];
                                                 if (block) {
                                                     block([statusCode integerValue], userType, nil);

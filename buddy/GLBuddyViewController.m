@@ -52,18 +52,8 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
     
-    UIImage *plusButtonImage= [UIImage imageNamed:@"navi_plusbutton.png"];
-    UIButton *plusButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, plusButtonImage.size.width, plusButtonImage.size.height)];
-    [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton.png"] forState:UIControlStateNormal];
-    [plusButton setImage:[UIImage imageNamed:@"navi_plusbutton_selected.png"] forState:UIControlStateHighlighted];
-    [plusButton addTarget:self action:@selector(didTapPlusButton:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithCustomView:plusButton];
+    UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapPlusButton:)];
     [self.navigationItem setRightBarButtonItem:plusBarButton];
-    
-    UIBarButtonItem *negativeSeperator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSeperator.width = -5;
-    
-    [self.navigationItem setRightBarButtonItems:@[negativeSeperator, plusBarButton]];
 }
 
 - (void)setupTableViewWithBuddys:(NSArray *)buddys;

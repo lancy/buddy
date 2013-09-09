@@ -10,4 +10,6 @@
 
 @interface GLMoreViewController : UIViewController
 
+@property (nonatomic, assign) BOOL shouldShowDoneButton;
+
 @end
