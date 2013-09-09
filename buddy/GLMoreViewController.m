@@ -15,20 +15,10 @@
 
 @implementation GLMoreViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (NSString *)tabImageName
 {
 	return @"tabbar_item4.png";
 }
-
 
 - (void)viewDidLoad
 {
@@ -46,6 +36,5 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end

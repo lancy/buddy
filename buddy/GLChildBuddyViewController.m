@@ -38,7 +38,7 @@
 
 - (void)customUserinterface
 {
-    self.title = @"Buddys";
+    self.title = @"Buddy";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
     UIBarButtonItem *moreBarButton = [[UIBarButtonItem alloc] initWithTitle:@"More" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapMoreButton:)];
     [self.navigationItem setLeftBarButtonItem:moreBarButton];
