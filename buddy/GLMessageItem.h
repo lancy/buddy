@@ -12,6 +12,7 @@
 @interface GLMessageItem : RETableViewItem
 
 @property (copy, nonatomic) GLBuddy *buddy;
+@property (assign, nonatomic) BOOL isSent;
 
 - (id)initWithBuddy:(GLBuddy *)buddy;
 

@@ -10,6 +10,7 @@
 #import "GLChildBuddyViewController.h"
 
 @interface GLMoreViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @end
 
@@ -25,15 +26,9 @@
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
-    
-    if ([self shouldShowDoneButton]) {
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDoneButton:)];
-        [self.navigationItem setLeftBarButtonItem:doneButton];
-    }
 }
 
-- (void)didTapDoneButton:(id)sender
-{
+- (IBAction)didTapLogoutButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

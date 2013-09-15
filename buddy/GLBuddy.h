@@ -13,6 +13,7 @@
 @property (copy, nonatomic) NSString *contactName;
 @property (copy, nonatomic) NSString *phoneNumber;
 @property (copy, nonatomic) NSString *avatarUrl;
+@property (copy, nonatomic) NSNumber *miss;
 
 - (id)initWithJsonObject:(NSDictionary *)jsonObject;
 + (NSArray *)buddysWithJsonObject:(NSDictionary *)jsonObject;

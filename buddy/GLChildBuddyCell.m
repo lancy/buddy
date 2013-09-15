@@ -44,6 +44,11 @@
     } else {
         [_nameLabel setText:buddy.phoneNumber];
     }
+    if (buddy.miss) {
+        [_missYouImageView setHidden:!buddy.miss.boolValue];
+    } else {
+        [_missYouImageView setHidden:YES];
+    }
     if (buddy.avatarUrl) {
         //[self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         

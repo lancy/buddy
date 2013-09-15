@@ -282,9 +282,32 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <view key="view" contentMode="scaleToFill" id="kmY-EF-SOc">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-2U-iac">
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="登出">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapLogoutButton:" destination="enO-ef-trv" eventType="touchUpInside" id="19N-XA-yjV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="leading" secondItem="kmY-EF-SOc" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3zl-J2-yKZ"/>
+                            <constraint firstAttribute="trailing" secondItem="uAk-2U-iac" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ssy-H3-qUh"/>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="top" secondItem="kmY-EF-SOc" secondAttribute="top" constant="20" symbolic="YES" type="default" id="zTL-hY-E2e"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="More" id="WkU-Y7-9Vr"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="uAk-2U-iac" id="Lbz-FH-GWR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uR-VH-yGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -657,7 +680,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="scrollView" destination="xTo-Y3-2on" id="K42-Mb-MCJ"/>
                         <segue destination="aCX-np-MIy" kind="modal" identifier="presentRegister" modalTransitionStyle="flipHorizontal" id="PqG-MQ-YCZ"/>
                         <segue destination="wcR-Gc-ePk" kind="modal" identifier="presentLogin" modalTransitionStyle="flipHorizontal" id="TH9-M4-0of"/>
-                        <segue destination="ScT-is-uEk" kind="modal" identifier="presentChild" id="20u-If-Gnw"/>
+                        <segue destination="ScT-is-uEk" kind="modal" identifier="presentChild" modalTransitionStyle="crossDissolve" id="20u-If-Gnw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mT-3N-E4z" userLabel="First Responder" sceneMemberID="firstResponder"/>

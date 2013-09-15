@@ -48,11 +48,8 @@
 
 - (void)didTapMoreButton:(id)sender
 {
-   
     GLMoreViewController *contentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MoreViewController"];
-    [contentVC setShouldShowDoneButton:YES];
-    UIViewController *vc = [[UINavigationController alloc] initWithRootViewController:contentVC];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:contentVC animated:YES];
 }
 
 - (void)requestRemoteBuddyData
@@ -214,4 +211,21 @@
     return NO;
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        // add contact
+        [[GLUserAgent sharedAgent] addRelativeWithPhoneNumber:_phoneTextField.text contactName:_nameTextField.text completed:^(APIStatusCode statusCode, NSError *error) {
+            NSLog(@"Add Relative API, statue = %d", statusCode);
+            if (statusCode == APIStatusCodeFriendAddedSuccess) {
+                UIAlertView *av=[[UIAlertView alloc]initWithTitle:@"信息" message:@"添加成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [av show];
+                [self requestRemoteBuddyData];
+            }else{
+                [[GLUserAgent sharedAgent] showErrorDialog:statusCode];
+            }
+        }];
+    }
+}
 @end

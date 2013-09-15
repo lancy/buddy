@@ -14,7 +14,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"phoneNumber = %@, contactName = %@, avatarUrl = %@", _phoneNumber, _contactName, _avatarUrl];
+    return [NSString stringWithFormat:@"phoneNumber = %@, contactName = %@, avatarUrl = %@, miss = %@", _phoneNumber, _contactName, _avatarUrl, _miss];
 }
 
 - (id)initWithJsonObject:(NSDictionary *)jsonObject
@@ -24,7 +24,8 @@
         [KZPropertyMapper mapValuesFrom:jsonObject toInstance:self usingMapping:@{
             @"contactName": @"contactName",
             @"phoneNumber": @"@String(phoneNumber)",
-            @"avatarUrl": @"avatarUrl"
+            @"avatarUrl": @"avatarUrl",
+            @"miss": @"miss"
          }];        
     }
     return self;

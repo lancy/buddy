@@ -37,6 +37,13 @@
 {
     [super cellWillAppear];
     GLBuddy *buddy = self.item.buddy;
+    if (self.item.isSent) {
+        UIImage *sendImage = [UIImage imageNamed:@"message_tableviewcell_sent"];
+        [self.heartImageView setImage:sendImage];
+    } else {
+        UIImage *unsendImage = [UIImage imageNamed:@"message_tableviewcell_unsend"];
+        [self.heartImageView setImage:unsendImage];
+    }
     if (buddy.contactName) {
         [_nameLabel setText:buddy.contactName];
     } else {

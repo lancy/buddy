@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>413153BD-C58D-4C72-9440-D29DAF6664A2</string>
+	<string>6DD3E60C-8A19-4E21-8A33-96723E71BEC2</string>
 	<key>IDESourceControlProjectName</key>
 	<string>buddy</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>252B3EAB-5F17-4166-853F-C247AAF12FA4</key>
-		<string>https://github.com/lancy/buddy.git</string>
+		<key>9E624CD9-EC76-4F10-9C23-1DE793509175</key>
+		<string>ssh://github.com/lancy/buddy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>buddy.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>252B3EAB-5F17-4166-853F-C247AAF12FA4</key>
+		<key>9E624CD9-EC76-4F10-9C23-1DE793509175</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/lancy/buddy.git</string>
+	<string>ssh://github.com/lancy/buddy.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>252B3EAB-5F17-4166-853F-C247AAF12FA4</string>
+	<string>9E624CD9-EC76-4F10-9C23-1DE793509175</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>252B3EAB-5F17-4166-853F-C247AAF12FA4</string>
+			<string>9E624CD9-EC76-4F10-9C23-1DE793509175</string>
 			<key>IDESourceControlWCCName</key>
 			<string>buddy</string>
 		</dict>

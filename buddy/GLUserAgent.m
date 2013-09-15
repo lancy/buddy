@@ -191,7 +191,7 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
 
 - (void)requestRelativesListWithCompletedBlock:(void (^)(NSArray *relatives, NSError *error))block
 {
-    [[GLBuddyApiClient sharedClient] postPath:@"get_relatives_list/"
+    [[GLBuddyApiClient sharedClient] postPath:@"get_relatives_list_with_miss/"
                                    parameters:nil
                                       success:^(AFHTTPRequestOperation *operation, id JSON) {
                                           NSArray *relatives = [GLBuddy buddysWithJsonObject:JSON[@"data"]];
