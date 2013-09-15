@@ -74,7 +74,7 @@
     [self.stateLabel setFont:[UIFont systemFontOfSize:24]];
     [self.stateLabel setAdjustsFontSizeToFitWidth:YES];
     [self.stateLabel setBackgroundColor:[UIColor clearColor]];
-    [self.stateLabel setText:NSLocalizedString(@"Tap the microphone", nil)];
+    [self.stateLabel setText:NSLocalizedString(@"点击麦克风", nil)];
     
     self.descriptionLabel= [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 280, 44)];
     [self.descriptionLabel setTextColor:[UIColor grayColor]];
@@ -82,7 +82,7 @@
     [self.descriptionLabel setNumberOfLines:2];
     [self.descriptionLabel setAdjustsFontSizeToFitWidth:YES];
     [self.descriptionLabel setBackgroundColor:[UIColor clearColor]];
-    [self.descriptionLabel setText:NSLocalizedString(@"You could record audio up to 1 min, or stop by tap the microphone again", nil)];
+    [self.descriptionLabel setText:NSLocalizedString(@"你最多可以录制一分钟的语音，再次点击麦克风来停止录音", nil)];
 
     [self.view addSubview:self.timeLabel];
     [self.view addSubview:self.stateLabel];
@@ -98,7 +98,7 @@
         int s = ((int) self.audioManager.recorder.currentTime) % 60;
         int ss = (self.audioManager.recorder.currentTime - ((int) self.audioManager.recorder.currentTime)) * 100;
         
-        NSMutableString *recordingString = [NSLocalizedString(@"Recording.", nil) mutableCopy];
+        NSMutableString *recordingString = [NSLocalizedString(@"录音中.", nil) mutableCopy];
         if (s % 3 == 0) {
             [recordingString appendString:@"."];
         } else if (s % 3 == 1) {
@@ -135,7 +135,7 @@
 {
     [self setRecording:NO];
     [self.audioManager stopRecord];
-    [self.stateLabel setText:NSLocalizedString(@"Tap the microphone", nil)];
+    [self.stateLabel setText:NSLocalizedString(@"点击麦克风", nil)];
     [self.powerIndicatorView stopAnimation];
     [self.timer invalidate];
 }

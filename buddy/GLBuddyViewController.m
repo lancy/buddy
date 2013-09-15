@@ -11,6 +11,7 @@
 #import "GLBuddyManager.h"
 #import "GLBuddyCell.h"
 #import "GLUserAgent.h"
+#import "MBProgressHUD.h"
 
 @interface GLBuddyViewController () <UIGestureRecognizerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate>
 
@@ -50,6 +51,7 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
 
 - (void)customUserinterface
 {
+    [self setTitle:@"亲友团"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
     
     UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapPlusButton:)];
@@ -87,8 +89,10 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
 
 - (void)requestRemoteBuddyData
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[GLUserAgent sharedAgent] requestRelativesListWithCompletedBlock:^(NSArray *relatives, NSError *error) {
         NSLog(@"relatives = %@", relatives);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self setupTableViewWithBuddys:relatives];
     }];
 }

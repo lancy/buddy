@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 GraceLancy. All rights reserved.
 //
 
+#import "AFNetworking.h"
 #import "GLUserAgent.h"
 #import "GLBuddyApiClient.h"
 #import "GLBuddyManager.h"
@@ -213,29 +214,34 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
                                          completed:(void (^)(APIStatusCode statusCode, NSError *error))block
 {
     NSData *audioData = [[NSData alloc] initWithContentsOfFile:filePath];
+    
     NSDictionary *parameters = @{
                                  @"friendPhoneNumber": @([phoneNumber integerValue]),
                                  @"remindTime": @(remindTime),
-                                 @"audio": audioData
                                  };
-    [[GLBuddyApiClient sharedClient] postPath:@"send_remind_to_relative/"
-                                   parameters:parameters
-                                      success:^(AFHTTPRequestOperation *operation, id JSON) {
-                                          NSNumber *statusCode = [JSON valueForKeyPath:@"status_code"];
-                                          if (block) {
-                                              block([statusCode integerValue], nil);
-                                          }
-                                      }
-                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                          if (block) {
-                                              block(APIStatusCodeError, error);
-                                          }
-                                      }];
+    NSMutableURLRequest *request = [[GLBuddyApiClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"send_remind_to_relative/" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:audioData name:@"audio" fileName:@"bra.aac" mimeType:@"audio/aac"];
+    }];
+    
+    AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSNumber *statusCode = [responseObject valueForKeyPath:@"status_code"];
+        if (block) {
+            block([statusCode integerValue], nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(APIStatusCodeError, error);
+
+        }
+    }];
+    [[GLBuddyApiClient sharedClient] enqueueHTTPRequestOperation:operation];
 }
 
 - (void)requestRemindsWithCompletedBlock:(void (^)(APIStatusCode statusCode, NSArray *reminds, NSError *error))block
 {
-    [[GLBuddyApiClient sharedClient] postPath:@"get_remind/"
+    [[GLBuddyApiClient sharedClient] postPath:@"get_remind_fifty_limit/"
                                    parameters:nil
                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                           NSNumber *statusCode = responseObject[@"status_code"];

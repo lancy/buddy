@@ -49,7 +49,7 @@
     } else {
         [_nameLabel setText:buddy.phoneNumber];
     }
-    [_descriptionLabel setText:NSLocalizedString(@"Click here to message him/her.", nil)];
+    [_descriptionLabel setText:NSLocalizedString(@"点击这里给他/她发送思念", nil)];
     if (buddy.avatarUrl) {
         [_avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         [_avatarImageView setHidden:NO];

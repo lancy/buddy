@@ -8,6 +8,7 @@
 
 #import "GLLoginViewController.h"
 #import "GLUserAgent.h"
+#import "MBProgressHUD.h"
 
 @interface GLLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
@@ -31,10 +32,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)didTapLoginButton:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[GLUserAgent sharedAgent] loginWithPhoneNumber:self.phoneNumberTextField.text
                                            password:self.passwordTextField.text
                                           completed:^(APIStatusCode statusCode, GLUserType userType, NSError *error) {
                                               NSLog(@"login api, status code = %d, userType = %d", statusCode, userType);
+                                              [MBProgressHUD hideHUDForView:self.view animated:YES];
                                               if (statusCode == APIStatusCodeOK) {
                                                   [self dismissViewControllerAnimated:NO completion:[self loginSuccessHandler]];
                                               }else{

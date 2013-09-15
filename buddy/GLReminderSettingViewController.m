@@ -10,6 +10,7 @@
 #import "MCProgressBarView.h"
 #import "GLReminderManager.h"
 #import "GLUserAgent.h"
+#import "MBProgressHUD.h"
 
 @interface GLReminderSettingViewController ()
 
@@ -35,7 +36,7 @@
 {
     self.title = @"Reminder";
     
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapRecordAgainButton:)]];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapRecordAgainButton:)]];
     
     
     
@@ -76,7 +77,7 @@
     [self.stateLabel setFont:[UIFont systemFontOfSize:24]];
     [self.stateLabel setAdjustsFontSizeToFitWidth:YES];
     [self.stateLabel setBackgroundColor:[UIColor clearColor]];
-    [self.stateLabel setText:NSLocalizedString(@"Recording is finished", nil)];
+    [self.stateLabel setText:NSLocalizedString(@"录音完成", nil)];
     
     self.descriptionLabel= [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 280, 44)];
     [self.descriptionLabel setTextColor:[UIColor grayColor]];
@@ -84,7 +85,7 @@
     [self.descriptionLabel setNumberOfLines:2];
     [self.descriptionLabel setAdjustsFontSizeToFitWidth:YES];
     [self.descriptionLabel setBackgroundColor:[UIColor clearColor]];
-    [self.descriptionLabel setText:NSLocalizedString(@"You could listen the audio and set the alert time", nil)];
+    [self.descriptionLabel setText:NSLocalizedString(@"你可以试听，或点击返回再录制一次", nil)];
     
     [self.view addSubview:self.timeLabel];
     [self.view addSubview:self.stateLabel];
@@ -101,7 +102,7 @@
         int s = ((int) self.audioManager.player.currentTime) % 60;
         int ss = (self.audioManager.player.currentTime - ((int) self.audioManager.player.currentTime)) * 100;
         
-        NSMutableString *recordingString = [NSLocalizedString(@"Playing.", nil) mutableCopy];
+        NSMutableString *recordingString = [NSLocalizedString(@"播放中.", nil) mutableCopy];
         if (s % 3 == 0) {
             [recordingString appendString:@"."];
         } else if (s % 3 == 1) {
@@ -118,7 +119,7 @@
         [self.progressBarView setProgress:progress];
     } else {
         [self.progressBarView setProgress:1];
-        [self.stateLabel setText:NSLocalizedString(@"Recording is finished", nil)];
+        [self.stateLabel setText:NSLocalizedString(@"录音完成", nil)];
         [self.timer invalidate];
         [self.playerButton setHidden:NO];
     }
@@ -133,11 +134,17 @@
     NSString *savedFilePath = [self.audioManager saveCurrentAudioToDocument];
     if (_selectedBuddy) {
         NSTimeInterval fireDate = [self.datePicker.date timeIntervalSince1970];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[GLUserAgent sharedAgent] requestSendRemindToRelativeWithPhoneNumber:_selectedBuddy.phoneNumber remindTime:fireDate audioFilePath:savedFilePath completed:^(APIStatusCode statusCode, NSError *error) {
             NSLog(@"statusCode = %d", statusCode);
+            MBProgressHUD *hub = [MBProgressHUD HUDForView:self.view];
             if (statusCode == APIStatusCodeOK) {
+                [hub setLabelText:@"发送成功"];
                 [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [hub setLabelText:@"发送失败"];
             }
+            [hub hide:YES afterDelay:0.5];
         }];
     } else {
         [[GLReminderManager shareManager] addNewLocalReminderWithFireDate:self.datePicker.date audioFilePath:savedFilePath];

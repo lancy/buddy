@@ -43,7 +43,7 @@
     } else {
         [_nameLabel setText:buddy.phoneNumber];
     }
-    [self.descriptionLabel setText:NSLocalizedString(@"Click here to call him/her.", nil)];
+    [self.descriptionLabel setText:NSLocalizedString(@"点击这里给他/她打电话", nil)];
     if (buddy.avatarUrl) {
         [self.avatarImageView.layer setCornerRadius:32];
         [self.avatarImageView.layer setMasksToBounds:YES];

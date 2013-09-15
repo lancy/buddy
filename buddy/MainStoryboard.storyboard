@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Buddy View Controller - Buddy-->
+        <!--Buddy View Controller - 亲友团-->
         <scene sceneID="Clo-dN-HKK">
             <objects>
                 <viewController storyboardIdentifier="BuddyViewController" id="RlJ-5h-4dp" customClass="GLBuddyViewController" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                             <constraint firstItem="5Mk-Ye-FGF" firstAttribute="trailing" secondItem="MQn-qS-65V" secondAttribute="trailing" type="default" id="OJe-lp-tcQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Buddy" id="OAk-Wj-NrR"/>
+                    <navigationItem key="navigationItem" title="亲友团" id="OAk-Wj-NrR"/>
                     <connections>
                         <outlet property="tableview" destination="5Mk-Ye-FGF" id="Kvw-5E-Z7O"/>
                     </connections>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="2106" y="-1072"/>
         </scene>
-        <!--Reminder View Controller - Reminder-->
+        <!--Reminder View Controller - 提醒-->
         <scene sceneID="pad-1Q-08H">
             <objects>
                 <viewController storyboardIdentifier="ReminderViewController" id="WsQ-9d-Tga" customClass="GLReminderViewController" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                             <constraint firstItem="EGo-QQ-E7r" firstAttribute="leading" secondItem="yTe-iW-3DB" secondAttribute="leading" type="default" id="yv3-MX-gew"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Reminder" id="r1b-RO-h7A"/>
+                    <navigationItem key="navigationItem" title="提醒" id="r1b-RO-h7A"/>
                     <connections>
                         <outlet property="tableview" destination="EGo-QQ-E7r" id="vbR-Pk-tjc"/>
                         <segue destination="jn0-8R-k5a" kind="modal" identifier="ShowAudioRecordView" id="Cvq-wf-LNH"/>
@@ -182,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="2106" y="-379"/>
         </scene>
-        <!--Record View Controller - Record Audio-->
+        <!--Record View Controller - 录音-->
         <scene sceneID="s2Q-ik-Ha7">
             <objects>
                 <viewController id="DSd-ZJ-hIo" customClass="GLRecordViewController" sceneMemberID="viewController">
@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Record Audio" id="2vG-Rp-brf"/>
+                    <navigationItem key="navigationItem" title="录音" id="2vG-Rp-brf"/>
                     <connections>
                         <segue destination="u6H-EV-Z63" kind="push" identifier="FinishedRecording" id="CPQ-e5-Kh2"/>
                     </connections>
@@ -200,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="3183" y="-379"/>
         </scene>
-        <!--Reminder Setting View Controller - Reminder Setting-->
+        <!--Reminder Setting View Controller - 提醒设置-->
         <scene sceneID="eiT-9s-eB9">
             <objects>
                 <viewController id="u6H-EV-Z63" customClass="GLReminderSettingViewController" sceneMemberID="viewController">
@@ -265,7 +265,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="cQ4-PX-Iqv" firstAttribute="trailing" secondItem="6yu-Ay-Chz" secondAttribute="trailing" type="default" id="zpd-SD-HsE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Reminder Setting" id="tax-PH-A3h"/>
+                    <navigationItem key="navigationItem" title="提醒设置" id="tax-PH-A3h"/>
                     <connections>
                         <outlet property="datePicker" destination="cQ4-PX-Iqv" id="t00-6m-hdB"/>
                         <outlet property="playerButton" destination="OPY-1g-MFW" id="abx-IZ-s7P"/>
@@ -275,7 +275,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="3653" y="-379"/>
         </scene>
-        <!--More View Controller - More-->
+        <!--More View Controller - 更多-->
         <scene sceneID="wat-Yn-YPj">
             <objects>
                 <viewController storyboardIdentifier="MoreViewController" id="enO-ef-trv" customClass="GLMoreViewController" sceneMemberID="viewController">
@@ -304,7 +304,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="uAk-2U-iac" firstAttribute="top" secondItem="kmY-EF-SOc" secondAttribute="top" constant="20" symbolic="YES" type="default" id="zTL-hY-E2e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="More" id="WkU-Y7-9Vr"/>
+                    <navigationItem key="navigationItem" title="更多" id="WkU-Y7-9Vr"/>
                     <connections>
                         <outlet property="logoutButton" destination="uAk-2U-iac" id="Lbz-FH-GWR"/>
                     </connections>
@@ -492,7 +492,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-50" y="-1374"/>
         </scene>
-        <!--Message View Controller - Messages-->
+        <!--Message View Controller - 思念-->
         <scene sceneID="DOq-as-EFC">
             <objects>
                 <viewController storyboardIdentifier="MessageViewController" id="tDn-R1-Hhr" customClass="GLMessageViewController" sceneMemberID="viewController">
@@ -591,7 +591,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="c8d-i6-L9k" firstAttribute="bottom" secondItem="de5-sn-LhV" secondAttribute="bottom" type="default" id="rWc-Wm-b3I"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="5bS-Rh-MXG"/>
+                    <navigationItem key="navigationItem" title="思念" id="5bS-Rh-MXG"/>
                     <connections>
                         <outlet property="tableview" destination="c8d-i6-L9k" id="a9k-aQ-uE8"/>
                     </connections>
@@ -727,12 +727,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="BaJ-Fy-sS5">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="w4Q-zC-2KA">
+                        <barButtonItem key="leftBarButtonItem" title="取消" style="plain" id="w4Q-zC-2KA">
                             <connections>
                                 <action selector="didTapCancelButton:" destination="BCt-FF-gR0" id="tUR-6O-VtA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="mQK-XZ-N2O">
+                        <barButtonItem key="rightBarButtonItem" title="下一步" style="done" id="mQK-XZ-N2O">
                             <connections>
                                 <action selector="didTapNextButton:" destination="BCt-FF-gR0" id="uNJ-cM-bxO"/>
                             </connections>
@@ -795,7 +795,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="t6R-ic-GHl">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="LFy-LA-AbJ">
+                        <barButtonItem key="rightBarButtonItem" title="下一步" style="done" id="LFy-LA-AbJ">
                             <connections>
                                 <action selector="didTapNextButton:" destination="nQh-LG-oCA" id="Hb3-ld-80y"/>
                             </connections>
@@ -897,7 +897,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="Le1-7h-yGZ">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="T9N-cP-x2w">
+                        <barButtonItem key="rightBarButtonItem" title="完成" style="done" id="T9N-cP-x2w">
                             <connections>
                                 <action selector="didTapNextButton:" destination="iqh-mW-gv6" id="qi9-1i-qP5"/>
                             </connections>
@@ -925,7 +925,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-gT-Gu7">
                                 <items>
                                     <navigationItem title="登陆" id="Ohh-Na-WEX">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Cc-Nw-Qdu">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="8Cc-Nw-Qdu">
                                             <connections>
                                                 <action selector="didTapCancelButton:" destination="wcR-Gc-ePk" id="K3R-AZ-iEA"/>
                                             </connections>
@@ -1126,12 +1126,132 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="reminder_tableviewcell_bubble_unread@2x.png" width="443" height="117"/>
         <image name="youngframe.png" width="95" height="96"/>
     </resources>
+    <classes>
+        <class className="GLBuddyCell" superclassName="RETableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLBuddyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLBuddyViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLChildBuddyCell" superclassName="RETableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLChildBuddyCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="missYouImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="moodProgressImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLChildBuddyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLChildBuddyViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLDropDownCell" superclassName="RETableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLDropDownCell.h"/>
+        </class>
+        <class className="GLLaunchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLLaunchViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="GLLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLLoginViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="GLMessageCell" superclassName="RETableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="heartImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLMessageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMessageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GLMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLMoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="logoutButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GLRecordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRecordViewController.h"/>
+        </class>
+        <class className="GLRegisterFinishViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterFinishViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="againPasswordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="GLRegisterMiddleViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterMiddleViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="subtitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLRegisterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLRegisterViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chooseSwitch" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GLReminderCell" superclassName="RETableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="fireDateLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GLReminderSettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderSettingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="playerButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GLReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GLReminderViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RETableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RETableViewCell.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1bV-zw-tZy"/>
+        <segue reference="Cvq-wf-LNH"/>
     </inferredMetricsTieBreakers>
 </document>

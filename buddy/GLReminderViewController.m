@@ -12,13 +12,15 @@
 #import "GLReminderCell.h"
 #import <AVFoundation/AVFoundation.h>
 #import "GLReminder.h"
+#import "MBProgressHUD.h"
+
 
 @interface GLReminderViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSArray *reminders;
 
-@property (strong, nonatomic) AVAudioPlayer *player;
+@property (strong, nonatomic) AVPlayer *player;
 
 @end
 
@@ -48,7 +50,9 @@
 - (void)loadRemidnersData
 {
 //    self.reminders = [[GLReminderManager shareManager] allLocalReminders];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[GLUserAgent sharedAgent] requestRemindsWithCompletedBlock:^(APIStatusCode statusCode, NSArray *reminds, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         self.reminders = reminds;
         [self setupTableViewWithReminders:self.reminders];
     }];
@@ -66,10 +70,12 @@
             [item deselectRowAnimated:YES];
             GLReminder *reminder = item.reminder;
             if (reminder.audioFileUrl) {
-                self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:reminder.audioFileUrl] error:nil];
+                NSURL *url = [NSURL URLWithString:reminder.audioFileUrl];
+                AVPlayerItem *item = [AVPlayerItem playerItemWithURL:url];
+                self.player = [AVPlayer playerWithPlayerItem:item];
                 [self.player play];
             } else if (reminder.audioFilePath) {
-                self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:reminder.audioFilePath] error:nil];
+                self.player = [[AVPlayer alloc] initWithURL:[NSURL fileURLWithPath:reminder.audioFilePath]];
                 [self.player play];
             }
         }];

@@ -38,6 +38,7 @@
 
 - (void)customUserinterface
 {
+    [self setTitle:@"思念"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
 }
 

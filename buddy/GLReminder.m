@@ -14,7 +14,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"fireDate = %@, audioFilePath = %@", _fireDate, _audioFilePath];
+    return [NSString stringWithFormat:@"fireDate = %@, audioFileUrl = %@", _fireDate, _audioFileUrl];
 }
 
 - (id)initWithJsonObject:(NSDictionary *)jsonObject
@@ -22,12 +22,18 @@
     self = [super init];
     if (self) {
         [KZPropertyMapper mapValuesFrom:jsonObject toInstance:self usingMapping:@{
-             @"remindTime": @"fireDate",
+             @"remindTime": @"@Selector(dateFromNumber:, fireDate)",
              @"audio": @"audioFileUrl",
              @"phoneNumber": @"phoneNumber"
          }];
     }
     return self;
+}
+
+- (NSDate *)dateFromNumber:(NSNumber *)number
+{
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[number doubleValue]];
+    return date;
 }
 
 - (id)initWithDictionaryValue:(NSDictionary *)dictionary

@@ -15,6 +15,7 @@
 #import "GLDropDownCell.h"
 #import "GLDropDownItem.h"
 #import "GLRecordViewController.h"
+#import "MBProgressHUD.h"
 
 @interface GLChildBuddyViewController () <MFMessageComposeViewControllerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate>
 
@@ -38,9 +39,9 @@
 
 - (void)customUserinterface
 {
-    self.title = @"Buddy";
+    self.title = @"亲友团";
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
-    UIBarButtonItem *moreBarButton = [[UIBarButtonItem alloc] initWithTitle:@"More" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapMoreButton:)];
+    UIBarButtonItem *moreBarButton = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapMoreButton:)];
     [self.navigationItem setLeftBarButtonItem:moreBarButton];
     UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapPlusButton:)];
     [self.navigationItem setRightBarButtonItem:plusBarButton];
@@ -54,8 +55,10 @@
 
 - (void)requestRemoteBuddyData
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[GLUserAgent sharedAgent] requestRelativesListWithCompletedBlock:^(NSArray *relatives, NSError *error) {
         NSLog(@"relatives = %@", relatives);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self setupTableViewWithBuddys:relatives];
     }];
 }
