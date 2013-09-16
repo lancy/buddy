@@ -50,10 +50,7 @@
         [_missYouImageView setHidden:YES];
     }
     if (buddy.avatarUrl) {
-        //[self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
-        
-        //For testing purpose only
-        [self.avatarImageView setImageWithURL:[NSURL URLWithString:@"http://tp1.sinaimg.cn/1666109020/180/40013962754/1"]];
+        [self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         [self.avatarImageView.layer setCornerRadius:32];
         [self.avatarImageView.layer setMasksToBounds:YES];
         [self.avatarImageView setHidden:NO];
