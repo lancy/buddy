@@ -13,10 +13,12 @@
 #import "GLBuddy.h"
 #import "GLMessageItem.h"
 #import "GLUserAgent.h"
+#import <AVFoundation/AVFoundation.h>
 @interface GLMessageViewController () <MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) AVAudioPlayer *audioplayer;
 
 @end
 
@@ -35,6 +37,23 @@
     [self registerNotificationHandler];
     [self customUserinterface];
 }
+
+- (void) viewDidAppear:(BOOL)animated{
+    NSString *soundFilePath =[[NSBundle mainBundle] pathForResource: @"missu_cn" ofType: @"aac"];
+    NSURL *url=[NSURL fileURLWithPath:soundFilePath];
+    self.audioplayer=[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    if(![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
+        [[self audioplayer] prepareToPlay];
+        [[self audioplayer] play];
+    }
+    
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [[self audioplayer] stop];
+}
+
+
 
 - (void)customUserinterface
 {

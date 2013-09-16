@@ -10,4 +10,7 @@
 
 @interface GLMoreViewController : UIViewController
 
+
+-(void) setButtonTitle;
 @end
+

@@ -7,6 +7,7 @@
 //
 
 #import <AddressBookUI/AddressBookUI.h>
+#import <AVFoundation/AVFoundation.h>
 #import "GLBuddyViewController.h"
 #import "GLBuddyManager.h"
 #import "GLBuddyCell.h"
@@ -20,6 +21,7 @@
 
 @property (strong, nonatomic) UITextField *nameTextField;
 @property (strong, nonatomic) UITextField *phoneTextField;
+@property (strong, nonatomic) AVAudioPlayer *audioplayer;
 
 @end
 
@@ -39,6 +41,23 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
     [self registerNotificationHandler];
     [self initGestureRecognizer];
     [self requestRemoteBuddyData];
+}
+
+
+
+- (void) viewDidAppear:(BOOL)animated{
+    NSString *soundFilePath =[[NSBundle mainBundle] pathForResource: @"quicktalk_cn" ofType: @"aac"];
+    NSURL *url=[NSURL fileURLWithPath:soundFilePath];
+    self.audioplayer=[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    if(![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
+        [[self audioplayer] prepareToPlay];
+        [[self audioplayer] play];
+    }
+
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [[self audioplayer] stop];
 }
 
 - (void)initGestureRecognizer

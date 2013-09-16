@@ -21,7 +21,7 @@
 @property (strong, nonatomic) NSArray *reminders;
 
 @property (strong, nonatomic) AVPlayer *player;
-
+@property (strong, nonatomic) AVAudioPlayer *audioplayer;
 @end
 
 @implementation GLReminderViewController
@@ -40,6 +40,22 @@
     
     [self registerNotificationHandler];
     [self loadRemidnersData];
+}
+
+
+- (void) viewDidAppear:(BOOL)animated{
+    NSString *soundFilePath =[[NSBundle mainBundle] pathForResource: @"reminder_cn" ofType: @"aac"];
+    NSURL *url=[NSURL fileURLWithPath:soundFilePath];
+    self.audioplayer=[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    if(![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
+        [[self audioplayer] prepareToPlay];
+        [[self audioplayer] play];
+    }
+    
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [[self audioplayer] stop];
 }
 
 - (void)registerNotificationHandler

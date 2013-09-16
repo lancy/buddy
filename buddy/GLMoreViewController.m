@@ -8,9 +8,14 @@
 
 #import "GLMoreViewController.h"
 #import "GLChildBuddyViewController.h"
+#import "GLUserAgent.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GLMoreViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
+
+@property (strong, nonatomic) AVAudioPlayer *audioplayer;
 
 @end
 
@@ -21,15 +26,55 @@
 	return @"tabbar_item4.png";
 }
 
+
+
+-(void) setButtonTitle{
+    if([[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
+        [self.toggleButton setTitle:@"开启语音导航" forState:0];
+    }else{
+        [self.toggleButton setTitle:@"关闭语音导航" forState:0];
+    }
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setTitle:@"更多"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
+    [self setButtonTitle];
+
 }
+
+- (void) viewDidAppear:(BOOL)animated{
+    NSString *soundFilePath =[[NSBundle mainBundle] pathForResource: @"more_cn" ofType: @"aac"];
+    NSURL *url=[NSURL fileURLWithPath:soundFilePath];
+    self.audioplayer=[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    if(![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
+        [[self audioplayer] prepareToPlay];
+        [[self audioplayer] play];
+    }
+    
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [[self audioplayer] stop];
+}
+
 
 - (IBAction)didTapLogoutButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)didTaptoggleButton:(id)sender {
+    
+    BOOL nowStatus=[[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus];
+    
+    [[GLUserAgent sharedAgent] setAudioNavigationDisabledStatus:nowStatus^1];
+
+    [self setButtonTitle];
+    
+    
 }
 
 @end

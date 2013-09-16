@@ -298,6 +298,17 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
     
 }
 
+
+- (void) setAudioNavigationDisabledStatus:(BOOL)status {
+    NSUserDefaults *prefs=[NSUserDefaults standardUserDefaults];
+    [prefs setBool:status forKey:@"AudioNavigationDisabled"];
+}
+
+- (BOOL) getAudioNavigationDisabledStatus{
+    NSUserDefaults *prefs=[NSUserDefaults standardUserDefaults];
+    return [prefs boolForKey:@"AudioNavigationDisabled"];
+}
+
 - (void)showErrorDialog:(APIStatusCode)statusCode {
     UIAlertView *av=[[UIAlertView alloc] initWithTitle:@"错误" message:[NSString stringWithFormat:@"错误代码：%d\n 错误原因：%@", statusCode, [[GLUserAgent sharedAgent] getAPIStatusCodeDescription:statusCode]  ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [av show];

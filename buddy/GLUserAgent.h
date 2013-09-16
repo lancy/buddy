@@ -70,6 +70,11 @@ typedef enum {
 
 - (void)requestSendMissToRelativeWithPhoneNumber:(NSString *)phoneNumber completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
 
+
+- (void) setAudioNavigationDisabledStatus: (BOOL) status;
+
+- (BOOL) getAudioNavigationDisabledStatus;
+
 - (NSString *) getAPIStatusCodeDescription : (APIStatusCode) APIStatusCode;
 
 - (void) showErrorDialog:(APIStatusCode) APIStatusCode;
