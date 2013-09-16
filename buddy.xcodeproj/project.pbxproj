@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA6B39717E71A8F00F6C69E /* missu_cn.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B38F17E71A8F00F6C69E /* missu_cn.aac */; };
+		3AA6B39817E71A8F00F6C69E /* missu_en.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39017E71A8F00F6C69E /* missu_en.aac */; };
+		3AA6B39917E71A8F00F6C69E /* more_cn.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39117E71A8F00F6C69E /* more_cn.aac */; };
+		3AA6B39A17E71A8F00F6C69E /* more_en.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39217E71A8F00F6C69E /* more_en.aac */; };
+		3AA6B39B17E71A8F00F6C69E /* quicktalk_cn.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39317E71A8F00F6C69E /* quicktalk_cn.aac */; };
+		3AA6B39C17E71A8F00F6C69E /* quicktalk_en.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39417E71A8F00F6C69E /* quicktalk_en.aac */; };
+		3AA6B39D17E71A8F00F6C69E /* reminder_cn.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39517E71A8F00F6C69E /* reminder_cn.aac */; };
+		3AA6B39E17E71A8F00F6C69E /* reminder_en.aac in Resources */ = {isa = PBXBuildFile; fileRef = 3AA6B39617E71A8F00F6C69E /* reminder_en.aac */; };
 		BF035692176B2575004996DA /* record_mic_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035691176B2575004996DA /* record_mic_icon.png */; };
 		BF035694176B257D004996DA /* record_mic_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF035693176B257D004996DA /* record_mic_icon@2x.png */; };
 		BF05958A17B7B8CA00C4921A /* GLMessageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF05958917B7B8CA00C4921A /* GLMessageItem.m */; };
@@ -154,6 +162,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AA6B38F17E71A8F00F6C69E /* missu_cn.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = missu_cn.aac; sourceTree = "<group>"; };
+		3AA6B39017E71A8F00F6C69E /* missu_en.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = missu_en.aac; sourceTree = "<group>"; };
+		3AA6B39117E71A8F00F6C69E /* more_cn.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = more_cn.aac; sourceTree = "<group>"; };
+		3AA6B39217E71A8F00F6C69E /* more_en.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = more_en.aac; sourceTree = "<group>"; };
+		3AA6B39317E71A8F00F6C69E /* quicktalk_cn.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicktalk_cn.aac; sourceTree = "<group>"; };
+		3AA6B39417E71A8F00F6C69E /* quicktalk_en.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicktalk_en.aac; sourceTree = "<group>"; };
+		3AA6B39517E71A8F00F6C69E /* reminder_cn.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = reminder_cn.aac; sourceTree = "<group>"; };
+		3AA6B39617E71A8F00F6C69E /* reminder_en.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = reminder_en.aac; sourceTree = "<group>"; };
 		7832FC8B3FFC4EBA962DD164 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BF035691176B2575004996DA /* record_mic_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_mic_icon.png; sourceTree = "<group>"; };
 		BF035693176B257D004996DA /* record_mic_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_mic_icon@2x.png"; sourceTree = "<group>"; };
@@ -358,6 +374,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AA6B38E17E71A8F00F6C69E /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				3AA6B38F17E71A8F00F6C69E /* missu_cn.aac */,
+				3AA6B39017E71A8F00F6C69E /* missu_en.aac */,
+				3AA6B39117E71A8F00F6C69E /* more_cn.aac */,
+				3AA6B39217E71A8F00F6C69E /* more_en.aac */,
+				3AA6B39317E71A8F00F6C69E /* quicktalk_cn.aac */,
+				3AA6B39417E71A8F00F6C69E /* quicktalk_en.aac */,
+				3AA6B39517E71A8F00F6C69E /* reminder_cn.aac */,
+				3AA6B39617E71A8F00F6C69E /* reminder_en.aac */,
+			);
+			path = Audios;
+			sourceTree = "<group>";
+		};
 		BF067BFA17B77D790051E8B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +531,7 @@
 		BFDFA6D21764E83D006668BC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AA6B38E17E71A8F00F6C69E /* Audios */,
 				BFDFA71F17650215006668BC /* Images */,
 				BFDFA6D31764E83D006668BC /* buddy-Info.plist */,
 				BFDFA6D41764E83D006668BC /* InfoPlist.strings */,
@@ -844,6 +876,14 @@
 				BF2B3AB117C86379001685E5 /* moodProgressBG.png in Resources */,
 				BF2B3AB217C86379001685E5 /* moodProgressBG@2x.png in Resources */,
 				BF2B3AB317C86379001685E5 /* moodProgress@2x.png in Resources */,
+				3AA6B39717E71A8F00F6C69E /* missu_cn.aac in Resources */,
+				3AA6B39817E71A8F00F6C69E /* missu_en.aac in Resources */,
+				3AA6B39917E71A8F00F6C69E /* more_cn.aac in Resources */,
+				3AA6B39A17E71A8F00F6C69E /* more_en.aac in Resources */,
+				3AA6B39B17E71A8F00F6C69E /* quicktalk_cn.aac in Resources */,
+				3AA6B39C17E71A8F00F6C69E /* quicktalk_en.aac in Resources */,
+				3AA6B39D17E71A8F00F6C69E /* reminder_cn.aac in Resources */,
+				3AA6B39E17E71A8F00F6C69E /* reminder_en.aac in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
