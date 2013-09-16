@@ -217,7 +217,7 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
     
     NSDictionary *parameters = @{
                                  @"friendPhoneNumber": @([phoneNumber integerValue]),
-                                 @"remindTime": @(remindTime),
+                                 @"remindTime": @(round(remindTime)),
                                  };
     NSMutableURLRequest *request = [[GLBuddyApiClient sharedClient] multipartFormRequestWithMethod:@"POST" path:@"send_remind_to_relative/" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:audioData name:@"audio" fileName:@"bra.aac" mimeType:@"audio/aac"];
