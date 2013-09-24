@@ -27,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
-    [self customUserinterface];
+//    [self customUserinterface];
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     return YES;
 }

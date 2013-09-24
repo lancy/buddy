@@ -17,13 +17,4 @@ extern NSString * const BuddysDidChangedNotification;
 
 @property (strong, nonatomic) NSArray *remotesBuddys;
 
-- (NSArray *)allBuddys;
-- (void)addNewBuddyWithPerson:(ABRecordRef)person;
-- (void)addNewBuddyWithName:(NSString *)name phoneNumber:(NSString *)phoneNumber avatarPath:(NSString *)avatarPath;
-- (void)updateBuddyMessageTimeWithIndex:(NSUInteger)index;
-- (void)removeBuddyWithIndex:(NSUInteger)index;
-- (void)clearAllBuddys;
-
-- (BOOL)hasBuddyWithPhoneNumber:(NSString *)phoneNumber;
-
 @end

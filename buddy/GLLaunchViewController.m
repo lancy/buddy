@@ -133,7 +133,8 @@ NSString * const kPresentChildBuddySegueIdentifier = @"presentChild";
     if ([segue.identifier isEqualToString:kPresentRegisterSegueIdentifier]) {
         
     } else if ([segue.identifier isEqualToString:kPresentLoginSegueIdentifier]) {
-        [(GLLoginViewController *)segue.destinationViewController setLoginSuccessHandler:^{
+        UINavigationController *navi = segue.destinationViewController;
+        [(GLLoginViewController *)navi.topViewController setLoginSuccessHandler:^{
             if ([[GLUserAgent sharedAgent] userType] == GLUserTypeOld) {
                 [self presentHomeViewController];
             } else {

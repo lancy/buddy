@@ -208,7 +208,6 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
         }
     } else {
         if (buttonIndex == actionSheet.destructiveButtonIndex) {
-            [[GLBuddyManager shareManager] removeBuddyWithIndex:actionSheet.tag];
         }
     }
 }
@@ -225,7 +224,6 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
 - (BOOL)peoplePickerNavigationController:
 (ABPeoplePickerNavigationController *)peoplePicker
       shouldContinueAfterSelectingPerson:(ABRecordRef)person {
-    [[GLBuddyManager shareManager] addNewBuddyWithPerson:person];
     [[GLUserAgent sharedAgent] addRelativeWithPersonRef:person completed:^(APIStatusCode statusCode, NSError *error) {
         if(statusCode==APIStatusCodeFriendAddedSuccess) {
             UIAlertView *av=[[UIAlertView alloc]initWithTitle:@"信息" message:@"添加成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];

@@ -24,10 +24,25 @@
     [self setupUserInterface];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.phoneNumberTextField becomeFirstResponder];
+}
+
 - (void)setupUserInterface
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
 }
+
+- (IBAction)accountTextFieldDidEndOnExit:(id)sender {
+    [self.passwordTextField becomeFirstResponder];
+}
+
+- (IBAction)passwordTextFieldDidEndOnExit:(id)sender {
+    [self didTapLoginButton:sender];
+}
+
 - (IBAction)didTapCancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -45,5 +60,4 @@
                                               }
                                           }];
 }
-
 @end

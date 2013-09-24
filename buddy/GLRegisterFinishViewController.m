@@ -40,6 +40,15 @@
     [userAgent setPassword:self.passwordTextField.text];
     [userAgent setEmail:self.emailTextField.text];
 }
+- (IBAction)textFieldDidEndOnExit:(id)sender {
+    NSArray *textFields = @[self.phoneNumberTextField, self.passwordTextField, self.againPasswordTextField, self.emailTextField];
+    NSInteger index = [textFields indexOfObject:sender];
+    if (sender != self.emailTextField) {
+        [textFields[index + 1] becomeFirstResponder];
+    } else {
+        [self didTapNextButton:nil];
+    }
+}
 
 - (IBAction)didTapNextButton:(id)sender {
     if (self.phoneNumberTextField.text.length == 0) {
