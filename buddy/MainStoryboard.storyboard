@@ -300,7 +300,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-2U-iac">
-                                <rect key="frame" x="20" y="148" width="280" height="34"/>
+                                <rect key="frame" x="20" y="180" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6EU-mF-hrf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="登出">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,7 +313,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUF-HI-sxS">
-                                <rect key="frame" x="20" y="86" width="280" height="34"/>
+                                <rect key="frame" x="20" y="86" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PtI-fD-oeE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="关闭语音导航">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -322,12 +328,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KUF-HI-sxS" firstAttribute="leading" secondItem="kmY-EF-SOc" secondAttribute="leading" constant="20" symbolic="YES" id="4yz-eC-bnE"/>
-                            <constraint firstItem="KUF-HI-sxS" firstAttribute="leading" secondItem="uAk-2U-iac" secondAttribute="leading" id="Btd-qp-UMk"/>
-                            <constraint firstAttribute="trailing" secondItem="KUF-HI-sxS" secondAttribute="trailing" constant="20" symbolic="YES" id="TnV-4A-0QE"/>
-                            <constraint firstItem="uAk-2U-iac" firstAttribute="top" secondItem="KUF-HI-sxS" secondAttribute="bottom" constant="28" id="eQ5-F5-Q5S"/>
-                            <constraint firstItem="KUF-HI-sxS" firstAttribute="trailing" secondItem="uAk-2U-iac" secondAttribute="trailing" id="rG9-9n-ReG"/>
-                            <constraint firstItem="KUF-HI-sxS" firstAttribute="top" secondItem="nR7-hx-kb8" secondAttribute="bottom" constant="22" id="wZE-9n-c5x"/>
+                            <constraint firstItem="KUF-HI-sxS" firstAttribute="leading" secondItem="kmY-EF-SOc" secondAttribute="leading" constant="20" symbolic="YES" id="FSF-O4-WsR"/>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="width" secondItem="KUF-HI-sxS" secondAttribute="width" id="HLL-oL-l4P"/>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="top" secondItem="KUF-HI-sxS" secondAttribute="bottom" constant="50" id="Jbe-rm-tzv"/>
+                            <constraint firstItem="KUF-HI-sxS" firstAttribute="top" secondItem="nR7-hx-kb8" secondAttribute="bottom" constant="22" id="Nfh-ik-ghT"/>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="trailing" secondItem="KUF-HI-sxS" secondAttribute="trailing" id="kob-tc-jwZ"/>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="leading" secondItem="KUF-HI-sxS" secondAttribute="leading" id="laj-AS-DH1"/>
+                            <constraint firstAttribute="trailing" secondItem="KUF-HI-sxS" secondAttribute="trailing" constant="20" symbolic="YES" id="qF0-wf-dQn"/>
+                            <constraint firstItem="uAk-2U-iac" firstAttribute="height" secondItem="KUF-HI-sxS" secondAttribute="height" id="yPw-Nq-6A3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="更多" id="WkU-Y7-9Vr"/>
@@ -1207,8 +1215,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderNormal.png" width="81" height="45"/>
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
+        <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
+        <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
         <image name="chooseold.png" width="214" height="96"/>
@@ -1218,6 +1233,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dot3.png" width="40" height="8"/>
         <image name="dropDownBG.png" width="247" height="51"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
+        <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
         <image name="missYouHeart.png" width="26" height="23"/>
