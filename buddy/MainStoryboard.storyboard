@@ -401,6 +401,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <rect key="frame" x="91" y="58" width="24" height="24"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="woe-CJ-YJy" secondAttribute="bottom" id="Zrk-J0-uHB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1204,15 +1207,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderNormal.png" width="81" height="45"/>
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
-        <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
-        <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
         <image name="chooseold.png" width="214" height="96"/>
@@ -1222,7 +1218,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dot3.png" width="40" height="8"/>
         <image name="dropDownBG.png" width="247" height="51"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
-        <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
         <image name="missYouHeart.png" width="26" height="23"/>
@@ -1238,6 +1233,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Cvq-wf-LNH"/>
+        <segue reference="1bV-zw-tZy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -158,20 +158,20 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
 
 - (void)showAddPeopleAlertView
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"添加伙伴" message:@"   " delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"添加", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"添加伙伴" message:@"请输入电话号码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"添加", nil];
     [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    _nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
-    [_nameTextField setBackgroundColor:[UIColor whiteColor]];
-    [_nameTextField setPlaceholder:@"姓名"];
-    [alertView addSubview:_nameTextField];
-    
-    _phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 85.0, 260.0, 25.0)];
-    [_phoneTextField setBackgroundColor:[UIColor whiteColor]];
-    [_phoneTextField setPlaceholder:@"电话号码"];
-    [alertView addSubview:_phoneTextField];
-    
+//    _nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 50.0, 260.0, 25.0)];
+//    [_nameTextField setBackgroundColor:[UIColor whiteColor]];
+//    [_nameTextField setPlaceholder:@"姓名"];
+//    [alertView addSubview:_nameTextField];
+//    
+//    _phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 85.0, 260.0, 25.0)];
+//    [_phoneTextField setBackgroundColor:[UIColor whiteColor]];
+//    [_phoneTextField setPlaceholder:@"电话号码"];
+//    [alertView addSubview:_phoneTextField];
+//    
     [alertView show];
-    [_nameTextField becomeFirstResponder];
+//    [_nameTextField becomeFirstResponder];
 }
 
 #pragma mark - Alert View Delegate Methods
@@ -179,8 +179,9 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == alertView.firstOtherButtonIndex) {
+        UITextField *phoneTextFiled = [alertView textFieldAtIndex:0];
         // add contact
-        [[GLUserAgent sharedAgent] addRelativeWithPhoneNumber:_phoneTextField.text contactName:_nameTextField.text completed:^(APIStatusCode statusCode, NSError *error) {
+        [[GLUserAgent sharedAgent] addRelativeWithPhoneNumber:phoneTextFiled.text contactName:nil completed:^(APIStatusCode statusCode, NSError *error) {
             NSLog(@"Add Relative API, statue = %d", statusCode);
             if (statusCode == APIStatusCodeFriendAddedSuccess) {
                 UIAlertView *av=[[UIAlertView alloc]initWithTitle:@"信息" message:@"添加成功" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];

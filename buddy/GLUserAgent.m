@@ -170,10 +170,13 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
                        contactName:(NSString *)contactName
                          completed:(void (^)(APIStatusCode statusCode, NSError *error))block
 {
-    NSDictionary *parameters = @{
-                                 @"phoneNumber": @([phoneNumber integerValue]),
-                                 @"contactName": contactName
-                                 };
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    if (phoneNumber) {
+        parameters[@"phoneNumber"] = phoneNumber;
+    }
+    if (contactName) {
+        parameters[@"contactName"] = contactName;
+    }
     
     [[GLBuddyApiClient sharedClient] postPath:@"add_relatives/"
                                    parameters:parameters
