@@ -24,6 +24,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <REValidation/REValidation.h>
+#import "RECommonFunctions.h"
 #import "RETableViewSection.h"
 #import "RETableViewCellStyle.h"
 #import "RETableViewCell.h"
@@ -44,15 +46,8 @@
 #import "REFloatItem.h"
 #import "REDateTimeItem.h"
 #import "REMultipleChoiceItem.h"
-#import "REValidation.h"
 
 @protocol RETableViewManagerDelegate;
-
-/**
- Returns device OS major version.
- */
-NSUInteger REDeviceSystemMajorVersion();
-BOOL REDeviceIsUIKit7();
 
 /**
  `RETableViewManager` allows to manage the content of any `UITableView` with ease, both forms and lists. `RETableViewManager` is built on top of reusable cells technique and provides 
@@ -70,7 +65,7 @@ BOOL REDeviceIsUIKit7();
 /**
  The array of sections. See RETableViewSection reference for details.
  */
-@property (strong, readwrite, nonatomic) NSMutableArray *sections;
+@property (strong, readonly, nonatomic) NSArray *sections;
 
 /**
  The `UITableView` that needs to be managed using this `RETableViewManager`.
@@ -123,6 +118,15 @@ BOOL REDeviceIsUIKit7();
  @param identifier The cell class identifier.
  */
 - (void)registerClass:(NSString *)objectClass forCellWithReuseIdentifier:(NSString *)identifier;
+
+/**
+ For each custom item class that the manager will use, register a cell class.
+ 
+ @param objectClass The object class to be associated with a cell class.
+ @param identifier The cell class identifier.
+ @param bundle The resource gbundle.
+ */
+- (void)registerClass:(NSString *)objectClass forCellWithReuseIdentifier:(NSString *)identifier bundle:(NSBundle *)bundle;
 
 /**
  Returns cell class at specified index path.

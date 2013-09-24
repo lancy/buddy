@@ -22,7 +22,7 @@
 #define COCOAPODS_POD_AVAILABLE_CYHelper
 #define COCOAPODS_VERSION_MAJOR_CYHelper 1
 #define COCOAPODS_VERSION_MINOR_CYHelper 1
-#define COCOAPODS_VERSION_PATCH_CYHelper 0
+#define COCOAPODS_VERSION_PATCH_CYHelper 3
 
 // KZPropertyMapper
 #define COCOAPODS_POD_AVAILABLE_KZPropertyMapper
@@ -33,26 +33,26 @@
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
-#define COCOAPODS_VERSION_MINOR_MBProgressHUD 7
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
 // REFormattedNumberField
 #define COCOAPODS_POD_AVAILABLE_REFormattedNumberField
 #define COCOAPODS_VERSION_MAJOR_REFormattedNumberField 1
-#define COCOAPODS_VERSION_MINOR_REFormattedNumberField 0
-#define COCOAPODS_VERSION_PATCH_REFormattedNumberField 4
+#define COCOAPODS_VERSION_MINOR_REFormattedNumberField 1
+#define COCOAPODS_VERSION_PATCH_REFormattedNumberField 0
 
 // RETableViewManager
 #define COCOAPODS_POD_AVAILABLE_RETableViewManager
 #define COCOAPODS_VERSION_MAJOR_RETableViewManager 1
-#define COCOAPODS_VERSION_MINOR_RETableViewManager 2
-#define COCOAPODS_VERSION_PATCH_RETableViewManager 0
+#define COCOAPODS_VERSION_MINOR_RETableViewManager 3
+#define COCOAPODS_VERSION_PATCH_RETableViewManager 2
 
 // REValidation
 #define COCOAPODS_POD_AVAILABLE_REValidation
 #define COCOAPODS_VERSION_MAJOR_REValidation 0
 #define COCOAPODS_VERSION_MINOR_REValidation 1
-#define COCOAPODS_VERSION_PATCH_REValidation 3
+#define COCOAPODS_VERSION_PATCH_REValidation 4
 
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage

@@ -15,5 +15,11 @@
 @property (nonatomic, readwrite) CGFloat width;
 @property (nonatomic, readwrite) CGFloat height;
 @property (nonatomic, readwrite) CGSize size;
+@property (nonatomic, readwrite) CGPoint origin;
+@property (nonatomic, readwrite) CGFloat bottom;
+@property (nonatomic, readwrite) CGFloat right;
+
+- (void)removeAllSubviews;
 
 @end
+
