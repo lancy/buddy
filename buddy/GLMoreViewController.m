@@ -43,12 +43,14 @@
     [super viewDidLoad];
     [self setTitle:@"更多"];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
-    [self.logoutButton.layer setBorderColor:self.logoutButton.tintColor.CGColor];
-    [self.logoutButton.layer setCornerRadius:4];
-    [self.logoutButton.layer setBorderWidth:1];
-    [self.toggleButton.layer setBorderColor:self.toggleButton.tintColor.CGColor];
-    [self.toggleButton.layer setCornerRadius:4];
-    [self.toggleButton.layer setBorderWidth:1];
+    if (IOS7_OR_LATER) {
+        [self.logoutButton.layer setBorderColor:self.logoutButton.tintColor.CGColor];
+        [self.logoutButton.layer setCornerRadius:4];
+        [self.logoutButton.layer setBorderWidth:1];
+        [self.toggleButton.layer setBorderColor:self.toggleButton.tintColor.CGColor];
+        [self.toggleButton.layer setCornerRadius:4];
+        [self.toggleButton.layer setBorderWidth:1];
+    }
     [self setButtonTitle];
 }
 
