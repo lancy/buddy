@@ -823,34 +823,36 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="您选择了伴儿子女端" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajz-Pt-uAh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="您选择了伴儿子女端" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajz-Pt-uAh">
                                 <rect key="frame" x="84" y="340" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="建议您在老人手机上安装老人端，就算工作在忙，他们也能感受到您的陪伴" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="8RC-TR-yzD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="建议您在老人手机上安装老人端，就算工作在忙，他们也能感受到您的陪伴" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="8RC-TR-yzD">
                                 <rect key="frame" x="20" y="358" width="280" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" image="dot2.png" translatesAutoresizingMaskIntoConstraints="NO" id="dk5-j4-du6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dot2.png" translatesAutoresizingMaskIntoConstraints="NO" id="dk5-j4-du6">
                                 <rect key="frame" x="140" y="393" width="40" height="8"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pct-9V-yQS" firstAttribute="centerX" secondItem="ajz-Pt-uAh" secondAttribute="centerX" id="9BX-QB-AIc"/>
+                            <constraint firstItem="tz4-hp-RJd" firstAttribute="top" secondItem="dk5-j4-du6" secondAttribute="bottom" constant="15" id="3kV-tZ-bde"/>
                             <constraint firstItem="Pct-9V-yQS" firstAttribute="top" secondItem="q1U-Pb-18D" secondAttribute="bottom" constant="8" symbolic="YES" id="B1Z-2y-bwT"/>
+                            <constraint firstItem="dk5-j4-du6" firstAttribute="top" secondItem="8RC-TR-yzD" secondAttribute="bottom" constant="3" id="KRd-Ny-8gd"/>
                             <constraint firstItem="Pct-9V-yQS" firstAttribute="leading" secondItem="6oj-yZ-AIi" secondAttribute="leading" constant="60" id="Mn5-Xj-Cdd"/>
                             <constraint firstItem="q1U-Pb-18D" firstAttribute="top" secondItem="OSy-eD-fmK" secondAttribute="bottom" constant="21" id="OX4-Aa-KB5"/>
                             <constraint firstItem="q1U-Pb-18D" firstAttribute="centerX" secondItem="6oj-yZ-AIi" secondAttribute="centerX" id="OXU-eG-Ya7"/>
-                            <constraint firstItem="8RC-TR-yzD" firstAttribute="top" secondItem="ajz-Pt-uAh" secondAttribute="bottom" constant="8" symbolic="YES" id="VWI-ns-v3L"/>
+                            <constraint firstItem="8RC-TR-yzD" firstAttribute="centerX" secondItem="ajz-Pt-uAh" secondAttribute="centerX" id="OZO-TO-9xp"/>
                             <constraint firstItem="q1U-Pb-18D" firstAttribute="centerX" secondItem="Pct-9V-yQS" secondAttribute="centerX" id="Z8M-yL-sCc"/>
-                            <constraint firstItem="8RC-TR-yzD" firstAttribute="centerX" secondItem="dk5-j4-du6" secondAttribute="centerX" id="cOz-mi-mpi"/>
-                            <constraint firstItem="dk5-j4-du6" firstAttribute="top" secondItem="8RC-TR-yzD" secondAttribute="bottom" constant="8" symbolic="YES" id="pEy-Vo-hbb"/>
-                            <constraint firstItem="ajz-Pt-uAh" firstAttribute="centerX" secondItem="8RC-TR-yzD" secondAttribute="centerX" id="ylM-5B-YSf"/>
+                            <constraint firstItem="dk5-j4-du6" firstAttribute="top" secondItem="ajz-Pt-uAh" secondAttribute="bottom" constant="32" id="d3T-8v-GiS"/>
+                            <constraint firstItem="8RC-TR-yzD" firstAttribute="centerX" secondItem="dk5-j4-du6" secondAttribute="centerX" id="dRU-hr-4PX"/>
+                            <constraint firstItem="ajz-Pt-uAh" firstAttribute="centerX" secondItem="Pct-9V-yQS" secondAttribute="centerX" id="l1H-8P-iA1"/>
+                            <constraint firstItem="8RC-TR-yzD" firstAttribute="leading" secondItem="6oj-yZ-AIi" secondAttribute="leading" constant="20" symbolic="YES" id="pGA-dO-Vnu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="t6R-ic-GHl">
@@ -1219,8 +1221,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderNormal.png" width="81" height="45"/>
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
+        <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
+        <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
         <image name="chooseold.png" width="214" height="96"/>
@@ -1230,6 +1239,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dot3.png" width="40" height="8"/>
         <image name="dropDownBG.png" width="247" height="51"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
+        <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
         <image name="missYouHeart.png" width="26" height="23"/>
