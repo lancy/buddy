@@ -14,6 +14,7 @@
 #import "GLMessageItem.h"
 #import "GLUserAgent.h"
 #import <AVFoundation/AVFoundation.h>
+#import "MBProgressHUD.h"
 @interface GLMessageViewController () <MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *buddys;
@@ -87,9 +88,14 @@
             [item deselectRowAnimated:YES];
             GLBuddy *buddy = item.buddy;
             if ([item isSent] == NO) {
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 [[GLUserAgent sharedAgent] requestSendMissToRelativeWithPhoneNumber:buddy.phoneNumber completed:^(APIStatusCode statusCode, NSError *error) {
                     NSLog(@"statusCode = %d", statusCode);
                     if (statusCode == APIStatusCodeOK) {
+                        MBProgressHUD *hub = [MBProgressHUD HUDForView:self.view];
+                        [hub setMode:MBProgressHUDModeText];
+                        [hub setLabelText:@"思念发送成功"];
+                        [hub hide:YES afterDelay:1.0];
                         [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:buddy.phoneNumber recordType:GLRecordTypeMISS];
                         [item setIsSent:YES];
                         [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
