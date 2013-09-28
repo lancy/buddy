@@ -73,9 +73,12 @@
 }
 
 - (IBAction)didTaptoggleButton:(id)sender {
-    BOOL nowStatus=[[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus];
-    [[GLUserAgent sharedAgent] setAudioNavigationDisabledStatus:nowStatus^1];
+    BOOL nowStatus= ![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus];
+    [[GLUserAgent sharedAgent] setAudioNavigationDisabledStatus:nowStatus];
     [self setButtonTitle];
+    if (nowStatus == YES) {
+        [self.audioplayer stop];
+    }
 }
 
 @end
