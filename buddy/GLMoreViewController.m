@@ -53,12 +53,14 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSString *soundFilePath =[[NSBundle mainBundle] pathForResource: @"more_cn" ofType: @"aac"];
-    NSURL *url=[NSURL fileURLWithPath:soundFilePath];
-    self.audioplayer=[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    if(![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
-        [[self audioplayer] prepareToPlay];
-        [[self audioplayer] play];
+    if (_isChild == NO) {
+        NSString *soundFilePath =[[NSBundle mainBundle] pathForResource: @"more_cn" ofType: @"aac"];
+        NSURL *url=[NSURL fileURLWithPath:soundFilePath];
+        self.audioplayer=[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        if(![[GLUserAgent sharedAgent] getAudioNavigationDisabledStatus]){
+            [[self audioplayer] prepareToPlay];
+            [[self audioplayer] play];
+        }
     }
 }
 

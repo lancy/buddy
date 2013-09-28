@@ -1246,16 +1246,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderNormal.png" width="81" height="45"/>
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
-        <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
-        <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="alarm.png" width="25" height="25"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
         <image name="chooseold.png" width="214" height="96"/>
@@ -1266,7 +1259,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dropDownBG.png" width="247" height="51"/>
         <image name="like.png" width="25" height="23"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
-        <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
         <image name="missYouHeart.png" width="26" height="23"/>
