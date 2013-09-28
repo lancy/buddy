@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *moodProgressImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *missYouImageView;
+@property (assign, nonatomic) CGFloat moodWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
 
 @end
 
@@ -30,6 +33,8 @@
 - (void)cellDidLoad
 {
     [super cellDidLoad];
+    UIImage *progressImage = [[UIImage imageNamed:@"moodProgress"] resizableImageWithCapInsets:UIEdgeInsetsMake(2, 6, 2, 6)];
+    [self.moodProgressImageView setImage:progressImage];
     [self.avatarImageView.layer setCornerRadius:32];
     [self.avatarImageView.layer setMasksToBounds:YES];
     NSLog(@"called cellDidLoad");
@@ -49,6 +54,11 @@
     } else {
         [_missYouImageView setHidden:YES];
     }
+    
+    if (buddy.userIntimacy) {
+        [self setMoodWithUserIntimacy:buddy.userIntimacy];
+    }
+    
     if (buddy.avatarUrl) {
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         [self.avatarImageView.layer setCornerRadius:32];
@@ -64,5 +74,29 @@
     [super cellDidDisappear];
 }
 
+- (void)setMoodWithUserIntimacy:(NSNumber *)intimacy
+{
+    NSUInteger mood = [intimacy integerValue];
+    CGFloat width = 178 * (mood / 100.0);
+    [self.widthConstraint setConstant:width];
+    [self.faceImageView setImage:[self faceImageWithUserIntimacy:intimacy]];
+}
 
+- (UIImage *)faceImageWithUserIntimacy:(NSNumber *)intimacy
+{
+    UIImage *image;
+    NSUInteger mood = [intimacy integerValue];
+    if (mood < 20) {
+        image = [UIImage imageNamed:@"mood20"];
+    } else if (mood < 40) {
+        image = [UIImage imageNamed:@"mood40"];
+    } else if (mood < 60) {
+        image = [UIImage imageNamed:@"mood60"];
+    } else if (mood < 80) {
+        image = [UIImage imageNamed:@"mood80"];
+    } else {
+        image = [UIImage imageNamed:@"mood100"];
+    }
+    return image;
+}
 @end

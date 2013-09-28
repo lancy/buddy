@@ -400,8 +400,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <rect key="frame" x="103" y="61" width="178" height="18"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="moodProgress.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-Y9-EvY">
-                                                    <rect key="frame" x="103" y="61" width="36" height="15"/>
+                                                    <rect key="frame" x="103" y="61" width="100" height="15"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="71Z-eP-IMx"/>
                                                         <constraint firstAttribute="height" constant="15" id="Bz1-Ln-KOj"/>
                                                     </constraints>
                                                 </imageView>
@@ -411,6 +412,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="woe-CJ-YJy" secondAttribute="bottom" id="Zrk-J0-uHB"/>
+                                                <constraint firstItem="xQc-Y9-EvY" firstAttribute="top" secondItem="JKO-Wk-eQc" secondAttribute="top" id="jZo-bi-Rks"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -419,7 +421,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <constraint firstAttribute="bottom" secondItem="XeA-Mq-fKQ" secondAttribute="bottom" constant="18" id="4hv-yJ-aBq"/>
                                             <constraint firstAttribute="bottom" secondItem="woe-CJ-YJy" secondAttribute="bottom" id="CfO-Io-nhK"/>
                                             <constraint firstItem="woe-CJ-YJy" firstAttribute="centerX" secondItem="dV7-FH-4FY" secondAttribute="centerX" id="Ksa-fq-P7C"/>
-                                            <constraint firstItem="xQc-Y9-EvY" firstAttribute="top" secondItem="JKO-Wk-eQc" secondAttribute="top" id="Pfq-W3-iim"/>
                                             <constraint firstItem="hzN-PW-Xgc" firstAttribute="top" secondItem="dV7-FH-4FY" secondAttribute="top" constant="22" id="eNB-yV-CdG"/>
                                             <constraint firstItem="hzN-PW-Xgc" firstAttribute="top" secondItem="wfx-qj-Uqr" secondAttribute="top" id="fwL-ER-qRd"/>
                                             <constraint firstItem="gWu-mT-Yxs" firstAttribute="top" secondItem="dV7-FH-4FY" secondAttribute="top" constant="24" id="gI0-1H-d73"/>
@@ -434,9 +435,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </constraints>
                                         <connections>
                                             <outlet property="avatarImageView" destination="gWu-mT-Yxs" id="Vrg-fi-9tC"/>
+                                            <outlet property="faceImageView" destination="XeA-Mq-fKQ" id="PYG-Sz-80D"/>
                                             <outlet property="missYouImageView" destination="hzN-PW-Xgc" id="05f-Ib-fLu"/>
                                             <outlet property="moodProgressImageView" destination="xQc-Y9-EvY" id="2Vx-Id-vV2"/>
                                             <outlet property="nameLabel" destination="wfx-qj-Uqr" id="feo-xv-g6j"/>
+                                            <outlet property="widthConstraint" destination="71Z-eP-IMx" id="OMa-Xz-bqa"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GLDropDownCell" rowHeight="50" id="6LD-iO-pqY" customClass="GLDropDownCell">
@@ -1243,9 +1246,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderNormal.png" width="81" height="45"/>
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
+        <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
+        <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="alarm.png" width="25" height="25"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
+        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
         <image name="chooseold.png" width="214" height="96"/>
@@ -1256,6 +1266,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dropDownBG.png" width="247" height="51"/>
         <image name="like.png" width="25" height="23"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
+        <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
         <image name="missYouHeart.png" width="26" height="23"/>
@@ -1273,6 +1284,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Cvq-wf-LNH"/>
+        <segue reference="1bV-zw-tZy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@
 @property (copy, nonatomic) NSString *phoneNumber;
 @property (copy, nonatomic) NSString *avatarUrl;
 @property (copy, nonatomic) NSNumber *miss;
+@property (copy, nonatomic) NSNumber *userIntimacy;
 
 - (id)initWithJsonObject:(NSDictionary *)jsonObject;
 + (NSArray *)buddysWithJsonObject:(NSDictionary *)jsonObject;

@@ -163,7 +163,6 @@ NSString * const kPresentMainBuddySegueIdentifier = @"presentMain";
     [self presentLoginViewController];
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

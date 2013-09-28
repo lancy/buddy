@@ -25,7 +25,8 @@
             @"contactName": @"contactName",
             @"phoneNumber": @"@String(phoneNumber)",
             @"avatarUrl": @"avatarUrl",
-            @"miss": @"miss"
+            @"miss": @"miss",
+            @"userIntimacy": @"userIntimacy"
          }];        
     }
     return self;
