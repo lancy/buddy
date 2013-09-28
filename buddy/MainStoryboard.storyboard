@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zob-xm-UPv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MQn-qS-65V">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-Ye-FGF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="GLBuddyCell" rowHeight="100" id="fUT-Xx-zm8" customClass="GLBuddyCell">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9s-66-0ZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="-1072"/>
+            <point key="canvasLocation" x="3158" y="-1104"/>
         </scene>
         <!--Reminder View Controller - 提醒-->
         <scene sceneID="pad-1Q-08H">
@@ -115,11 +115,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tnM-ZL-DRa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yTe-iW-3DB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EGo-QQ-E7r">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="GLReminderCell" rowHeight="100" id="FN0-5N-JnT" customClass="GLReminderCell">
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMn-IF-UkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2632" y="-379"/>
+            <point key="canvasLocation" x="3158" y="-379"/>
         </scene>
         <!--Record View Controller - 录音-->
         <scene sceneID="s2Q-ik-Ha7">
@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlJ-Gy-qpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3709" y="-379"/>
+            <point key="canvasLocation" x="4235" y="-379"/>
         </scene>
         <!--Reminder Setting View Controller - 提醒设置-->
         <scene sceneID="eiT-9s-eB9">
@@ -285,7 +285,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79H-ha-yzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4179" y="-379"/>
+            <point key="canvasLocation" x="4705" y="-379"/>
         </scene>
         <!--More View Controller - 更多-->
         <scene sceneID="wat-Yn-YPj">
@@ -296,7 +296,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="C8h-ws-jDd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kmY-EF-SOc">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAk-2U-iac">
@@ -346,7 +346,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uR-VH-yGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="1001"/>
+            <point key="canvasLocation" x="3166" y="981"/>
         </scene>
         <!--Child Buddy View Controller-->
         <scene sceneID="2Jf-Sj-o6t">
@@ -548,11 +548,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="xdB-KN-ad4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="de5-sn-LhV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-i6-L9k">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="GLMessageCell" rowHeight="100" id="Jpd-DD-col" customClass="GLMessageCell">
@@ -643,13 +643,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO6-H6-wAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="309"/>
+            <point key="canvasLocation" x="3166" y="289"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - 伴儿-->
         <scene sceneID="Bu9-HH-YES">
             <objects>
                 <navigationController id="aiz-hF-F8L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hiE-dW-WuW"/>
+                    <tabBarItem key="tabBarItem" title="伴儿" image="user.png" id="hiE-dW-WuW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SVf-yo-lPo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -662,7 +662,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hn5-tz-Io5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-1072"/>
+            <point key="canvasLocation" x="2632" y="-1104"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="uTO-eN-vje">
@@ -726,6 +726,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="aCX-np-MIy" kind="modal" identifier="presentRegister" modalTransitionStyle="crossDissolve" id="PqG-MQ-YCZ"/>
                         <segue destination="4PW-Ty-FFA" kind="modal" identifier="presentLogin" modalTransitionStyle="crossDissolve" id="TH9-M4-0of"/>
                         <segue destination="ScT-is-uEk" kind="modal" identifier="presentChild" modalTransitionStyle="crossDissolve" id="20u-If-Gnw"/>
+                        <segue destination="qIr-Va-X6F" kind="modal" identifier="presentMain" modalTransitionStyle="crossDissolve" id="R3m-1u-vVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mT-3N-E4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1080,13 +1081,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRD-kg-Dkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773" y="-352"/>
+            <point key="canvasLocation" x="729" y="-704"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - 提醒-->
         <scene sceneID="A2l-iz-C9Q">
             <objects>
                 <navigationController id="hOu-ar-ouV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="COx-1v-7zX"/>
+                    <tabBarItem key="tabBarItem" title="提醒" image="alarm.png" id="COx-1v-7zX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="V6G-6x-TxM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1099,13 +1100,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyl-iY-ZLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="-379"/>
+            <point key="canvasLocation" x="2632" y="-379"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - 思念-->
         <scene sceneID="34R-bi-2dc">
             <objects>
                 <navigationController id="YGU-hQ-n4u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Gr5-XS-JXi"/>
+                    <tabBarItem key="tabBarItem" title="思念" image="like.png" id="Gr5-XS-JXi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="csn-9P-q2q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1118,13 +1119,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay4-br-A58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="309"/>
+            <point key="canvasLocation" x="2640" y="289"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - 更多-->
         <scene sceneID="Pfk-tX-lU7">
             <objects>
                 <navigationController id="sjY-GS-gL3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wk8-dB-X1t"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="more.png" id="wk8-dB-X1t"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iAo-kd-iJn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1137,7 +1138,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRI-lS-ni7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="1001"/>
+            <point key="canvasLocation" x="2640" y="981"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q0E-Rn-nbF">
@@ -1156,7 +1157,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ls4-qz-Fek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3183" y="-379"/>
+            <point key="canvasLocation" x="3709" y="-379"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IQj-PI-eOT">
@@ -1210,7 +1211,28 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkn-XU-ML2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="-352"/>
+            <point key="canvasLocation" x="203" y="-704"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4ud-4a-TFv">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qIr-Va-X6F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Diu-jk-V9K">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aiz-hF-F8L" kind="relationship" relationship="viewControllers" id="PIV-2u-Mc6"/>
+                        <segue destination="hOu-ar-ouV" kind="relationship" relationship="viewControllers" id="0dp-Dm-9iR"/>
+                        <segue destination="YGU-hQ-n4u" kind="relationship" relationship="viewControllers" id="bvn-qB-WVa"/>
+                        <segue destination="sjY-GS-gL3" kind="relationship" relationship="viewControllers" id="3vO-67-ssz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6y-Lo-nUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2106" y="-62"/>
         </scene>
     </scenes>
     <resources>
@@ -1222,6 +1244,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
+        <image name="alarm.png" width="25" height="25"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
@@ -1231,6 +1254,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dot2.png" width="40" height="8"/>
         <image name="dot3.png" width="40" height="8"/>
         <image name="dropDownBG.png" width="247" height="51"/>
+        <image name="like.png" width="25" height="23"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
@@ -1238,7 +1262,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="mood40.png" width="24" height="24"/>
         <image name="moodProgress.png" width="36" height="14"/>
         <image name="moodProgressBG.png" width="178" height="18"/>
+        <image name="more.png" width="30" height="6"/>
         <image name="reminder_tableviewcell_bubble_unread.png" width="221" height="58"/>
+        <image name="user.png" width="24" height="24"/>
         <image name="youngframe.png" width="95" height="96"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

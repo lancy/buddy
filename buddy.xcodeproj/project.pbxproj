@@ -105,6 +105,14 @@
 		BF8679D517F67DC0004C1599 /* LaunchIntroImage4-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CB17F67DC0004C1599 /* LaunchIntroImage4-1@2x.png */; };
 		BF8679D617F67DC0004C1599 /* LaunchIntroImage4-0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CC17F67DC0004C1599 /* LaunchIntroImage4-0.png */; };
 		BF8679D717F67DC0004C1599 /* LaunchIntroImage4-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CD17F67DC0004C1599 /* LaunchIntroImage4-3.png */; };
+		BF8AA86017F6CA980007F56B /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85817F6CA980007F56B /* more.png */; };
+		BF8AA86117F6CA980007F56B /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85917F6CA980007F56B /* like.png */; };
+		BF8AA86217F6CA980007F56B /* alarm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85A17F6CA980007F56B /* alarm@2x.png */; };
+		BF8AA86317F6CA980007F56B /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85B17F6CA980007F56B /* alarm.png */; };
+		BF8AA86417F6CA980007F56B /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85C17F6CA980007F56B /* like@2x.png */; };
+		BF8AA86517F6CA980007F56B /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85D17F6CA980007F56B /* user@2x.png */; };
+		BF8AA86617F6CA980007F56B /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85E17F6CA980007F56B /* more@2x.png */; };
+		BF8AA86717F6CA980007F56B /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8AA85F17F6CA980007F56B /* user.png */; };
 		BF9360E3176B2F1700A3A928 /* record_power_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E1176B2F1700A3A928 /* record_power_indicator.png */; };
 		BF9360E4176B2F1700A3A928 /* record_power_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */; };
 		BF9360F0176B313A00A3A928 /* MCProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9360EF176B313A00A3A928 /* MCProgressBarView.m */; };
@@ -292,6 +300,14 @@
 		BF8679CB17F67DC0004C1599 /* LaunchIntroImage4-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-1@2x.png"; sourceTree = "<group>"; };
 		BF8679CC17F67DC0004C1599 /* LaunchIntroImage4-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-0.png"; sourceTree = "<group>"; };
 		BF8679CD17F67DC0004C1599 /* LaunchIntroImage4-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-3.png"; sourceTree = "<group>"; };
+		BF8AA85817F6CA980007F56B /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		BF8AA85917F6CA980007F56B /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		BF8AA85A17F6CA980007F56B /* alarm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm@2x.png"; sourceTree = "<group>"; };
+		BF8AA85B17F6CA980007F56B /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
+		BF8AA85C17F6CA980007F56B /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
+		BF8AA85D17F6CA980007F56B /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
+		BF8AA85E17F6CA980007F56B /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		BF8AA85F17F6CA980007F56B /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		BF9360E1176B2F1700A3A928 /* record_power_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_power_indicator.png; sourceTree = "<group>"; };
 		BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_power_indicator@2x.png"; sourceTree = "<group>"; };
 		BF9360EE176B313A00A3A928 /* MCProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProgressBarView.h; sourceTree = "<group>"; };
@@ -567,6 +583,14 @@
 		BFDFA71F17650215006668BC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BF8AA85817F6CA980007F56B /* more.png */,
+				BF8AA85917F6CA980007F56B /* like.png */,
+				BF8AA85A17F6CA980007F56B /* alarm@2x.png */,
+				BF8AA85B17F6CA980007F56B /* alarm.png */,
+				BF8AA85C17F6CA980007F56B /* like@2x.png */,
+				BF8AA85D17F6CA980007F56B /* user@2x.png */,
+				BF8AA85E17F6CA980007F56B /* more@2x.png */,
+				BF8AA85F17F6CA980007F56B /* user.png */,
 				BF2B3AAC17C86379001685E5 /* moodProgress.png */,
 				BF2B3AAD17C86379001685E5 /* moodProgressBG.png */,
 				BF2B3AAE17C86379001685E5 /* moodProgressBG@2x.png */,
@@ -806,6 +830,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8AA86217F6CA980007F56B /* alarm@2x.png in Resources */,
 				BFDFA6D61764E83D006668BC /* InfoPlist.strings in Resources */,
 				BFDFA6DE1764E83D006668BC /* Default.png in Resources */,
 				BFDFA6E01764E83D006668BC /* Default@2x.png in Resources */,
@@ -814,8 +839,10 @@
 				BFDFA7181765020D006668BC /* navi_bg@2x.png in Resources */,
 				BFDFA7191765020D006668BC /* tabbar_item1@2x.png in Resources */,
 				BFDFA71A1765020D006668BC /* tabbar_item2@2x.png in Resources */,
+				BF8AA86617F6CA980007F56B /* more@2x.png in Resources */,
 				BFDFA71B1765020D006668BC /* tabbar_item3@2x.png in Resources */,
 				BF8679D617F67DC0004C1599 /* LaunchIntroImage4-0.png in Resources */,
+				BF8AA86317F6CA980007F56B /* alarm.png in Resources */,
 				BFDFA71C1765020D006668BC /* tabbar_item4@2x.png in Resources */,
 				BFDFA71D1765020D006668BC /* tabbar_selected@2x.png in Resources */,
 				BF8679D517F67DC0004C1599 /* LaunchIntroImage4-1@2x.png in Resources */,
@@ -835,6 +862,7 @@
 				BFDFA75F1765C34D006668BC /* message_tableviewcell_sent@2x.png in Resources */,
 				BFDFA7601765C34D006668BC /* message_tableviewcell_unsend@2x.png in Resources */,
 				BF035692176B2575004996DA /* record_mic_icon.png in Resources */,
+				BF8AA86517F6CA980007F56B /* user@2x.png in Resources */,
 				BF035694176B257D004996DA /* record_mic_icon@2x.png in Resources */,
 				BF9360E3176B2F1700A3A928 /* record_power_indicator.png in Resources */,
 				BF9360E4176B2F1700A3A928 /* record_power_indicator@2x.png in Resources */,
@@ -862,11 +890,13 @@
 				BF790C1017ADF957007E2FC1 /* LaunchWhiteButtonPressed@2x.png in Resources */,
 				BFFAD27217ADFFDE008F77AA /* chooseold.png in Resources */,
 				BFFAD27317ADFFDE008F77AA /* chooseyoung.png in Resources */,
+				BF8AA86117F6CA980007F56B /* like.png in Resources */,
 				BFFAD27417ADFFDE008F77AA /* chooseold@2x.png in Resources */,
 				BFFAD27517ADFFDE008F77AA /* chooseyoung@2x.png in Resources */,
 				BFFAD27C17AE007F008F77AA /* dot1.png in Resources */,
 				BFFAD27D17AE007F008F77AA /* dot2.png in Resources */,
 				BFFAD27E17AE007F008F77AA /* dot3.png in Resources */,
+				BF8AA86017F6CA980007F56B /* more.png in Resources */,
 				BFFAD27F17AE007F008F77AA /* dot3@2x.png in Resources */,
 				BFFAD28017AE007F008F77AA /* dot1@2x.png in Resources */,
 				BFFAD28117AE007F008F77AA /* dot2@2x.png in Resources */,
@@ -874,6 +904,7 @@
 				BF20BC4117AE068D00EB1980 /* youngframe.png in Resources */,
 				BF20BC4217AE068D00EB1980 /* oldframe@2x.png in Resources */,
 				BF20BC4317AE068D00EB1980 /* oldframe.png in Resources */,
+				BF8AA86717F6CA980007F56B /* user.png in Resources */,
 				BF20BC4817AE568B00EB1980 /* loginButtonPressed@2x.png in Resources */,
 				BF20BC4917AE568B00EB1980 /* loginButtonPressed.png in Resources */,
 				BF20BC4A17AE568B00EB1980 /* loginButtonNormal@2x.png in Resources */,
@@ -910,6 +941,7 @@
 				BF2B3AA917C86336001685E5 /* mood40@2x.png in Resources */,
 				BF2B3AAA17C86336001685E5 /* mood60@2x.png in Resources */,
 				BF2B3AAB17C86336001685E5 /* mood0@2x.png in Resources */,
+				BF8AA86417F6CA980007F56B /* like@2x.png in Resources */,
 				BF2B3AB017C86379001685E5 /* moodProgress.png in Resources */,
 				BF2B3AB117C86379001685E5 /* moodProgressBG.png in Resources */,
 				BF2B3AB217C86379001685E5 /* moodProgressBG@2x.png in Resources */,

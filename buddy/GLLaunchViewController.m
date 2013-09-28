@@ -22,6 +22,7 @@
 NSString * const kPresentRegisterSegueIdentifier = @"presentRegister";
 NSString * const kPresentLoginSegueIdentifier = @"presentLogin";
 NSString * const kPresentChildBuddySegueIdentifier = @"presentChild";
+NSString * const kPresentMainBuddySegueIdentifier = @"presentMain";
 
 
 @implementation GLLaunchViewController
@@ -106,9 +107,13 @@ NSString * const kPresentChildBuddySegueIdentifier = @"presentChild";
 
 - (void)presentHomeViewController
 {
-    [self setupTabbarController];
-    [_tabBarController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    [self presentViewController:_tabBarController animated:YES completion:nil];
+    if (IOS7_OR_LATER) {
+        [self performSegueWithIdentifier:kPresentMainBuddySegueIdentifier sender:self];
+    } else {
+        [self setupTabbarController];
+        [_tabBarController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:_tabBarController animated:YES completion:nil];
+    }
 }
 
 - (void)presentChildBuddyViewController
