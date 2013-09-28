@@ -76,7 +76,7 @@
 
 - (void)setMoodWithUserIntimacy:(NSNumber *)intimacy
 {
-    NSUInteger mood = [intimacy integerValue];
+    NSUInteger mood = [intimacy integerValue] + 1;
     CGFloat width = 178 * (mood / 100.0);
     [self.widthConstraint setConstant:width];
     [self.faceImageView setImage:[self faceImageWithUserIntimacy:intimacy]];

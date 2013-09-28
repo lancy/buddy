@@ -148,6 +148,10 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saK-wQ-9kR">
+                                                    <rect key="frame" x="14" y="36" width="56" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -160,6 +164,7 @@
                                             <constraint firstItem="Fap-02-FG6" firstAttribute="leading" secondItem="kgb-5J-dpY" secondAttribute="trailing" constant="8" symbolic="YES" id="rgL-xB-WfZ"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="avatarImageView" destination="saK-wQ-9kR" id="DsE-d3-rkK"/>
                                             <outlet property="fireDateLabel" destination="xEK-G8-MTr" id="HbZ-Rw-T0b"/>
                                         </connections>
                                     </tableViewCell>
@@ -1246,16 +1251,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="DropDownReminderNormal.png" width="81" height="45"/>
         <image name="DropDownReminderPressed.png" width="81" height="45"/>
         <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
-        <image name="LaunchWhiteButtonNormal.png" width="135" height="39"/>
-        <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="LaunchWhiteButtonPressed.png" width="135" height="39"/>
         <image name="alarm.png" width="25" height="25"/>
         <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_bg.png" width="313" height="84"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
-        <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_default_avatar.png" width="72" height="72"/>
         <image name="buddy_tableviewcell_phone.png" width="28" height="45"/>
         <image name="chooseold.png" width="214" height="96"/>
@@ -1266,7 +1264,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dropDownBG.png" width="247" height="51"/>
         <image name="like.png" width="25" height="23"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
-        <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
         <image name="message_tableviewcell_unsend.png" width="55" height="55"/>
         <image name="missYouHeart.png" width="26" height="23"/>
@@ -1284,6 +1281,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1bV-zw-tZy"/>
+        <segue reference="Cvq-wf-LNH"/>
     </inferredMetricsTieBreakers>
 </document>

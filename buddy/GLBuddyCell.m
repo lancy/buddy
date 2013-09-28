@@ -45,8 +45,6 @@
     }
     [self.descriptionLabel setText:NSLocalizedString(@"点击这里给他/她打电话", nil)];
     if (buddy.avatarUrl) {
-        [self.avatarImageView.layer setCornerRadius:32];
-        [self.avatarImageView.layer setMasksToBounds:YES];
         [self.avatarImageView setImageWithURL:[NSURL URLWithString:buddy.avatarUrl]];
         [self.avatarImageView setHidden:NO];
     } else {

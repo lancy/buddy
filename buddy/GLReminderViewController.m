@@ -65,7 +65,6 @@
 
 - (void)loadRemidnersData
 {
-//    self.reminders = [[GLReminderManager shareManager] allLocalReminders];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[GLUserAgent sharedAgent] requestRemindsWithCompletedBlock:^(APIStatusCode statusCode, NSArray *reminds, NSError *error) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -104,9 +103,6 @@
 - (void)customUserinterface
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
-    
-//    UIBarButtonItem *plusBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapPlusButton:)];
-//    [self.navigationItem setRightBarButtonItem:plusBarButton];
 }
 
 #pragma mark - View Methods

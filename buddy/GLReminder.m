@@ -24,8 +24,8 @@
         [KZPropertyMapper mapValuesFrom:jsonObject toInstance:self usingMapping:@{
              @"remindTime": @"@Selector(dateFromNumber:, fireDate)",
              @"audio": @"audioFileUrl",
-             @"phoneNumber": @"phoneNumber"
-         }];
+             @"phoneNumber": @"@String(phoneNumber)",
+             }];
     }
     return self;
 }

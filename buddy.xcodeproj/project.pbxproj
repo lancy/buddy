@@ -272,6 +272,7 @@
 		BF6844F517C86F2E0003B1C5 /* GLDropDownItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDropDownItem.m; sourceTree = "<group>"; };
 		BF6844F717C86F400003B1C5 /* GLDropDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDropDownCell.h; sourceTree = "<group>"; };
 		BF6844F817C86F400003B1C5 /* GLDropDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLDropDownCell.m; sourceTree = "<group>"; };
+		BF7591D817F7280B00BAC451 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BF790BB717ADE9FC007E2FC1 /* GLLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLaunchViewController.h; sourceTree = "<group>"; };
 		BF790BB817ADE9FC007E2FC1 /* GLLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLaunchViewController.m; sourceTree = "<group>"; };
 		BF790BBB17ADEA11007E2FC1 /* GLRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLRegisterViewController.h; sourceTree = "<group>"; };
@@ -536,6 +537,7 @@
 		BFDFA6CA1764E83D006668BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF7591D817F7280B00BAC451 /* CoreTelephony.framework */,
 				BFCF7FD01768CEAA0083E30B /* AudioToolbox.framework */,
 				BF35010A1768C95000E3ABD1 /* AVFoundation.framework */,
 				BFDFA77117662E05006668BC /* QuartzCore.framework */,

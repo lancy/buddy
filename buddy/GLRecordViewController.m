@@ -43,10 +43,9 @@
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"viewcontroller_bg"]]];
     
-    UIBarButtonItem *cancleButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(didTapCancleButton:)];
+    UIBarButtonItem *cancleButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapCancleButton:)];
     [self.navigationItem setLeftBarButtonItem:cancleButton];
     
-#warning TODO: auto layout
     self.powerIndicatorView = [[GLAudioPowerIndicatorView alloc] initWithFrame:CGRectMake(10, 250, 300, 300)];
     [self.view addSubview:self.powerIndicatorView];
     

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "GLBuddy.h"
 
 extern NSString * const BuddysDidChangedNotification;
 
@@ -16,5 +17,7 @@ extern NSString * const BuddysDidChangedNotification;
 + (GLBuddyManager *)shareManager;
 
 @property (strong, nonatomic) NSArray *remotesBuddys;
+
+- (GLBuddy *)buddyFromRemotesWithPhoneNumber:(NSString *)phoneNumber;
 
 @end

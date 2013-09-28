@@ -17,6 +17,7 @@
 #import "GLRecordViewController.h"
 #import "MBProgressHUD.h"
 
+
 @interface GLChildBuddyViewController () <MFMessageComposeViewControllerDelegate, UIActionSheetDelegate, ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -96,7 +97,7 @@
         NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
         NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", cleanedString]];
         [[UIApplication sharedApplication] openURL:telURL];
-        [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:buddy.phoneNumber recordType:GLRecordTypeTelephone];
+        [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:_selectedBuddy.phoneNumber recordType:GLRecordTypeTelephone];
     }];
     
     [item setReminderHandler:^(GLDropDownItem *item) {
@@ -223,4 +224,5 @@
         }];
     }
 }
+
 @end
