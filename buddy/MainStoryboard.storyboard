@@ -365,11 +365,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N81-lX-oAh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N81-lX-oAh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="GLChildBuddyCell" rowHeight="100" id="dV7-FH-4FY" customClass="GLChildBuddyCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GLChildBuddyCell" rowHeight="100" id="dV7-FH-4FY" customClass="GLChildBuddyCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dV7-FH-4FY" id="xL0-PJ-7lT">
@@ -418,6 +418,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="woe-CJ-YJy" secondAttribute="bottom" id="Zrk-J0-uHB"/>
                                                 <constraint firstItem="xQc-Y9-EvY" firstAttribute="top" secondItem="JKO-Wk-eQc" secondAttribute="top" id="jZo-bi-Rks"/>
+                                                <constraint firstAttribute="bottom" secondItem="woe-CJ-YJy" secondAttribute="bottom" id="nlf-2f-wDv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -454,13 +455,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dropDownBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-4s-2Gi">
-                                                    <rect key="frame" x="36" y="0.0" width="249" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="249" id="hgM-Xy-fDh"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="dropDownBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="3cz-4s-2Gi">
+                                                    <rect key="frame" x="34" y="0.0" width="249" height="46"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfQ-jx-Kob">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfQ-jx-Kob">
                                                     <rect key="frame" x="36" y="2" width="81" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="81" id="3Y7-6M-wIi"/>
@@ -515,15 +513,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <constraints>
                                             <constraint firstItem="dfQ-jx-Kob" firstAttribute="bottom" secondItem="lII-5k-4AV" secondAttribute="bottom" id="5Lg-9h-dMh"/>
                                             <constraint firstAttribute="trailing" secondItem="0Z9-Ts-eKZ" secondAttribute="trailing" constant="40" id="HlT-NT-woI"/>
-                                            <constraint firstItem="3cz-4s-2Gi" firstAttribute="bottom" secondItem="6LD-iO-pqY" secondAttribute="bottom" id="Nom-0h-7Vf"/>
                                             <constraint firstItem="dfQ-jx-Kob" firstAttribute="top" secondItem="6LD-iO-pqY" secondAttribute="top" constant="2" id="Qya-hi-5kA"/>
-                                            <constraint firstItem="dfQ-jx-Kob" firstAttribute="leading" secondItem="3cz-4s-2Gi" secondAttribute="leading" id="VRs-PJ-ndO"/>
                                             <constraint firstItem="lII-5k-4AV" firstAttribute="bottom" secondItem="0Z9-Ts-eKZ" secondAttribute="bottom" id="XqG-l5-acV"/>
-                                            <constraint firstItem="3cz-4s-2Gi" firstAttribute="top" secondItem="6LD-iO-pqY" secondAttribute="top" id="f8T-QL-qhh"/>
                                             <constraint firstItem="0Z9-Ts-eKZ" firstAttribute="top" secondItem="lII-5k-4AV" secondAttribute="top" id="jbv-ZI-Pxc"/>
                                             <constraint firstItem="lII-5k-4AV" firstAttribute="leading" secondItem="6LD-iO-pqY" secondAttribute="leading" constant="118" id="ojR-Q8-Zhs"/>
                                             <constraint firstItem="lII-5k-4AV" firstAttribute="top" secondItem="dfQ-jx-Kob" secondAttribute="top" id="yAN-ru-a9P"/>
-                                            <constraint firstItem="3cz-4s-2Gi" firstAttribute="centerX" secondItem="6LD-iO-pqY" secondAttribute="centerX" id="z0p-lA-7n1"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
@@ -1261,7 +1255,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="dot1.png" width="40" height="8"/>
         <image name="dot2.png" width="40" height="8"/>
         <image name="dot3.png" width="40" height="8"/>
-        <image name="dropDownBG.png" width="247" height="51"/>
+        <image name="dropDownBG.png" width="243" height="46"/>
         <image name="like.png" width="25" height="23"/>
         <image name="loginButtonNormal.png" width="294" height="42"/>
         <image name="loginButtonPressed.png" width="294" height="42"/>
@@ -1281,6 +1275,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Cvq-wf-LNH"/>
+        <segue reference="1bV-zw-tZy"/>
     </inferredMetricsTieBreakers>
 </document>
