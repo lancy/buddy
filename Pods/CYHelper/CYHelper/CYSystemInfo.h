@@ -15,6 +15,8 @@
 #define IOS3_OR_LATER	( [[[UIDevice currentDevice] systemVersion] compare:@"3.0"] != NSOrderedAscending )
 #define IS_IPHONE                       ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 #define IS_IPAD                         ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+#define IS_NOT_4INCH_IPHONE                     ([[UIScreen mainScreen] bounds].size.height < 500)
+
 
 
 @interface CYSystemInfo : NSObject

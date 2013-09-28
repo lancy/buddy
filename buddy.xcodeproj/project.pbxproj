@@ -95,6 +95,16 @@
 		BF790C0C17ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790C0417ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png */; };
 		BF790C0E17ADF957007E2FC1 /* LaunchWhiteButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790C0617ADF957007E2FC1 /* LaunchWhiteButtonNormal.png */; };
 		BF790C1017ADF957007E2FC1 /* LaunchWhiteButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF790C0817ADF957007E2FC1 /* LaunchWhiteButtonPressed@2x.png */; };
+		BF8679CE17F67DC0004C1599 /* LaunchIntroImage4-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679C417F67DC0004C1599 /* LaunchIntroImage4-2@2x.png */; };
+		BF8679CF17F67DC0004C1599 /* LaunchIntroImage4-4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679C517F67DC0004C1599 /* LaunchIntroImage4-4@2x.png */; };
+		BF8679D017F67DC0004C1599 /* LaunchIntroImage4-4.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679C617F67DC0004C1599 /* LaunchIntroImage4-4.png */; };
+		BF8679D117F67DC0004C1599 /* LaunchIntroImage4-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679C717F67DC0004C1599 /* LaunchIntroImage4-1.png */; };
+		BF8679D217F67DC0004C1599 /* LaunchIntroImage4-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679C817F67DC0004C1599 /* LaunchIntroImage4-3@2x.png */; };
+		BF8679D317F67DC0004C1599 /* LaunchIntroImage4-0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679C917F67DC0004C1599 /* LaunchIntroImage4-0@2x.png */; };
+		BF8679D417F67DC0004C1599 /* LaunchIntroImage4-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CA17F67DC0004C1599 /* LaunchIntroImage4-2.png */; };
+		BF8679D517F67DC0004C1599 /* LaunchIntroImage4-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CB17F67DC0004C1599 /* LaunchIntroImage4-1@2x.png */; };
+		BF8679D617F67DC0004C1599 /* LaunchIntroImage4-0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CC17F67DC0004C1599 /* LaunchIntroImage4-0.png */; };
+		BF8679D717F67DC0004C1599 /* LaunchIntroImage4-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8679CD17F67DC0004C1599 /* LaunchIntroImage4-3.png */; };
 		BF9360E3176B2F1700A3A928 /* record_power_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E1176B2F1700A3A928 /* record_power_indicator.png */; };
 		BF9360E4176B2F1700A3A928 /* record_power_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */; };
 		BF9360F0176B313A00A3A928 /* MCProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9360EF176B313A00A3A928 /* MCProgressBarView.m */; };
@@ -272,6 +282,16 @@
 		BF790C0417ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchWhiteButtonNormal@2x.png"; sourceTree = "<group>"; };
 		BF790C0617ADF957007E2FC1 /* LaunchWhiteButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchWhiteButtonNormal.png; sourceTree = "<group>"; };
 		BF790C0817ADF957007E2FC1 /* LaunchWhiteButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchWhiteButtonPressed@2x.png"; sourceTree = "<group>"; };
+		BF8679C417F67DC0004C1599 /* LaunchIntroImage4-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-2@2x.png"; sourceTree = "<group>"; };
+		BF8679C517F67DC0004C1599 /* LaunchIntroImage4-4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-4@2x.png"; sourceTree = "<group>"; };
+		BF8679C617F67DC0004C1599 /* LaunchIntroImage4-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-4.png"; sourceTree = "<group>"; };
+		BF8679C717F67DC0004C1599 /* LaunchIntroImage4-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-1.png"; sourceTree = "<group>"; };
+		BF8679C817F67DC0004C1599 /* LaunchIntroImage4-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-3@2x.png"; sourceTree = "<group>"; };
+		BF8679C917F67DC0004C1599 /* LaunchIntroImage4-0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-0@2x.png"; sourceTree = "<group>"; };
+		BF8679CA17F67DC0004C1599 /* LaunchIntroImage4-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-2.png"; sourceTree = "<group>"; };
+		BF8679CB17F67DC0004C1599 /* LaunchIntroImage4-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-1@2x.png"; sourceTree = "<group>"; };
+		BF8679CC17F67DC0004C1599 /* LaunchIntroImage4-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-0.png"; sourceTree = "<group>"; };
+		BF8679CD17F67DC0004C1599 /* LaunchIntroImage4-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchIntroImage4-3.png"; sourceTree = "<group>"; };
 		BF9360E1176B2F1700A3A928 /* record_power_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_power_indicator.png; sourceTree = "<group>"; };
 		BF9360E2176B2F1700A3A928 /* record_power_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_power_indicator@2x.png"; sourceTree = "<group>"; };
 		BF9360EE176B313A00A3A928 /* MCProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCProgressBarView.h; sourceTree = "<group>"; };
@@ -597,6 +617,16 @@
 				BFFAD26F17ADFFDE008F77AA /* chooseyoung.png */,
 				BFFAD27017ADFFDE008F77AA /* chooseold@2x.png */,
 				BFFAD27117ADFFDE008F77AA /* chooseyoung@2x.png */,
+				BF8679C417F67DC0004C1599 /* LaunchIntroImage4-2@2x.png */,
+				BF8679C517F67DC0004C1599 /* LaunchIntroImage4-4@2x.png */,
+				BF8679C617F67DC0004C1599 /* LaunchIntroImage4-4.png */,
+				BF8679C717F67DC0004C1599 /* LaunchIntroImage4-1.png */,
+				BF8679C817F67DC0004C1599 /* LaunchIntroImage4-3@2x.png */,
+				BF8679C917F67DC0004C1599 /* LaunchIntroImage4-0@2x.png */,
+				BF8679CA17F67DC0004C1599 /* LaunchIntroImage4-2.png */,
+				BF8679CB17F67DC0004C1599 /* LaunchIntroImage4-1@2x.png */,
+				BF8679CC17F67DC0004C1599 /* LaunchIntroImage4-0.png */,
+				BF8679CD17F67DC0004C1599 /* LaunchIntroImage4-3.png */,
 				BF790C0317ADF957007E2FC1 /* LaunchWhiteButtonPressed.png */,
 				BF790C0417ADF957007E2FC1 /* LaunchWhiteButtonNormal@2x.png */,
 				BF790C0617ADF957007E2FC1 /* LaunchWhiteButtonNormal.png */,
@@ -785,8 +815,10 @@
 				BFDFA7191765020D006668BC /* tabbar_item1@2x.png in Resources */,
 				BFDFA71A1765020D006668BC /* tabbar_item2@2x.png in Resources */,
 				BFDFA71B1765020D006668BC /* tabbar_item3@2x.png in Resources */,
+				BF8679D617F67DC0004C1599 /* LaunchIntroImage4-0.png in Resources */,
 				BFDFA71C1765020D006668BC /* tabbar_item4@2x.png in Resources */,
 				BFDFA71D1765020D006668BC /* tabbar_selected@2x.png in Resources */,
+				BF8679D517F67DC0004C1599 /* LaunchIntroImage4-1@2x.png in Resources */,
 				BFDFA71E1765020D006668BC /* tabbar_bg@2x.png in Resources */,
 				BFDFA73317650872006668BC /* viewcontroller_bg@2x.png in Resources */,
 				BFDFA73717650963006668BC /* buddy_tableviewcell_bg@2x.png in Resources */,
@@ -811,6 +843,7 @@
 				BF9360F8176B316700A3A928 /* progress_fg.png in Resources */,
 				BF9360F9176B316700A3A928 /* progress_fg@2x.png in Resources */,
 				BF322308176B53220008C973 /* record_wave_animation.png in Resources */,
+				BF8679D417F67DC0004C1599 /* LaunchIntroImage4-2.png in Resources */,
 				BF322309176B53220008C973 /* record_wave_animation@2x.png in Resources */,
 				BF790BF717ADF45F007E2FC1 /* LaunchIntroImage-0@2x.png in Resources */,
 				BF790BF817ADF45F007E2FC1 /* LaunchIntroImage-3@2x.png in Resources */,
@@ -820,6 +853,7 @@
 				BF790BFC17ADF45F007E2FC1 /* LaunchIntroImage-2@2x.png in Resources */,
 				BF790BFD17ADF45F007E2FC1 /* LaunchIntroImage-3.png in Resources */,
 				BF790BFE17ADF45F007E2FC1 /* LaunchIntroImage-2.png in Resources */,
+				BF8679D217F67DC0004C1599 /* LaunchIntroImage4-3@2x.png in Resources */,
 				BF790BFF17ADF45F007E2FC1 /* LaunchIntroImage-4.png in Resources */,
 				BF790C0017ADF45F007E2FC1 /* LaunchIntroImage-0.png in Resources */,
 				BF790C0B17ADF957007E2FC1 /* LaunchWhiteButtonPressed.png in Resources */,
@@ -846,6 +880,7 @@
 				BF20BC4B17AE568B00EB1980 /* loginButtonNormal.png in Resources */,
 				BF2B3A7617C85FD4001685E5 /* dropDownBG.png in Resources */,
 				BF2B3A7717C85FD4001685E5 /* dropDownBG@2x.png in Resources */,
+				BF8679D117F67DC0004C1599 /* LaunchIntroImage4-1.png in Resources */,
 				BF2B3A8417C86136001685E5 /* DropDownMessageNormal.png in Resources */,
 				BF2B3A8517C86136001685E5 /* DropDownMessageNormal@2x.png in Resources */,
 				BF2B3A8617C86136001685E5 /* DropDownPhonePressed.png in Resources */,
@@ -856,6 +891,8 @@
 				BF2B3A8B17C86136001685E5 /* DropDownPhoneNormal@2x.png in Resources */,
 				BF2B3A8C17C86136001685E5 /* DropDownMessagePressed.png in Resources */,
 				BF2B3A8D17C86136001685E5 /* DropDownReminderNormal.png in Resources */,
+				BF8679CF17F67DC0004C1599 /* LaunchIntroImage4-4@2x.png in Resources */,
+				BF8679D017F67DC0004C1599 /* LaunchIntroImage4-4.png in Resources */,
 				BF2B3A8E17C86136001685E5 /* DropDownReminderNormal@2x.png in Resources */,
 				BF2B3A8F17C86136001685E5 /* DropDownPhoneNormal.png in Resources */,
 				BF2B3A9E17C86336001685E5 /* mood20@2x.png in Resources */,
@@ -866,6 +903,7 @@
 				BF2B3AA317C86336001685E5 /* mood80@2x.png in Resources */,
 				BF2B3AA417C86336001685E5 /* mood80.png in Resources */,
 				BF2B3AA517C86336001685E5 /* mood20.png in Resources */,
+				BF8679CE17F67DC0004C1599 /* LaunchIntroImage4-2@2x.png in Resources */,
 				BF2B3AA617C86336001685E5 /* mood60.png in Resources */,
 				BF2B3AA717C86336001685E5 /* mood100.png in Resources */,
 				BF2B3AA817C86336001685E5 /* mood100@2x.png in Resources */,
@@ -880,7 +918,9 @@
 				3AA6B39817E71A8F00F6C69E /* missu_en.aac in Resources */,
 				3AA6B39917E71A8F00F6C69E /* more_cn.aac in Resources */,
 				3AA6B39A17E71A8F00F6C69E /* more_en.aac in Resources */,
+				BF8679D717F67DC0004C1599 /* LaunchIntroImage4-3.png in Resources */,
 				3AA6B39B17E71A8F00F6C69E /* quicktalk_cn.aac in Resources */,
+				BF8679D317F67DC0004C1599 /* LaunchIntroImage4-0@2x.png in Resources */,
 				3AA6B39C17E71A8F00F6C69E /* quicktalk_en.aac in Resources */,
 				3AA6B39D17E71A8F00F6C69E /* reminder_cn.aac in Resources */,
 				3AA6B39E17E71A8F00F6C69E /* reminder_en.aac in Resources */,

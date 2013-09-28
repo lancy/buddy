@@ -63,7 +63,12 @@ NSString * const kPresentChildBuddySegueIdentifier = @"presentChild";
 #pragma mark - scroll view
 - (void)setupScrollView
 {
-    NSArray *imagesNames = [self introImageNamesOfPrefix:@"LaunchIntroImage-" count:5];
+    NSArray *imagesNames;
+    if  (IS_NOT_4INCH_IPHONE) {
+        imagesNames = [self introImageNamesOfPrefix:@"LaunchIntroImage4-" count:5];
+    } else {
+        imagesNames = [self introImageNamesOfPrefix:@"LaunchIntroImage-" count:5];
+    }
     CGFloat pageWidth = self.scrollView.frame.size.width;
     [imagesNames enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIImage *image = [UIImage imageNamed:obj];
