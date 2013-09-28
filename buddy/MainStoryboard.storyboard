@@ -400,10 +400,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <rect key="frame" x="103" y="61" width="178" height="18"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="moodProgress.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-Y9-EvY">
-                                                    <rect key="frame" x="103" y="61" width="100" height="15"/>
+                                                    <rect key="frame" x="103" y="61" width="100" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="71Z-eP-IMx"/>
-                                                        <constraint firstAttribute="height" constant="15" id="Bz1-Ln-KOj"/>
+                                                        <constraint firstAttribute="height" constant="16" id="9rc-Ev-v7X"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mood40.png" translatesAutoresizingMaskIntoConstraints="NO" id="XeA-Mq-fKQ">

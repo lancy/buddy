@@ -320,6 +320,9 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
 
 - (BOOL) getAudioNavigationDisabledStatus{
     NSUserDefaults *prefs=[NSUserDefaults standardUserDefaults];
+    if ([prefs valueForKey:@"AudioNavigationDisabled"] == nil) {
+        [self setAudioNavigationDisabledStatus:YES];
+    }
     return [prefs boolForKey:@"AudioNavigationDisabled"];
 }
 

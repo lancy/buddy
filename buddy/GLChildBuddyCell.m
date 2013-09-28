@@ -33,7 +33,7 @@
 - (void)cellDidLoad
 {
     [super cellDidLoad];
-    UIImage *progressImage = [[UIImage imageNamed:@"moodProgress"] resizableImageWithCapInsets:UIEdgeInsetsMake(2, 6, 2, 6)];
+    UIImage *progressImage = [[UIImage imageNamed:@"moodProgress"] resizableImageWithCapInsets:UIEdgeInsetsMake(2, 6, 2, 6) resizingMode:UIImageResizingModeStretch];
     [self.moodProgressImageView setImage:progressImage];
     [self.avatarImageView.layer setCornerRadius:32];
     [self.avatarImageView.layer setMasksToBounds:YES];
