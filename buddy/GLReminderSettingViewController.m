@@ -34,7 +34,7 @@
 
 - (void)initUserinterface
 {
-    self.title = @"Reminder";
+    self.title = @"提醒设置";
     
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:self action:@selector(didTapRecordAgainButton:)]];
     

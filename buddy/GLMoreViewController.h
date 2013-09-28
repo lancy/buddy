@@ -10,7 +10,7 @@
 
 @interface GLMoreViewController : UIViewController
 
+@property (assign, nonatomic) BOOL isChild;
 
--(void) setButtonTitle;
 @end
 

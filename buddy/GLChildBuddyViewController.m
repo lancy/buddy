@@ -50,6 +50,7 @@
 - (void)didTapMoreButton:(id)sender
 {
     GLMoreViewController *contentVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MoreViewController"];
+    [contentVC setIsChild:YES];
     [self.navigationController pushViewController:contentVC animated:YES];
 }
 
@@ -109,7 +110,7 @@
         if ([MFMessageComposeViewController canSendText]) {
             MFMessageComposeViewController *messageComposer =
             [[MFMessageComposeViewController alloc] init];
-            NSString *message = NSLocalizedString(@"I miss you dear, call me if you have time.", nil);
+            NSString *message = NSLocalizedString(@"收到你的的思念啦，待会儿给你回电话：）", nil);
             [messageComposer setRecipients:@[cleanedString]];
             [messageComposer setBody:message];
             messageComposer.messageComposeDelegate = self;
