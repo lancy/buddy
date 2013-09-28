@@ -86,13 +86,16 @@
         [item setSelectionHandler:^(GLMessageItem *item) {
             [item deselectRowAnimated:YES];
             GLBuddy *buddy = item.buddy;
-            [[GLUserAgent sharedAgent] requestSendMissToRelativeWithPhoneNumber:buddy.phoneNumber completed:^(APIStatusCode statusCode, NSError *error) {
+            if ([item isSent] == NO) {
+                [[GLUserAgent sharedAgent] requestSendMissToRelativeWithPhoneNumber:buddy.phoneNumber completed:^(APIStatusCode statusCode, NSError *error) {
                     NSLog(@"statusCode = %d", statusCode);
-                if (statusCode == APIStatusCodeOK) {
-                    [item setIsSent:YES];
-                    [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
-                }
-            }];
+                    if (statusCode == APIStatusCodeOK) {
+                        [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:buddy.phoneNumber recordType:GLRecordTypeMISS];
+                        [item setIsSent:YES];
+                        [item reloadRowWithAnimation:UITableViewRowAnimationAutomatic];
+                    }
+                }];
+            }
         }];
         [section addItem:item];
     }
@@ -110,7 +113,6 @@
     } else if (result == MessageComposeResultCancelled) {
         [self dismissViewControllerAnimated:YES completion:nil];
     } else if (result == MessageComposeResultSent) {
-        // give current buddy a red heart
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

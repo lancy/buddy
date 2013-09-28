@@ -301,6 +301,17 @@ NSString * const GLUserRegisterDidSuccessNotificaton = @"GLUserRegisterDidSucces
     
 }
 
+- (void)requestRecordWithPhoneNumber:(NSString *)phoneNumber recordType:(GLRecordType)recordType
+{
+    NSDictionary *parameters = @{
+                                 @"friendPhoneNumber": @([phoneNumber integerValue]),
+                                 @"typeId": @(recordType)
+                                 };
+    [[GLBuddyApiClient sharedClient] postPath:@"record/" parameters:parameters success:nil failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"record failed, error = %@", error);
+    }];
+}
+
 
 - (void) setAudioNavigationDisabledStatus:(BOOL)status {
     NSUserDefaults *prefs=[NSUserDefaults standardUserDefaults];

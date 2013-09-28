@@ -73,6 +73,7 @@
     for (GLBuddy *buddy in buddys) {
         GLChildBuddyItem *item = [[GLChildBuddyItem alloc] initWithBuddy:buddy];
         [item setSelectionHandler:^(id item) {
+            _selectedBuddy = [item buddy];
             [section removeItem:_lastItem];
             GLChildBuddyItem *selectedItem = item;
             GLDropDownItem *dropDownItem = [[GLDropDownItem alloc] initWithBuddy:selectedItem.buddy];
@@ -93,11 +94,11 @@
         GLBuddy *buddy = item.buddy;
         NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
         NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", cleanedString]];
-        [[UIApplication sharedApplication] openURL:telURL];        
+        [[UIApplication sharedApplication] openURL:telURL];
+        [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:buddy.phoneNumber recordType:GLRecordTypeTelephone];
     }];
     
     [item setReminderHandler:^(GLDropDownItem *item) {
-        _selectedBuddy = item.buddy;
         [self performSegueWithIdentifier:@"ShowAudioRecordView" sender:self];
     }];
     
@@ -127,7 +128,7 @@
     } else if (result == MessageComposeResultCancelled) {
         [self dismissViewControllerAnimated:YES completion:nil];
     } else if (result == MessageComposeResultSent) {
-        // give current buddy a red heart
+        [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:_selectedBuddy.phoneNumber recordType:GLRecordTypeSMS];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -161,20 +162,7 @@
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"添加伙伴" message:@"请输入电话号码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"添加", nil];
     [alertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
-//    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 260, 100)];
-//    _nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 0, 260.0, 25.0)];
-//    [_nameTextField setBackgroundColor:[UIColor whiteColor]];
-//    [_nameTextField setPlaceholder:@"姓名"];
-//    [contentView addSubview:_nameTextField];
-//    
-//    _phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 25.0, 260.0, 25.0)];
-//    [_phoneTextField setBackgroundColor:[UIColor whiteColor]];
-//    [_phoneTextField setPlaceholder:@"电话号码"];
-//    [contentView addSubview:_phoneTextField];
-//    
-//    [alertView addSubview:contentView];
     [alertView show];
-//    [_nameTextField becomeFirstResponder];
 }
 - (void)presentPeoplePicker
 {

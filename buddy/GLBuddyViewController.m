@@ -92,6 +92,7 @@ const NSInteger kActionSheetTagAddBuddy = 1014;
             NSString *cleanedString = [[buddy.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
             NSURL *telURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@", cleanedString]];
             [[UIApplication sharedApplication] openURL:telURL];
+            [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:buddy.phoneNumber recordType:GLRecordTypeTelephone];
         }];
         [section addItem:item];
     }

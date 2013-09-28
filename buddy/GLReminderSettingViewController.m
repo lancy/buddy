@@ -139,6 +139,7 @@
             NSLog(@"statusCode = %d", statusCode);
             MBProgressHUD *hub = [MBProgressHUD HUDForView:self.view];
             if (statusCode == APIStatusCodeOK) {
+                [[GLUserAgent sharedAgent] requestRecordWithPhoneNumber:_selectedBuddy.phoneNumber recordType:GLRecordTypeVoiceRemind];
                 [hub setLabelText:@"发送成功"];
                 [self dismissViewControllerAnimated:YES completion:nil];
             } else {

@@ -18,6 +18,13 @@ typedef enum {
     GLUserTypeYoung = 1
 } GLUserType;
 
+typedef enum {
+    GLRecordTypeTelephone = 1,
+    GLRecordTypeVoiceRemind = 2,
+    GLRecordTypeSMS = 3,
+    GLRecordTypeMISS = 4
+} GLRecordType;
+
 @interface GLUserAgent : NSObject
 
 + (GLUserAgent *)sharedAgent;
@@ -70,6 +77,7 @@ typedef enum {
 
 - (void)requestSendMissToRelativeWithPhoneNumber:(NSString *)phoneNumber completed:(void (^)(APIStatusCode statusCode, NSError *error))block;
 
+- (void)requestRecordWithPhoneNumber:(NSString *)phoneNumber recordType:(GLRecordType)recordType;
 
 - (void) setAudioNavigationDisabledStatus: (BOOL) status;
 
